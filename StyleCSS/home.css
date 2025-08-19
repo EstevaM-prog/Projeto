@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1b0025;
+    color: #fff;
+}
+
+.container { /* Container */
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar { /* Barra Lateral */
+    width: 300px;
+    background-color: #121212;
+    padding: 24px;
+    padding-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+}
