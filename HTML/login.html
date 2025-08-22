@@ -5,28 +5,42 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Listenly - Login</title>
         <link rel="icon" href="/img/logo.png" type="image/png">
+        <link rel="stylesheet" href="/StyleCSS/login.css"
+        
+
     </head>
     <body>
         <h2>Login</h2>
+        <p>Explore mais sobre o Listenly</p>
 
-        <div class="form_login">
-            <form action="autenticar.php" method="post">
-                <label>Email:</label>
-                <input type="email" name="email" required><br><br>
+        <div clas="login-box">
+            <div class="form_login">
+                <form action="autenticar.php" method="post">
+                    <label>Email:</label>
+                    <input type="email" name="email" required><br><br>
 
-                <label>Senha:</label>
-                <input type="password" name="senha" required><br><br>
+                    <label>Senha:</label>
+                    <input type="password" name="senha" required><br><br>
 
-                <input type="submit" value="Entrar">
-            </form>
+                    <input type="submit" value="Entrar">
+                </form>
 
-            <script type="module">
-                import { validar_formulario_login } from '/JS/validar_form_login.js';
+                <p class="sigup-text">
+                    Don't have an account? <a href="/Create/criar_usuarios.html">Subscribe to Listenly</a>
+                </p>
 
-                // Disponibiliza no escopo global para o formulário conseguir acessar
-                window.validarFormulario = validar_formulario_login;
-            </script>
+                <div class="logo-box">
+                 <!--  <img src="#" alt="Listenly-logo">-->
+
+                </div>
+            </div>
         </div>
+                <script type="module">
+                    import { validar_formulario_login } from '/JS/validar_form_login.js';
+
+                    // Disponibiliza no escopo global para o formulário conseguir acessar
+                    window.validarFormulario = validar_formulario_login;
+                </script>
 
     </body>
     </html>
