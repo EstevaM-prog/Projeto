@@ -4,12 +4,13 @@
     const mensagem = document.getElementById('mensagem');
 
     if (senha !== senha2) {
-      mensagem.textContent = "As senhas não coincidem";
-      mensagem.className = "erro";
-      return false; // bloqueia o envio do formulário
-    } else {
-    mensagem.textContent = "Senhas conferem";
+    event.preventDefault(); // impede envio do formulário
+    mensagem.textContent = "❌ As senhas não coincidem";
+    mensagem.className = "erro";
+    return false;
+  } else {
+    mensagem.textContent = "✅ Senhas conferem";
     mensagem.className = "sucesso";
-    return true; // permite o envio
-    }
+    return true;
   }
+}
