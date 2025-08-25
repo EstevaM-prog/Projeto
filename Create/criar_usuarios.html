@@ -9,32 +9,34 @@
     <body>
         <h1>Cadastro de usuário</h1>
 
-        <div class="form_criar_usuario">
-            <form id="formCadastro" action="#" method="post" onsubmit="return validarFormCreateUser(event)">
+        <div class="container">
+            <div class="form_criar_usuario">
+                <form id="formCadastro" action="#" method="post" onsubmit="return validarFormCreateUser(event)">
 
-            <label for="nome">Digite Seu Nome Compelto:</label><br>
-            <input type="text" id="nome" name="nome" required><br><br>
-
-
-            <label for="email">Digite Seu E-mail:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
+                <label for="nome">Digite Seu Nome Compelto:</label><br>
+                <input type="text" id="nome" name="nome" required><br><br>
 
 
-            <label for="username">Digite Seu Username:</label><br>
-            <input type="text" id="username" name="username" required><br><br>
+                <label for="email">Digite Seu E-mail:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
 
 
-            <label for="senha">Digite Sua Senha:</label><br>
-            <input type="password" id="senha" name="senha" required><br><br>
+                <label for="username">Digite Seu Username:</label><br>
+                <input type="text" id="username" name="username" required><br><br>
 
 
-            <label for="senha2">Confirme Sua Senha:</label><br>
-            <input type="password" id="senha2" name="senha2" required><br><br>
+                <label for="senha">Digite Sua Senha:</label><br>
+                <input type="password" id="senha" name="senha" required><br><br>
 
-            <span id="mensagem"></span><br><br>
 
-            <input type="submit" value="Cadastrar">
-            </form>
+                <label for="senha2">Confirme Sua Senha:</label><br>
+                <input type="password" id="senha2" name="senha2" required><br><br>
+
+                <span id="mensagem"></span><br><br>
+
+                <input type="submit" value="Cadastrar">
+                </form>
+            </div>
         </div>
 
         <script type="module">
