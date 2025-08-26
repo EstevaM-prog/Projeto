@@ -1,0 +1,48 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Listenly - Login</title>
+        <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
+        <link rel="stylesheet" href="/Listenly/Scr/frontend/Pages/Login/login.css">
+        
+    </head>
+    <body>
+        <h2>Login</h2>
+        <p>Explore mais sobre o Listenly</p>
+
+        <div clas="login-box">
+            <div class="form_login">
+                <form action="autenticar.php" method="get">
+                    <label>Digite Seu E-mail:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+
+                    <label>Digite Sua Senha:</label>
+                    <input type="password" id="senha" name="senha" required><br><br>
+
+                    
+                    <input type="submit" value="Entrar">
+                </form>
+
+                <p class="sigup-text">
+                    Don't have an account? <a href="/Listenly/Scr/frontend/Pages/Criar_usuarios/criar_usuarios.html">Subscribe to Listenly</a>
+                </p>
+
+                <div class="logo-box">
+                 <!--  <img src="#" alt="Listenly-logo">-->
+
+                </div>
+            </div>
+        </div>
+                <script type="module">
+                    import { validar_formulario_login } from '/Listenly/Scr/Login/validar_form_login.js';
+
+                    // Disponibiliza no escopo global para o formulário conseguir acessar
+                    window.validarFormulario = validar_formulario_login;
+                </script>
+
+    </body>
+    </html>
