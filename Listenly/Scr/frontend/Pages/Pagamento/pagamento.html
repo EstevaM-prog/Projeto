@@ -1,0 +1,36 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/Listenly/Scr/frontend/Pages/Pagamento/pagamento.css">
+        <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png">
+        <title>Pagamento - Listenly</title>
+    </head>
+    <body>
+        <h1>Pagamento de assinatura</h1>
+
+        <div class="form_pagamento">
+            <form action="#" method="get">
+
+                <label for="nome_cartao">Digite Nome Do Dono do cartão:</label><br>
+                <input type="text" id="nome_cartao" name="nome_cartao" required><br><br>
+
+                <label for="numero_cartao">Digite o Numero do cartão</label><br>
+                <input type="number" id="numero_cartao" name="numero_cartao" maxlength="19" placeholder="0000 0000 0000 0000" required><br><br>
+
+                <label for="numero_validae">Digite o Numero da validade do cartão</label><br>
+                <input type="number" id="validade_cartao" name="validade_cartao placeholder="08/25" required"><br><br>
+
+                <label for="cod_seguranca">Digite o cod de segurança do cartão</label><br>
+                <input type="number" id="cod_seguranca" name="cod_seguranca" maxlength="4" placeholder="123" required><br><br>
+            
+                <label for="email">Digite E-mail de confirmação</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <input type="submit" value="Pagar">
+
+            </form>
+        </div>
+    </body>
+    </html>
