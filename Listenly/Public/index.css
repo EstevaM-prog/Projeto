@@ -5,11 +5,12 @@
 }
 
 body {
-    background-color: #1b0025;
-    color: #fff;
+    background-image: url(/Listenly/Scr/frontend/Pages/Img/bg_dark.jpg);
+    
 }
 
 .container { /* Container */
+    background-image: url(/Listenly/Scr/frontend/Pages/Img/bg_dark.jpg);
     display: flex;
     height: 100vh;
 }
