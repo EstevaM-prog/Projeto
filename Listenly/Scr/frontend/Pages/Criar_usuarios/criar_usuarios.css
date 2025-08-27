@@ -1,8 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libertinus+Serif+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 body{
-  background-image: url(/Listenly/Scr/frontend/Pages/Img/bg_dark.jpg);
+  background-image: url(/Listenly/Scr/frontend/Pages/Img/bg.gif);
+  width: 1440px;
+  height: 1024px;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .form_criar_usuario{ 
-  margin-right: 1000px;
-  
+  width: 350px;
+  height: 1440px;
+  background-color: #181818CC; /* CC = 80% opacidade */
+  color: #e0e0e0;
+  padding: 24px;
+  padding-bottom: 90px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid #BB86FC; /* cor roxa (accent) */
+  backdrop-filter: blur(10px); /* efeito de desfoque */
 }
