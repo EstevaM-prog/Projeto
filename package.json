@@ -2,6 +2,7 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "express.js": "^1.0.0",
+    "git": "^0.1.5",
     "mongoose": "^8.18.0"
   }
 }
