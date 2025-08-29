@@ -9,15 +9,31 @@
     </head>
     <body>
         <div class="wrapper">
-        <input type="radio" name="slider" ud="tab-1">
-        <input type="radio" name="slider" ud="tab-2">
-        <input type="radio" name="slider" ud="tab-3">
+        <input type="radio" name="slider" id="tab-1">
+        <input type="radio" name="slider" id="tab-2" checked>
+        <input type="radio" name="slider" id="tab-3">
             <header>
-                <label for="tab-1" class="tab-1">Gratuito</label>
-                <label for="tab-2" class="tab-2">Básico</label>
+                <label for="tab-1" class="tab-1">Básico</label>
+                <label for="tab-2" class="tab-2">Gratuito</label>
                 <label for="tab-3" class="tab-3">Premium</label>
-                <div class="slider">
+                <div class="slider">            
             </header>
+            <div class="cards-area">
+                <div class="cards">
+                    <div class="row">
+                    <div class="pricing-details">
+                        <span>Plano Grátis</span>
+                        <p>Crie já sua conta!</p>
+                    </div>
+                    <ul class="features">
+                        <li>&#10004;<i class="fas fa-check"></i><span> Gratuito com anúncios.</span>
+                        <li>&#10004;<i class="fas fa-check"></i><span> Sem acesso offline.</span>
+                        <li>&#10004;<i class="fas fa-check"></i><span> Recursos premium bloqueados.</span>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+            <button>Criar conta</button>
         </div>
     </body>
     </html>
