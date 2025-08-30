@@ -1,4 +1,4 @@
-/* teste conexão de dados
+
 const mongoose = require('mongoose');
 
 async function connectToDatabase() {
@@ -20,4 +20,4 @@ async function connectToDatabase() {
 
 module.exports = connectToDatabase;
 
-*/
+

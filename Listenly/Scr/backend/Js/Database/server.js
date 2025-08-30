@@ -1,4 +1,4 @@
-/* teste conexão de dados
+ 
 
 import mongoose from "mongoose";
 
@@ -17,4 +17,4 @@ const db = mongoose.connection;
 db.on("error", (error) => console.error (error));
 db.open("open"), () => console.log("📦 connect to the datebase")
 
-*/
+

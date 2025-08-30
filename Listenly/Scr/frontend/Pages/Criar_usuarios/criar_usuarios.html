@@ -13,7 +13,7 @@
             <div class="form_criar_usuario">
                 <h1>Cadastro de usuário</h1>
 
-                <form id="formCadastro" action="#" method="get" onsubmit="return validarFormCreateUser(event)">
+                <form id="formCadastro" action="#" method="post">
 
                 <label for="nome">Digite Seu Nome Compelto:</label><br>
                 <input type="text" id="nome" name="nome" required><br><br>
@@ -42,28 +42,31 @@
         </div>
 
         <script type="module">
-
-            // export de Função
+            // Import
             import { validarFormCreateUser } from './Listenly/Scr/Criar_usuarios/validar_form_criarusuario.js';
             import { confirmar_senha } from './Listenly/Scr/Criar_usuarios/confirm_senha.js';
 
-            // Chamando id de formulario
             const form = document.getElementById('formCadastro');
 
             form.addEventListener('submit', (event) => {
-            // Primeiro valida o formulário geral
-                if (!validarFormCreateUser(event)) {
+                // 1) validações gerais
+                const formOk = validarFormCreateUser(); // deve retornar true/false
+                if (!formOk) {
                 event.preventDefault();
                 return;
                 }
-            // Depois valida se as senhas conferem
-                if (!confirmar_senha(event)) {
+
+                // 2) confirmação de senha
+                const senhaOk = confirmar_senha(); // deve retornar true/false
+                if (!senhaOk) {
                 event.preventDefault();
                 return;
                 }
-                // Se tudo passar, mensagem de sucesso
+
+                // 3) tudo certo
                 alert('✅ Cadastro válido! (simulação)');
-                });
+                
+            });
         </script>
 
     </body>

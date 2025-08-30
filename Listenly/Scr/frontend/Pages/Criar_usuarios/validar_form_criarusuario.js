@@ -1,7 +1,9 @@
     // Validar form criar_usuarios com regex
+
     export function validarFormCreateUser(event) {
-    const name = document.getElementById('nome').value.trim();
+        const name = document.getElementById('nome').value.trim();
         const email = document.getElementById('email').value.trim();
+        const username = document.getElementById('username').value.trim();
         const senha = document.getElementById('senha').value.trim();
         const senha2 = document.getElementById('senha2').value.trim();
 
