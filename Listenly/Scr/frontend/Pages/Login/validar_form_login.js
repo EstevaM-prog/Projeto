@@ -1,20 +1,20 @@
   //validar form Login com regex 
 
-  export function validarFormLogin() {
+  function validarFormLogin(event) {
+    event.preventDefault(); // evita envio automático
+
+    // Dados
     const email = document.getElementById('email').value.trim();
-    const senha = document.getElementById('senha').value;
+    const senha = document.getElementById('senha').value.treim();
 
-    // Regex para email válido
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    // Regex para senha: mínimo 8 caracteres, pelo menos 1 letra e 1 número ou caractere especial
-    const regexSenha = /^(?=.*[a-zA-Z])(?=.*[\d\W_]).{10,}$/;
+    
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex para email válido
+    const regexSenha = /^(?=.*[a-zA-Z])(?=.*[\d\W_]).{10,}$/; // Regex para senha: mínimo 8 caracteres, pelo menos 1 letra e 1 número ou caractere especial
 
     // Alert de erro
-    const regexerro = document.getElementById("Erro");
+    const erro = document.getElementById("Erro");
 
     if (email === "" || senha === ""){
-      event.preventDefault();
       erro.textContent = "❌ Por favor, preencha todos os campos.";
     } else if (!regexEmail.test(email)) {
       event.preventDefault();
