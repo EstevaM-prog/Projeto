@@ -35,10 +35,20 @@
                 </div>
 
                 <div class="box_register">
-                    <input type="text" id="senha2" name="senha2" placeholder="Confirme your password" required>
-                    <i class="bi bi-envelope"></i>
+                    <input type="password" id="senha2" name="senha2" placeholder="Enter your password" required>
+                    
+                    <!-- botão com ícone -->
+                    <button class="View" type="button" onclick="mostrarSenha2()" style="border:none; background:none; cursor:pointer;">
+                        <i id="iconeSenha" class="bi bi-lock"></i>
+                    </button>
                 </div>
 
+<!--
+                <div class="box_register">
+                    <input type="text" id="senha2" name="senha2" placeholder="Confirme your password" required>
+                    <i id="iconeSenha" class="bi bi-lock"></i>
+                </div>
+-->
                 <div class="Enviar">
                     <button type="submit">TO ENTER</button>
                 </div>
@@ -47,16 +57,25 @@
         </div>
         
         <script>
-            function mostrarSenha() {
-                const campoSenha = document.getElementById("senha");
-                const icone = document.getElementById("iconeSenha");
+            function mostrarSenha(){
+                const senha = document.getElementById("senha");
 
-                if (campoSenha.type === "password") {
-                campoSenha.type = "text";
-                icone.classList.replace("bi-eye", "bi-eye-slash"); // olho cortado
+                if (senha.type === "password") {
+                    senha.type = "text";
+                    // icon icone.classList.replace("bi-lock", "bi-unlock")
                 } else {
-                campoSenha.type = "password";
-                icone.classList.replace("bi-eye-slash", "bi-eye"); // olho normal
+                    senha.type = "password";
+                }
+            }
+
+            function mostrarSenha2(){
+                const senha2 = document.getElementById("senha2");
+
+                if (senha2.type === "password") {
+                    senha2.type = "text";
+                    // icon icone.classList.replace("bi-lock", "bi-unlock")
+                } else {
+                    senha2.type = "password";
                 }
             }
         </script>
