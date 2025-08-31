@@ -30,11 +30,6 @@
                     </button>
                 </div>
 
-                <div class="box_lembrar_esqueci">
-                    <label><input type="checkbox">Remember</label>
-                    <a href="/Listenly/Scr/frontend/Pages/Esqueci_senha/esqueci_senha.html">Forgot password</a>
-                </div><br>
-
                 <div class="Enviar">
                 <button type="submit">TO ENTER</button>
                 </div>
@@ -49,15 +44,17 @@
 
                 <script>
                     function mostrarSenha(){
-                const senha = document.getElementById("senha");
+                        const senha = document.getElementById("senha");
+                        const icone = document.getElementById("iconeSenha")
 
-                if (senha.type === "password") {
-                    senha.type = "text";
-                    // icon icone.classList.replace("bi-lock", "bi-unlock")
-                } else {
-                    senha.type = "password";
-                }
-            }
+                        if (senha.type === "password") {
+                            senha.type = "text";
+                            icone.classList.replace("bi-lock", "bi-unlock")
+                        } else {
+                            senha.type = "password";
+                            icone.classList.replace("bi-unlock", "bi-lock")
+                        }
+                    }
                 </script>
                     
     </body>

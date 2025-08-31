@@ -30,7 +30,7 @@
                     
                     <!-- botão com ícone -->
                     <button class="View" type="button" onclick="mostrarSenha()" style="border:none; background:none; cursor:pointer;">
-                        <i id="iconeSenha" class="bi bi-lock"></i>
+                        <i id="iconeSenha" class="bi bi-eye"></i>
                     </button>
                 </div>
 
@@ -39,16 +39,10 @@
                     
                     <!-- botão com ícone -->
                     <button class="View" type="button" onclick="mostrarSenha2()" style="border:none; background:none; cursor:pointer;">
-                        <i id="iconeSenha" class="bi bi-lock"></i>
+                        <i id="iconeSenha2" class="bi bi-eye"></i>
                     </button>
                 </div>
 
-<!--
-                <div class="box_register">
-                    <input type="text" id="senha2" name="senha2" placeholder="Confirme your password" required>
-                    <i id="iconeSenha" class="bi bi-lock"></i>
-                </div>
--->
                 <div class="Enviar">
                     <button type="submit">TO ENTER</button>
                 </div>
@@ -57,27 +51,34 @@
         </div>
         
         <script>
-            function mostrarSenha(){
+
+            function mostrarSenha() {
                 const senha = document.getElementById("senha");
+                const icone = document.getElementById("iconeSenha");
 
                 if (senha.type === "password") {
                     senha.type = "text";
-                    // icon icone.classList.replace("bi-lock", "bi-unlock")
+                    icone.classList.replace("bi-eye", "bi-eye-slash");
                 } else {
                     senha.type = "password";
+                    icone.classList.replace("bi-eye-slash", "bi-eye");
                 }
             }
 
-            function mostrarSenha2(){
+            function mostrarSenha2() {
                 const senha2 = document.getElementById("senha2");
+                const icone2 = document.getElementById("iconeSenha2");
 
                 if (senha2.type === "password") {
                     senha2.type = "text";
-                    // icon icone.classList.replace("bi-lock", "bi-unlock")
+                    icone2.classList.replace("bi-eye", "bi-eye-slash");
                 } else {
                     senha2.type = "password";
+                    icone2.classList.replace("bi-eye-slash", "bi-eye");
                 }
             }
+
+
         </script>
     </body>
     </html>
