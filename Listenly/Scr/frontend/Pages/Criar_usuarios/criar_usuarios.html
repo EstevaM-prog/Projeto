@@ -4,67 +4,61 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login - Listenly</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="/Listenly/Scr/frontend/Pages/Criar_usuarios/criar_usuarios.css">
         <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
     </head>
     <body>
+        
+        <div class="form_register">
 
-        <div class="container">
-            <div class="form_criar_usuario">
-                <h1>Cadastro de usuário</h1>
+            <h1>Register</h1>
 
-                <form id="formCadastro" action="#" method="POST" onsubmit="return validarFormCreateUser(event)">
+            <form for="" action="#" method="post">
+                <div class="box_register">
+                    <input type="text" id="email" name="email" placeholder="Enter your email" required>
+                    <i class="bi bi-envelope"></i>
+                </div>
 
-                <label for="nome">Digite Seu Nome Compelto:</label><br>
-                <input type="text" id="nome" name="nome" required><br><br>
+                <div class="box_register">
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    <i class="bi bi-person"></i>
+                </div>
 
+                <div class="box_register">
+                    <input type="password" id="senha" name="senha" placeholder="Enter your password" required>
+                    
+                    <!-- botão com ícone -->
+                    <button class="View" type="button" onclick="mostrarSenha()" style="border:none; background:none; cursor:pointer;">
+                        <i id="iconeSenha" class="bi bi-lock"></i>
+                    </button>
+                </div>
 
-                <label for="email">Digite Seu E-mail:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+                <div class="box_register">
+                    <input type="text" id="senha2" name="senha2" placeholder="Confirme your password" required>
+                    <i class="bi bi-envelope"></i>
+                </div>
 
+                <div class="Enviar">
+                    <button type="submit">TO ENTER</button>
+                </div>
 
-                <label for="username">Digite Seu Username:</label><br>
-                <input type="text" id="username" name="username" required><br><br>
-
-
-                <label for="senha">Digite Sua Senha:</label><br>
-                <input type="password" id="senha" name="senha" required><br><br>
-
-
-                <label for="senha2">Confirme Sua Senha:</label><br>
-                <input type="password" id="senha2" name="senha2" required><br><br>
-
-                <span id="mensagem"></span><br><br>
-
-                <input type="submit" value="Cadastrar">
-                </form>
-            </div>
+            </form>
         </div>
+        
+        <script>
+            function mostrarSenha() {
+                const campoSenha = document.getElementById("senha");
+                const icone = document.getElementById("iconeSenha");
 
-        <script type="module">
-
-            // export de Função
-            import { validarFormCreateUser } from './Listenly/Scr/Criar_usuarios/validar_form_criarusuario.js';
-            import { confirmar_senha } from './Listenly/Scr/Criar_usuarios/confirm_senha.js';
-
-            // Chamando id de formulario
-            const form = document.getElementById('formCadastro');
-
-            form.addEventListener('submit', (event) => {
-            // Primeiro valida o formulário geral
-                if (!validarFormCreateUser(event)) {
-                event.preventDefault();
-                return;
+                if (campoSenha.type === "password") {
+                campoSenha.type = "text";
+                icone.classList.replace("bi-eye", "bi-eye-slash"); // olho cortado
+                } else {
+                campoSenha.type = "password";
+                icone.classList.replace("bi-eye-slash", "bi-eye"); // olho normal
                 }
-            // Depois valida se as senhas conferem
-                if (!confirmar_senha(event)) {
-                event.preventDefault();
-                return;
-                }
-                // Se tudo passar, mensagem de sucesso
-                alert('✅ Cadastro válido! (simulação)');
-                });
+            }
         </script>
-
     </body>
     </html>
