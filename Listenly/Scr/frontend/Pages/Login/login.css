@@ -151,3 +151,9 @@ body{
 .link_register p {
   color: #fff;
 }
+
+.box_form {
+    position: relative; /* necessário para o botão se posicionar em relação a esse container */
+    display: flex;
+    align-items: center;
+  }

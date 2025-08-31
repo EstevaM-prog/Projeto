@@ -22,8 +22,12 @@
                 </div>
 
                 <div class="box_form">
-                    <input type="password" id="senha" name="senha" placeholder="Your password" required>
-                    <i class="bi bi-lock"></i>
+                    <input type="password" id="senha" name="senha" placeholder="Enter your password" required>
+                    
+                    <!-- botão com ícone -->
+                    <button class="View" type="button" onclick="mostrarSenha()" style="border:none; background:none; cursor:pointer;">
+                        <i id="iconeSenha" class="bi bi-lock"></i>
+                    </button>
                 </div>
 
                 <div class="box_lembrar_esqueci">
@@ -44,37 +48,16 @@
         </div>
 
                 <script>
-                    
-                // Validar Login
-                function validarFormLogin(event) {
-                    event.preventDefault(); // evita envio automático
+                    function mostrarSenha(){
+                const senha = document.getElementById("senha");
 
-                    // Dados
-                    const email = document.getElementById('email').value.trim();
-                    const senha = document.getElementById('senha').value.treim();
-
-                    
-                    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex para email válido
-                    const regexSenha = /^(?=.*[a-zA-Z])(?=.*[\d\W_]).{10,}$/; // Regex para senha: mínimo 8 caracteres, pelo menos 1 letra e 1 número ou caractere especial
-
-                    // Alert de erro
-                    const erro = document.getElementById("Erro");
-
-                    if (email === "" || senha === ""){
-                    erro.textContent = "❌ Por favor, preencha todos os campos.";
-                    } else if (!regexEmail.test(email)) {
-                    event.preventDefault();
-                    erro.textContent = "❌ Insira um e-mail válido.";
-                    } else if (!regexSenha.test(senha)) {
-                    event.preventDefault();
-                    erro.textContent = "❌ A senha deve ter pelo menos 10 caracteres, incluindo letras e números ou caractere especial.";
-                    } else {
-                    erro.textContent = "";
-                    alert("✅ Login válido! (simulação)");
-                    }
-                };
-
-
+                if (senha.type === "password") {
+                    senha.type = "text";
+                    // icon icone.classList.replace("bi-lock", "bi-unlock")
+                } else {
+                    senha.type = "password";
+                }
+            }
                 </script>
                     
     </body>
