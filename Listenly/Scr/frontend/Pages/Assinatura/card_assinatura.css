@@ -77,7 +77,28 @@ header .slider{
 .wrapper input[type="radio"]{
   display:none;
 }
-
+.cards-area{
+  overflow: hidden; 
+}
+.cards-area .cards{
+  width: 300%;
+  display: flex;
+}
+.cards .row{
+  width: 33.4%
+}
+.cards .row-1{
+  transition: all 0.3s ease;
+}
+#tab-1:checked ~ .cards-area .cards .row-1{
+  margin-left: 0%;
+}
+#tab-2:checked ~ .cards-area .cards .row-1{
+  margin-left: -33.4%;
+}
+#tab-3:checked ~ .cards-area .cards .row-1{
+  margin-left: -66.8%;
+}
 .row .pricing-details{
   margin: 20px 0;
   text-align: center;
@@ -132,5 +153,5 @@ header .slider{
   transition: transform 0.3s ease;
 }
 .wrapper button::hover{
-  transform> scale(0.98);
+  transform scale(0.98);
 }
