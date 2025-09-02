@@ -1,3 +1,5 @@
+
+
 function validarFormLogin(event) {
     event.preventDefault(); // evita envio do formulário
 
@@ -17,4 +19,5 @@ function validarFormLogin(event) {
         alert("✅ Login válido! (simulação)");
         // aqui você poderia enviar o formulário com form.submit() se quiser
     }
-}
+} 
+

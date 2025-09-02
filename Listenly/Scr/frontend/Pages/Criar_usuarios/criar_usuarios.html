@@ -14,7 +14,7 @@
 
             <h1>Register</h1>
 
-            <form for="" action="#" method="post">
+            <form action="#" method="post" onsubmit="return validarFormCreateUser(event)">
                 <div class="box_register">
                     <input type="text" id="email" name="email" placeholder="Enter your email" required>
                     <i class="bi bi-envelope"></i>
@@ -50,35 +50,7 @@
             </form>
         </div>
         
-        <script>
-
-            function mostrarSenha() {
-                const senha = document.getElementById("senha");
-                const icone = document.getElementById("iconeSenha");
-
-                if (senha.type === "password") {
-                    senha.type = "text";
-                    icone.classList.replace("bi-eye", "bi-eye-slash");
-                } else {
-                    senha.type = "password";
-                    icone.classList.replace("bi-eye-slash", "bi-eye");
-                }
-            }
-
-            function mostrarSenha2() {
-                const senha2 = document.getElementById("senha2");
-                const icone2 = document.getElementById("iconeSenha2");
-
-                if (senha2.type === "password") {
-                    senha2.type = "text";
-                    icone2.classList.replace("bi-eye", "bi-eye-slash");
-                } else {
-                    senha2.type = "password";
-                    icone2.classList.replace("bi-eye-slash", "bi-eye");
-                }
-            }
-
-
-        </script>
+        <script src="./mostrar_senha.js"></script>
+        <script src="./validar_form_criarusuario.js"></script>
     </body>
     </html>
