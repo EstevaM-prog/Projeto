@@ -15,7 +15,7 @@
 
             <h1>Login</h1>
 
-            <form for="#" action="#" method="POST" onsubmit="validarFormLogin(event)">
+            <form for="#" action="#" method="POST" onsubmit=" return validarFormLogin(event)">
                 <div class="box_form">
                     <input type="text" id="email" name="email" placeholder="Your email" required>
                     <i class="bi bi-envelope"></i>
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="Enviar">
-                <button type="submit" onclick="logar(); return false;">TO ENTER</button>
+                <button type="submit">TO ENTER</button>
                 </div>
 
                 <div class="link_register">
@@ -43,7 +43,7 @@
         </div>
 
             <script src="./mostrar_senha.js"></script>
-            <script src="/Listenly/Scr/frontend/Pages/Login/validar_form_login.js"></script>
+            <script src="./validar_form_login.js"></script>
             <script src="./login.js"></script>
             <script>
                 const nomeUsuario = ""; // Pode vir do servidor ou localStorage, por exemplo
