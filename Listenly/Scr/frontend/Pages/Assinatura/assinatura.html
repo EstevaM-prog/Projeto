@@ -8,39 +8,63 @@
         <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
     </head>
     <body>
-        <div class="Container">
-        <h1>Seja Premium por apenas R$ 11,95</h1>
-        </div>
-        <div class="Card_gratuito">
-            <p>
-                Música com anúncios<br>
-                Ouvir no modo online<br>
-                Ouça em ordem aleatória<br>
-                Áudio de qualidade alta<br>
-                Ouça músicas e podcasts gratuitamente
-            </p>
-            <div class="botao_voltar">
-                <a href="/Listenly/Public/index.html">Ir para a Página Inicial</a>
+        <div class="wrapper">
+        <input type="radio" name="slider" id="tab-1">
+        <input type="radio" name="slider" id="tab-2" checked>
+        <input type="radio" name="slider" id="tab-3">
+            <header>
+                <label for="tab-1" class="tab-1">Plus</label>
+                <label for="tab-2" class="tab-2">Gratuito</label>
+                <label for="tab-3" class="tab-3">Premium</label>
+                <div class="slider">            
+            </header>
+            <div class="cards-area">
+                <div class="cards">
+                    <div class="row row-1">
+                    <div class="pricing-details">
+                        <span>Plus</span>
+                        <p>R$ 14,99</p>
+                        <p>Faça parte da família Listenly!</p>
+                    </div>
+                    <ul class="features">
+                        <li>&#10004;<i class="fas fa-check"></i><span> Sem anúncios</span>
+                        <li>&#10004;<i class="fas fa-check"></i><span> Acesso offline limitado</span>
+                        <li>&#10004;<i class="fas fa-check"></i><span> Escutar em 1 dispositivo por vez</span>
+                        <li>&#10004;<i class="fas fa-check"></i><span> Suporte via chat e e-mail</span>
+                        <li>&#10004;<i class="fas fa-check"></i><span> Criar e salvar playlists personalizadas</span>
+                    </ul>
+                   <button class="btn" id="btn-2">Assine Plano Plus</button>
+                </div>
+                    <div class="row">
+                    <div class="pricing-details">
+                        <span>Plano Grátis</span>
+                        <p>Crie já sua conta!</p>
+                        <p>Faça parte da família Listenly!</p>
+                    </div>
+                    <ul class="features">
+                        <li>&#10004;<i class="fas fa-check"></i><span> Gratuito com anúncios.</span>
+                        <li>&#10004;<i class="fas fa-check"></i><span> Sem acesso offline.</span>
+                        <li>&#10004;<i class="fas fa-check"></i><span> Recursos premium bloqueados.</span>
+                    </ul>
+                 <button class="btn" id="btn-1" onclick="window.location.href='http://127.0.0.1:5500/Listenly/Scr/frontend/Pages/Criar_usuarios/criar_usuarios.html'">Criar conta grátis</button>
+                </div>
+                    <div class="row">
+                    <div class="pricing-details">
+                        <span>Premium</span>
+                        <p>R$ 40,00</p>
+                        <p>Faça parte da família Listenly!</p>
+                    </div>
+                    <ul class="features">
+                        <li>&#10004;<i class="fas fa-check"></i><span> Sem anúncios</span>
+                        <li>&#10004;<i class="fas fa-check"></i><span> Acesso offline completo</span>
+                        <li>&#10004;<i class="fas fa-check"></i><span> Pular faixas ilimitado</span>
+                        <li>&#10004;<i class="fas fa-check"></i><span> Multi-dispositivo</span>
+                        <li>&#10004;<i class="fas fa-check"></i><span> Suporte prioritário</span>
+                    </ul>
+                    <button class="btn" id="bnt-3">Assine Plano Premium</button>
+                </div>
             </div>
-            
-                
         </div>
-
-        <div class="Card_premium">
-            <p>Música sem anúncios<br>
-                Baixe pra ouvir no modo offline<br>
-                Ouça músicas na ordem que quiser<br>
-                Áudio de qualidade alta<br>
-                Possibilidade de ouvir com os amigos em tempo real<br>
-                Fila na ordem que você quiser<br>
-                Insights de stream (Sua Máquina do Tempo)
-            </p>
-            <div class="botao_voltar">
-                <a href="/Listenly/Scr/frontend/Pages/Pagamento/pagamento.html">Ir para a Página Inicial</a>
-            </div>
-                
-        
         </div>
-
     </body>
     </html>

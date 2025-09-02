@@ -1,26 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libertinus+Serif+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
 
 body{
-  background-image: url(/Listenly/Scr/frontend/Pages/Img/bg.gif);
-  width: 1440px;
-  height: 1024px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   overflow: hidden;
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+  background: linear-gradient(to bottom, #2a1b6b, #000000);
+  position: relative;
 }
 
-.form_criar_usuario{ 
-  width: 350px;
-  height: 1440px;
-  background-color: #181818CC; /* CC = 80% opacidade */
-  color: #e0e0e0;
-  padding: 24px;
-  padding-bottom: 90px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-  text-align: center;
-  border: 1px solid #BB86FC; /* cor roxa (accent) */
-  backdrop-filter: blur(10px); /* efeito de desfoque */
+.estrelas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 25% 15%, #fff, transparent),
+    radial-gradient(1px 1px at 50% 40%, #fff, transparent),
+    radial-gradient(2px 2px at 15% 55%, #fff, transparent),
+    radial-gradient(1px 1px at 70% 25%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 85% 60%, #fff, transparent),
+    radial-gradient(1px 1px at 35% 75%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 90% 10%, #fff, transparent),
+    radial-gradient(2px 2px at 5% 30%, #fff, transparent),
+    radial-gradient(1px 1px at 60% 85%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 40% 5%, #fff, transparent),
+  ;
 }
+
+.form_register{
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #000000;
+  padding: 35px;
+  border-radius: 20px;
+}
+
+.form_register h1{
+  font-size:  30px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.box_register{
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.box_register input{
+  width: 100%;
+  height: 40px;
+  border: none; 
+  border-radius: 10px;
+  outline: none;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 16px;
+  padding: 0 20px;
+}
+
+.box_register input::placeholder{
+  color: #fff;
+}
+
+.box_register i {
+   position: absolute;
+   right: 20px;
+   font-size: 15px;
+   top: 35%;
+}
+
+.Enviar button {
+  width: 100%;
+  height: 27px;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  color: #2a1b6b;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.Enviar button::hover{
+  background-color: #fff;
+  transform: translateY(5px);
+}
+
+.link_register{
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.link_register a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+
+.link_register a::hover{
+  text-decoration: underline;
+}
+
+.box_register {
+    position: relative; /* necessário para o botão se posicionar em relação a esse container */
+    display: flex;
+    align-items: center;
+  }
