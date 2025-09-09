@@ -1,0 +1,40 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
+        <title>Esqueçeu sua Senha?</title>
+    </head>
+    <body>
+        <div class="form_esqueci_senha">
+
+            <form for="forms_help" action="https://formsubmit.co/felipe.estevam@uni9.edu.br" method="POST">
+            <h1>Formulario de Contato</h1>
+
+            <div class="box_form">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="box_form">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+
+            <div class="texto">
+                <label for="msg">Mensagem</label>
+                <input type="text" id="msg" name="msg">
+            </div>
+
+            <div class="form_submit">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="next" valu="http://127.0.0.1:5501/obrigado.html">
+            </div>
+
+            <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </body>
+    </html>
