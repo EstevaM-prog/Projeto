@@ -1,3 +1,5 @@
+/*
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // Const ( Name e Foto do artista)
@@ -19,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Const ( Name, Arista, Imagem do album)
     const albumsData = [
+        { name: 'test', artist: 'teste', Image: '/Listenly/Src/frontend/Pages/Img/bg_light.jpg' },
+        
         { name: 'Arctic Monkeys', artist: 'Arctic Monkeys', image: '/Listenly/Src/frontend/Pages/Img/Album/artic_monkeys.jpg' },
         { name: 'Baile', artist: 'Fdn', image: '/Listenly/Src/frontend/Pages/Img/Album/baile.jpg' },
         { name: 'Eu não sou santo não', artist: 'Bezerra da Silva', image: '/Listenly/Src/frontend/Pages/Img/Album/bezerra.jpg' },
@@ -79,3 +83,27 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
+// Função para verificar se o usuário está logado
+function isLoggedIn() {
+            const cookies = document.cookie.split(';');
+            for (let c of cookies) {
+                c = c.trim();
+                if (c === "logado=true") {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Verifica o login e redireciona se necessário
+        window.onload = function() {
+            if (isLoggedIn()) {
+                // Usuário logado → vai para home
+                window.location.href = "home.html";
+            } else {
+                // Usuário não logado → permanece na index
+                console.log("Usuário não logado. Permanece na index.html");
+            }
+        }
+
+        */
