@@ -92,7 +92,8 @@ main {
 main {
     padding: 24px;
     flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 
 .search-bar {
@@ -102,6 +103,12 @@ main {
     padding: 8px 16px;
     border-radius: 20px;
     width: 300px;
+    position: fixed;
+}
+
+.search-bar button i{
+    cursor: pointer;
+    
 }
 
 .log {
@@ -177,13 +184,19 @@ main {
     color: #B7B3B6;
 }
 
+
+
 .content {
     margin-top: 40px;
 }
 
+
+
 .container h2 {
     margin-bottom: 10px;
 }
+
+
 
 .banner {
     position: fixed;
@@ -214,3 +227,78 @@ main {
     cursor: pointer;
 }
 
+
+
+.content{
+    display: grid;
+    grid-template-columns: repeat(autofill, minmax(180px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.artist-grid {
+    display: flex;       /* deixa os artistas lado a lado */
+    gap: 20px;  /* Espaço fazio entre os artistas */
+}
+
+.artist img {
+    width: 150px;        /* ajusta o tamanho da imagem */
+    height: auto;
+    cursor: pointer;
+}
+
+.artist {
+    text-align: center;  /* centraliza o nome abaixo da imagem */
+}
+
+.artist-grid img{
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
+
+
+.artist-grid h4{
+    display: flex;
+    margin-top: 160px; /* aumenta a distância entre a imagem e o nome */
+    font-size: 16px;  /* tamanho do texto */
+    text-align: center; /* garante que o texto continue centralizado */
+    
+}
+
+
+
+.albums {
+    text-align: center;  /* centraliza o nome abaixo da imagem */
+}
+
+.albums-grid {
+    display: flex;       /* deixa os artistas lado a lado */
+    gap: 20px;           /* espaço entre os artistas */
+}
+
+.albums img {
+    width: 150px;        /* ajusta o tamanho da imagem */
+    height: auto;
+    cursor: pointer;
+}
+
+.albums {
+    text-align: center;  /* centraliza o nome abaixo da imagem */
+}
+
+.albums-grid img{
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;   
+}
+
+.albums-grid h4{
+    display: flex;
+    margin-top: 160px; /* aumenta a distância entre a imagem e o nome */
+    font-size: 16px;  /* tamanho do texto */
+    text-align: center; /* garante que o texto continue centralizado */
+    
+}
