@@ -1,28 +1,31 @@
-function setLoginCokkie() {
-    const dias = 1; // duração do cookie (1 dia)
-    const data = newData ();
-    data.setTime(data.getTime() + (dias * 24 * 60 * 60 * 1000));
-    const expira ="expires=" + data.toUTCString();
-    document.cookie = "logado=true" + expira + ";path=/"
-}
-
-function isLoggedIN() {
-    const cookies = document.cookie.split(';');
-    for (let c of cookies) {
-        c = c.trim();
-        if (c === "logado.true") {
-            return true;
+    // Cria um cookie
+    function setCookie(username, value, days) {
+        const encodedValue = encodeURIComponent(value);
+        let expires = "";
+        if (days) {
+            const d = new Date();
+            d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+            expires = "; expires=" + d.toUTCString();
         }
-    }
-    return false;
-}
+        // path=/ para ficar disponível em todo o site; SameSite=Lax recomendado por padrão
+        document.cookie = `${username}=${encodedValue}${expires}; path=/; SameSite=Lax`;
+        }
 
-if (isLoggedIN()) {
-    console.log ("User logado")
-} else {
-    console.log ("User not log")
-};
+    // Lê um cookie pelo nome
+    function getCookie(username) {
+        const nameEQ = name + "=";
+        const cookies = document.cookie.split(';');
+        for (let c of cookies) {
+            c = c.trim();
+            if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length));
+        }
+        return null;
+        }
 
-function logou(){
-    document.cookie = "logado=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-}
+    // Apaga um cookie
+    function eraseCookie(username) {
+        // define com data de expiração passada
+        document.cookie = `${username}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
+        }
+
+        

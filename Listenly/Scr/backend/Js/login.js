@@ -49,6 +49,9 @@ function validarFormLogin(event) {
     alert(sucessoTexto);
     mensagem.textContent = sucessoTexto;
     mensagem.className = "sucesso";
+    
+    // redireciona para a página home após o usuário clicar em "OK"
+    window.location.href = "/Listenly/Scr/frontend/Pages/Home/home.html"; // coloque o caminho da sua página inicial
 
     return true;
 }

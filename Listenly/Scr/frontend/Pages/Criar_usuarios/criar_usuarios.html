@@ -6,12 +6,30 @@
         <title>Listenly - Register</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="/Listenly/Scr/frontend/Pages/Criar_usuarios/criar_usuarios.css">
+        
         <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
     </head>
     <body>
+        <div class="nav_bar">
+            <div class="nav_container"></div>
+            <a href="#" class="logo"></a>
+                <nav>
+                    <ul>
+                        <li>
+                            <ul class="nav-menu">
+                                <li><a href="#" class="nav-link">Home</a></li>
+                                <li><a href="#" class="nav-link">Sobre</a></li>
+                                <li><a href="#" class="nav-link">Serviços</a></li>
+                                <li><a href="#" class="nav-link">Contato</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
         
         <div class="form_register">
-
+        
             <h1>Register</h1>
 
             <form action="#" method="post" onsubmit="return validarFormCreateUser(event)">
@@ -51,6 +69,37 @@
         </div>
         
         <script src="/Listenly/Scr/backend/Js/create_user.js"></script>
+        <script>
+            document.getElementById('form_register').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const username = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                // EXEMPLO: enviar para o servidor para criar conta (recomendado)
+                try {
+                    const resp = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                    });
+
+                    if (!resp.ok) throw new Error('Erro no registro');
+
+                    const data = await resp.json(); // por exemplo: { success: true, token: 'abc123' }
+
+                    // SALVE apenas um token (nunca a senha) no cookie se necessário
+                    // Preferência de segurança: preferir que o servidor crie um cookie HttpOnly (ver abaixo).
+                    setCookie('session_token', data.token, 7); // expira em 7 dias
+                    setCookie('username', username, 7);
+
+                    alert('Registro realizado com sucesso!');
+                    window.location.href = '/Pages/Home/home.html'; // redireciona
+                } catch (err) {
+                    console.error(err);
+                    alert('Erro ao registrar: ' + err.message);
+                }
+                });
+        </script>
     
     </body>
     </html>

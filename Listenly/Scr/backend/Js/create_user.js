@@ -83,8 +83,12 @@ function validarFormCreateUser(event) {
     // Sucesso
     const sucessoTexto = "✅ Cadastro válido!";
     alert(sucessoTexto);
+
     mensagem.textContent = sucessoTexto;
     mensagem.className = "sucesso";
 
+    // redireciona para a página home após o usuário clicar em "OK"
+    window.location.replace("/Listenly/Scr/frontend/Pages/Home/home.html");
+
     return true;
-}
+    }
