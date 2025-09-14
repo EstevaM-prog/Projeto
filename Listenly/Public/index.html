@@ -9,7 +9,8 @@
         <link rel="shortcut icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
         <link rel="stylesheet" href="/Listenly/Public/index.css">
 
-        <script src="/Listenly/Public/index.js"></script>
+        
+        
     </head>
 
     <body>
@@ -52,7 +53,7 @@
                     <i class="bi bi-search"></i>
                     </button>
                     <input placeholder="O que voce quer ouvir">
-                    
+                    <div class="search-results-dropdown"></div>
                 </header>
                 <header class="log">
                     <a href="/Listenly/Scr/frontend/Pages/Login/login.html">Login</a>
@@ -152,10 +153,12 @@
                                 <img src="/Listenly/Scr/frontend/Pages/Img/Album/racionais_2.jpg">
                                 <h4>Nada Como um Dia</h4>
                             </div>
+                            
                         </div>
                         <button class="carousel-button next"><i class="bi bi-chevron-right"></i></button>
                     </div>
                 </section>
+                <script src="./index.js"></script>
             </main>
         </div>
         <div class="banner">
@@ -167,70 +170,7 @@
             <button onclick="window.location.href='/Listenly/Scr/frontend/Pages/Criar_usuarios/criar_usuarios.html'">Inscreva-se gratis</button>
         </div>
         
-        <script>
-            function setupCarousel(carouselContainer) {
-                const grid = carouselContainer.querySelector('.artist-grid, .albums-grid');
-                const prevButton = carouselContainer.querySelector('.carousel-button.prev');
-                const nextButton = carouselContainer.querySelector('.carousel-button.next');
-                const scrollAmount = 300;
-                let isScrolling = false;
-
-                if (!grid || !prevButton || !nextButton) return;
-
-                const items = Array.from(grid.children);
-                items.forEach(item => {
-                    const clone = item.cloneNode(true);
-                    grid.appendChild(clone);
-                });
-
-                function handleScroll() {
-                    if (grid.scrollLeft >= grid.scrollWidth / 2) {
-                        grid.scrollLeft = 0;
-                    }
-                }
-
-                function scroll(direction) {
-                    if (isScrolling) return;
-                    isScrolling = true;
-
-                    const start = grid.scrollLeft;
-                    const end = start + direction * scrollAmount;
-
-                    grid.scrollTo({
-                        left: end,
-                        behavior: 'smooth'
-                    });
-
-                    setTimeout(() => {
-                        if (grid.scrollLeft >= grid.scrollWidth / 2) {
-                            grid.scrollLeft = grid.scrollLeft - (grid.scrollWidth / 2);
-                        } else if (grid.scrollLeft === 0 && direction === -1) {
-                            grid.scrollLeft = grid.scrollWidth / 2;
-                        }
-                        isScrolling = false;
-                    }, 500);
-                }
-
-                prevButton.addEventListener('click', () => {
-                    if (grid.scrollLeft === 0) {
-                        grid.scrollLeft = grid.scrollWidth / 2;
-                    }
-                    grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                });
-
-                nextButton.addEventListener('click', () => {
-                    grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                });
-
-                grid.addEventListener('scroll', () => {
-                    if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth) {
-                        grid.scrollLeft = 0;
-                    }
-                });
-            }
-
-            document.querySelectorAll('.carousel-container').forEach(setupCarousel);
-        </script>
+        
     </body>
 
     </html>
