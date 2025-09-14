@@ -1,13 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Listenly/Scr/frontend/Pages/Pagamento/pagamento.css">
-    <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png">
-    <title>Pagamento - Listenly</title>
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Imports Css-->
+        <link rel="stylesheet" href="/Listenly/Scr/frontend/Pages/Pagamento/pagamento.css">
+        <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png">
+
+        <!-- Titulo Aba-->
+        <title>Pagamento - Listenly</title>
+        
+    </head>
+
+    <body>
+        <!-- Nav Bar-->
         <div class="nav_bar">
             <div class="nav_container"></div>
             <a href="#" class="logo"></a>
@@ -30,6 +37,7 @@
     <div class="estrelas"></div>
     <!-- <h1>Pagamento de assinatura</h1> -->
 
+    <!-- Formulario-->
     <div class="form_pagamento">
         <form action="#" method="get" onsubmit="return validarFormPagamento(event)">
 
@@ -48,13 +56,15 @@
             <label for="email">E-mail de Confirmação</label>
             <input type="email" id="email" name="email" placeholder="user@gmail.com"><br><br>
 
+            <!-- Input de Pagar-->
             <input type="submit" value="Pagar">
         
             <span id="Erro" style="color: red; margin-top: 10px; display: block; text-align: center;"></span>
         </form>
     </div>
 
-    <script src="./validar_form_pagamento.js"></script>
-    <script src="./pagamento.js"></script>
-</body>
-</html>
+        <script src="./validar_form_pagamento.js"></script>
+        <script src="/Listenly/Scr/backend/Js/pagamento.js"></script> <!-- Import Script.js-->
+    </body>
+
+    </html>

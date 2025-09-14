@@ -1,9 +1,11 @@
+// Search
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('.search-bar input');
     const searchButton = document.getElementById('btn-search');
     const searchBar = document.querySelector('.search-bar');
     const resultsDropdown = document.querySelector('.search-results-dropdown');
 
+// Array dos Aristas (Nome, Imagem)
     const artists = [
         { name: 'Alee', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_alee.jpg' },
         { name: 'Kyan', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_kyan.jpg' },
@@ -17,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Yago', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_yago.jpg' }
     ];
 
+// Array dos Albums (Nome, Imagem)
     const albums = [
         { name: '505', image: '/Listenly/Scr/frontend/Pages/Img/Album/artic_monkeys.jpg' },
         { name: 'BAILE', image: '/Listenly/Scr/frontend/Pages/Img/Album/baile.jpg' },
@@ -30,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Nada Como um Dia', image: '/Listenly/Scr/frontend/Pages/Img/Album/racionais_2.jpg' }
     ];
 
+//Function de Resultado
     function displayResults(results) {
         resultsDropdown.innerHTML = '';
         if (results.length === 0) {
@@ -53,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsDropdown.style.display = 'block';
     }
 
+// Function de Pesquisa
     function search() {
         const query = searchInput.value.toLowerCase();
         if (query) {
@@ -85,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+// Function de Carrosel das imagens (Aristas / Album)
     function setupCarousel(carouselContainer) {
         const grid = carouselContainer.querySelector('.artist-grid, .albums-grid');
         const prevButton = carouselContainer.querySelector('.carousel-button.prev');

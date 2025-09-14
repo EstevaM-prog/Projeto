@@ -1,34 +1,32 @@
 // Mstrar senha
+    function mostrarSenha() {
+                    const senha = document.getElementById("senha");
+                    const icone = document.getElementById("iconeSenha");
 
-function mostrarSenha() {
-                const senha = document.getElementById("senha");
-                const icone = document.getElementById("iconeSenha");
-
-                if (senha.type === "password") {
-                    senha.type = "text";
-                    icone.classList.replace("bi-eye", "bi-eye-slash");
-                } else {
-                    senha.type = "password";
-                    icone.classList.replace("bi-eye-slash", "bi-eye");
+                    if (senha.type === "password") {
+                        senha.type = "text";
+                        icone.classList.replace("bi-eye", "bi-eye-slash");
+                    } else {
+                        senha.type = "password";
+                        icone.classList.replace("bi-eye-slash", "bi-eye");
+                    }
                 }
-            }
 
-            function mostrarSenha2() {
-                const senha2 = document.getElementById("senha2");
-                const icone2 = document.getElementById("iconeSenha2");
+                function mostrarSenha2() {
+                    const senha2 = document.getElementById("senha2");
+                    const icone2 = document.getElementById("iconeSenha2");
 
-                if (senha2.type === "password") {
-                    senha2.type = "text";
-                    icone2.classList.replace("bi-eye", "bi-eye-slash");
-                } else {
-                    senha2.type = "password";
-                    icone2.classList.replace("bi-eye-slash", "bi-eye");
+                    if (senha2.type === "password") {
+                        senha2.type = "text";
+                        icone2.classList.replace("bi-eye", "bi-eye-slash");
+                    } else {
+                        senha2.type = "password";
+                        icone2.classList.replace("bi-eye-slash", "bi-eye");
+                    }
                 }
-            }
 
 
 // Validar formulário criar_usuarios com regex
-
 function validarFormCreateUser(event) {
     event.preventDefault(); // impede envio automático do form
 
@@ -38,12 +36,12 @@ function validarFormCreateUser(event) {
     const senha2 = document.getElementById('senha2').value.trim();
     const mensagem = document.getElementById('mensagem');
 
-    // Regex
+// Regex
     const regexUsername = /^[a-zA-Z0-9._]{3,20}$/; // 3-20 caracteres, letras, números, . ou _
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const regexSenha = /^(?=.*[a-zA-Z])(?=.*[\d\W_]).{10,}$/; // mínimo 10 caracteres, letra + número ou especial
 
-    // Função para exibir erro
+// Função para exibir erro
     function exibirErro(texto) {
         alert(texto);
         mensagem.textContent = texto;
