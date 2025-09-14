@@ -292,12 +292,16 @@ main {
 }
 
 
-.artist-grid h4{
+.artist-item {
     display: flex;
-    margin-top: 160px; /* aumenta a distância entre a imagem e o nome */
-    font-size: 16px;  /* tamanho do texto */
-    text-align: center; /* garante que o texto continue centralizado */
-    
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.artist-item h4 {
+    margin-top: 10px;
+    font-size: 16px;
 }
 
 
@@ -328,12 +332,16 @@ main {
     border-radius: 10px;   
 }
 
-.albums-grid h4{
+.album-item {
     display: flex;
-    margin-top: 160px; /* aumenta a distância entre a imagem e o nome */
-    font-size: 16px;  /* tamanho do texto */
-    text-align: center; /* garante que o texto continue centralizado */
-    
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.album-item h4 {
+    margin-top: 10px;
+    font-size: 16px;
 }
 
 
