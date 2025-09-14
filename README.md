@@ -20,57 +20,16 @@ Banco de Dados
 
 ## 🤝 Contribuidores
 
-<div align="center">
+## 🤝 Contribuidores
 
-<a href="https://github.com/EstevaM-prog">
-  <img src="https://avatars.githubusercontent.com/EstevaM-prog" width="80" style="border-radius:50%"/>
-  <br />
-  Felipe Estevam
-</a>
-
-<a href="https://github.com/ArTezra1">
-  <img src="https://avatars.githubusercontent.com/ArTezra1" width="80" style="border-radius:50%"/>
-  <br />
-  Arthur Nogueira
-</a>
-
-<a href="https://github.com/DanielGumes">
-  <img src="https://avatars.githubusercontent.com/DanielGumes" width="80" style="border-radius:50%"/>
-  <br />
-  Daniel Gomes
-</a>
-
-<a href="https://github.com/ramon-v1">
-  <img src="https://avatars.githubusercontent.com/ramon-v1" width="80" style="border-radius:50%"/>
-  <br />
-  Ramon Moreira
-</a>
-
-<a href="https://github.com/Dorokiww">
-  <img src="https://avatars.githubusercontent.com/Dorokiww" width="80" style="border-radius:50%"/>
-  <br />
-  Roberto Bispo
-</a>
-
-<a href="https://github.com/juliaduller">
-  <img src="https://avatars.githubusercontent.com/juliaduller" width="80" style="border-radius:50%"/>
-  <br />
-  Julia Duller
-</a>
-
-<a href="https://github.com/JennyferShiroma">
-  <img src="https://avatars.githubusercontent.com/JennyferShiroma" width="80" style="border-radius:50%"/>
-  <br />
-  Jennyfer Shiroma
-</a>
-
-<a href="https://github.com/LipeOliver-prog">
-  <img src="https://avatars.githubusercontent.com/LipeOliver-prog" width="80" style="border-radius:50%"/>
-  <br />
-  Filipe Oliveira
-</a>
-
-</div>
+- <img src="https://avatars.githubusercontent.com/EstevaM-prog" width="40" style="border-radius:50%"/> [Felipe Estevam](https://github.com/EstevaM-prog)
+- <img src="https://avatars.githubusercontent.com/ArTezra1" width="40" style="border-radius:50%"/> [Arthur Nogueira](https://github.com/ArTezra1)
+- <img src="https://avatars.githubusercontent.com/DanielGumes" width="40" style="border-radius:50%"/> [Daniel Gomes](https://github.com/DanielGumes)
+- <img src="https://avatars.githubusercontent.com/ramon-v1" width="40" style="border-radius:50%"/> [Ramon Moreira](https://github.com/ramon-v1)
+- <img src="https://avatars.githubusercontent.com/Dorokiww" width="40" style="border-radius:50%"/> [Roberto Bispo](https://github.com/Dorokiww)
+- <img src="https://avatars.githubusercontent.com/juliaduller" width="40" style="border-radius:50%"/> [Julia Duller](https://github.com/juliaduller)
+- <img src="https://avatars.githubusercontent.com/JennyferShiroma" width="40" style="border-radius:50%"/> [Jennyfer Shiroma](https://github.com/JennyferShiroma)
+- <img src="https://avatars.githubusercontent.com/LipeOliver-prog" width="40" style="border-radius:50%"/> [Filipe Oliveira](https://github.com/LipeOliver-prog)
 
 
 
