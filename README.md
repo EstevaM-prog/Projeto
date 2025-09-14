@@ -30,7 +30,7 @@ Para colaborar com o projeto:
 1. Faça um clone do repositório
 
 2. Use uma branch de desenvolvimento:
-(Front-end / Back-end)
+(Front-end)
 
 3. Commit suas alterações:
 git commit -m "Adiciona minha feature"
