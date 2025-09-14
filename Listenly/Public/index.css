@@ -11,7 +11,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: auto; 
     background-image: url(/Listenly/Scr/frontend/Pages/Img/bg_dark.jpg);
     background-size: cover;
     background-position: center;
@@ -107,8 +108,8 @@ main {
 main {
     padding: 24px;
     flex-grow: 1;
-    overflow-y: hidden;
-    overflow-x: auto;
+    overflow-y: auto; /* Permitir rolagem vertical principal se necessário */
+    overflow-x: hidden; /* Prevenir rolagem horizontal principal */
 }
 
 .search-bar {
@@ -161,11 +162,27 @@ main {
 }
 
 .artist-grid, .albums-grid {
-    display: grid;
+    
     grid-template-columns: repeat(autofill, minmax(180px, 1fr));
     gap: 24px;
     margin-bottom: 40px;
+
+   
+    display: flex;
+    
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 8px;
+    
+    /* Opcional: estiliza a barra de rolagem */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
+
+.artist-grid::-webkit-scrollbar, .albums-grid::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
 
 .artist-Card, .album-Card {
     background-color: #181818;
@@ -252,7 +269,8 @@ main {
 }
 
 .artist-grid {
-    display: flex;       /* deixa os artistas lado a lado */
+           /* deixa os artistas lado a lado */
+    display: flex;
     gap: 20px;  /* Espaço fazio entre os artistas */
 }
 
@@ -318,3 +336,64 @@ main {
     
 }
 
+
+
+
+.card {
+ min-width: 200px;
+ height: 250px;
+ background: #222;
+ border-radius: 12px;
+ flex: 0 0 auto;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+ overflow: hidden;
+}
+
+.card img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden; /* Garante que nada saia do contêiner */
+}
+
+.carousel-container:hover .carousel-button {
+    opacity: 1;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
