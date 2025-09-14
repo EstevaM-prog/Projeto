@@ -20,9 +20,7 @@ Banco de Dados
 
 ## 🤝 Contribuidores
 
-## 🤝 Contribuidores
-
-- <img src="https://avatars.githubusercontent.com/EstevaM-prog" width="40" style="border-radius:50%"/> [Felipe Estevam](https://github.com/EstevaM-prog)
+- <img src="https://avatars.githubusercontent.com/EstevaM-prog" width="40" style="border-radius:100%"/> [Felipe Estevam](https://github.com/EstevaM-prog)
 - <img src="https://avatars.githubusercontent.com/ArTezra1" width="40" style="border-radius:50%"/> [Arthur Nogueira](https://github.com/ArTezra1)
 - <img src="https://avatars.githubusercontent.com/DanielGumes" width="40" style="border-radius:50%"/> [Daniel Gomes](https://github.com/DanielGumes)
 - <img src="https://avatars.githubusercontent.com/ramon-v1" width="40" style="border-radius:50%"/> [Ramon Moreira](https://github.com/ramon-v1)
