@@ -26,6 +26,7 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 - <img src="https://avatars.githubusercontent.com/juliaduller" width="40" height="40" style="border-radius:50%;" /> [Julia Duller](https://github.com/juliaduller)
 - <img src="https://avatars.githubusercontent.com/JennyferShiroma" width="40" height="40" style="border-radius:50%;" /> [Jennyfer Shiroma](https://github.com/JennyferShiroma)
 - <img src="https://avatars.githubusercontent.com/LipeOliver-prog" width="40" height="40" style="border-radius:50%;" /> [Filipe Oliveira](https://github.com/LipeOliver-prog)
+- <img src="https://avatars.githubusercontent.com/ogrenatx" width="40" height="40" style="border-radius:50%;" /> [Renato](https://github.com/ogrenatx)
 
 
 
