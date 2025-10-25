@@ -17,10 +17,22 @@
 }
 
 body {
-    margin: 0;
-    font-family: Inter, system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    background-image: url(/Listenly/Scr/frontend/Pages/Img/bg_dark.jpg);
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: hidden;
+    overflow-x: auto; 
+    background-image: url(/Listenly/Scr/frontend/Pages/Img/bg_dark.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #fff;
 }
 
 .app {
@@ -34,13 +46,15 @@ body {
 /* Sidebar */
 .sidebar {
     width: var(--sidebar-w);
-    background: var(--sidebar-bg);
     border-radius: 14px;
-    padding: 20px;
     box-shadow: 0 6px 18px rgba(15, 15, 20, 0.04);
-    position: sticky;
-    top: 20px;
     height: fit-content;
+    background-color: #121212;
+    padding: 24px;
+    padding-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .brand {
@@ -181,6 +195,7 @@ body {
     gap: 16px;
     overflow-x: auto;
     padding: 8px 6px;
+    
 }
 
 .artist {
@@ -193,6 +208,7 @@ body {
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
+    
 }
 
 .artist .name {
@@ -208,7 +224,7 @@ body {
     transform: translateX(-50%);
     bottom: 14px;
     width: min(1100px, calc(100% - 40px));
-    background: var(--player-bg);
+    background-color: #121212;
     display: flex;
     align-items: center;
     gap: 14px;
@@ -388,4 +404,61 @@ body {
     .right-controls {
         display: none;
     }
+}
+
+/* Caixa de pesquisa by: Estevam */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #242424;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 300px;
+    z-index: 101;
+}
+
+.search-bar button i{
+    cursor: pointer;
+}
+
+.search-bar input {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    width: 100%;
+    margin-left: 10px;
+    outline: none;
+}
+
+.search-results-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #282828;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    z-index: 102;
+}
+
+.search-results-dropdown .result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-results-dropdown .result-item:hover {
+    background-color: #333;
+}
+
+.search-results-dropdown .result-item h4 {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.search-results-dropdown .result-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
 }

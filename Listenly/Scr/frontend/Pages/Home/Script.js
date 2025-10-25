@@ -96,3 +96,28 @@ document.addEventListener("DOMContentLoaded", () => {
     audio.volume = parseFloat(volumeSlider.value);
     updatePlayButton();
 });
+
+
+
+// Simula um user logado By: Estevam
+async function mostrarNomeUsuario() {
+  const elementoMensagem = document.getElementById("mensagem");
+
+  try {
+    // Faz a requisição ao backend
+    const resposta = await fetch("/api/user");
+    const userData = await resposta.json();
+
+    if (userData && userData.username) {
+      elementoMensagem.textContent = `Olá, ${userData.username}!`;
+    } else {
+      elementoMensagem.textContent = "Olá, visitante!";
+    }
+  } catch (erro) {
+    console.error("Erro ao buscar usuário:", erro);
+    elementoMensagem.textContent = "Erro ao carregar usuário 😢";
+  }
+}
+
+// Chama a função assim que a pagina carregar
+mostrarNomeUsuario();
