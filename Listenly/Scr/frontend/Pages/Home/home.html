@@ -1,145 +1,153 @@
-<!doctype html>
-<html lang="pt-BR">
+    <!doctype html>
+    <html lang="pt-BR">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Listenly - Home</title>
-    <link rel="stylesheet" href="home.css" />
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<body>
-    <div class="app">
-        <aside class="sidebar" aria-label="Menu lateral">
-            <div class="brand">
-                <div class="logo">L</div>
-                <div>
-                    <div style="font-weight:700">Listenly</div>
-                    <div style="font-size:12px;color:var(--muted)">Seu player</div>
-                </div>
-            </div>
+        <!-- Imports Css -->
+        <link rel="stylesheet" href="home.css" />
+        <link rel="shortcut icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
 
-        <nav class="menu" role="navigation" aria-label="Principais">
-            <a href="#" class="item">🏠 Home</a>
-            <a href="/Listenly/Scr/frontend/Pages/Playlist/Playlist.html" class="item">🎧 Playlist</a>
-        </nav>
+        <!-- Title Aba -->
+        <title>Listenly - Home</title>
+        
+    </head>
 
-
-            <div class="profile" role="region" aria-label="perfil">
-                <div class="avatar"></div>
-                <div>
-                    <div style="font-size:12px; color:var(--muted);">
-                        <a href="/Listenly/Scr/frontend/Pages/Perfil/perfil-de-usuario.html" style="color:inherit; text-decoration:none;">Ver perfil</a>
+    <body>
+        <!-- NavBar -->
+        <div class="app">
+            <aside class="sidebar" aria-label="Menu lateral">
+                <div class="brand">
+                    <div class="logo">L</div>
+                    <div>
+                        <div style="font-weight:700">Listenly</div>
+                        <div style="font-size:12px;color:var(--muted)">Seu player</div>
                     </div>
                 </div>
-            </div>
-        </aside>
 
-        <main class="container">
-            <div class="header">
-                <div>
-                    <div style="font-weight:600" id="mensagem">Olá, visitante!</div>
-                    <div class="title">Músicas em Alta</div>
+            <nav class="menu" role="navigation" aria-label="Principais">
+                <a href="#" class="item">🏠 Home</a>
+                <a href="/Listenly/Scr/frontend/Pages/Playlist/Playlist.html" class="item">🎧 Playlist</a>
+            </nav>
+
+
+                <div class="profile" role="region" aria-label="perfil">
+                    <div class="avatar"></div>
+                    <div>
+                        <div style="font-size:12px; color:var(--muted);">
+                            <a href="/Listenly/Scr/frontend/Pages/Perfil/perfil-de-usuario.html" style="color:inherit; text-decoration:none;">Ver perfil</a>
+                        </div>
+                    </div>
                 </div>
+            </aside>
+
+
+            <main class="container">
+                <div class="header">
+                    <div>
+                        <div style="font-weight:600" id="mensagem">Olá, visitante!</div>
+                        <div class="title">Músicas em Alta</div>
+                    </div>
+                    
+                    <!-- Ciaxa de Pesquisa-->
+                    <header class="search-bar">
+                        <i class="bi bi-search"></i>
+
+                    <!-- Caixa de Resultado-->
+                        <input placeholder="O que voce quer ouvir">
+                        <div class="search-results-dropdown"></div>
+                    </header>
+                </div>
+
+                <!-- Músicas em Alta -->
+                <section class="section row" aria-label="Músicas em alta">
+                    <div class="cards" id="hot-cards">
+                        <div class="card"
+                            data-src="https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_1MG.mp3">
+                            <div class="cover"></div>
+                            <div class="meta">Blinding Lights — The Weeknd</div>
+                        </div>
+                        <div class="card" data-src="">
+                            <div class="cover"></div>
+                            <div class="meta">Boate Azul — Bruno e marrone</div>
+                        </div>
+                        <div class="card" data-src="">
+                            <div class="cover"></div>
+                            <div class="meta">Sexta Feira Hoje Tem — Mc IG</div>
+                        </div>
+                        <div class="card" data-src="">
+                            <div class="cover"></div>
+                            <div class="meta">PRIDE — Kendrick Lamar</div>
+                        </div>
+                        <div class="card" data-src="">
+                            <div class="cover"></div>
+                            <div class="meta">Aleatória — Artista</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Artistas -->
+                <section class="section">
+                    <div class="section-header">
+                        <div class="section-title">Artistas Populares</div>
+                    </div>
+
+                    <div class="artists" id="artists">
+                        <div class="artist">
+                            <div style="font-size:20px">🎧</div>
+                            <div class="name">Bruno e marrone</div>
+                        </div>
+                        <div class="artist">
+                            <div style="font-size:20px">🎧</div>
+                            <div class="name">Kendrick Lamar</div>
+                        </div>
+                        <div class="artist">
+                            <div style="font-size:20px">🎧</div>
+                            <div class="name">Mc IG</div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Player -->
+        <div class="player" role="region" aria-label="Player">
+            <div class="track-info">
                 
-                <!-- Ciaxa de Pesquisa-->
-                <header class="search-bar">
-                    <i class="bi bi-search"></i>
-
-                <!-- Caixa de Resultado-->
-                    <input placeholder="O que voce quer ouvir">
-                    <div class="search-results-dropdown"></div>
-                </header>
+                <div class="track-text">
+                    <div class="song" id="song-title">Boate Azul</div>
+                    <div class="artist" id="song-artist">Bruno e marrone</div>
+                </div>
             </div>
 
-            <!-- Músicas em Alta -->
-            <section class="section row" aria-label="Músicas em alta">
-                <div class="cards" id="hot-cards">
-                    <div class="card"
-                        data-src="https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_1MG.mp3">
-                        <div class="cover"></div>
-                        <div class="meta">Blinding Lights — The Weeknd</div>
-                    </div>
-                    <div class="card" data-src="">
-                        <div class="cover"></div>
-                        <div class="meta">Boate Azul — Bruno e marrone</div>
-                    </div>
-                    <div class="card" data-src="">
-                        <div class="cover"></div>
-                        <div class="meta">Sexta Feira Hoje Tem — Mc IG</div>
-                    </div>
-                    <div class="card" data-src="">
-                        <div class="cover"></div>
-                        <div class="meta">PRIDE — Kendrick Lamar</div>
-                    </div>
-                    <div class="card" data-src="">
-                        <div class="cover"></div>
-                        <div class="meta">Aleatória — Artista</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Artistas -->
-            <section class="section">
-                <div class="section-header">
-                    <div class="section-title">Artistas Populares</div>
+            <div class="controls">
+                <div class="buttons">
+                    <button class="btn" id="prev" title="Anterior">⏮️</button>
+                    <button class="btn play" id="play" title="Play/Pause">▶</button>
+                    <button class="btn" id="next" title="Próxima">⏭️</button>
                 </div>
 
-                <div class="artists" id="artists">
-                    <div class="artist">
-                        <div style="font-size:20px">🎧</div>
-                        <div class="name">Bruno e marrone</div>
+                <div class="progress-container">
+                    <div class="progress" id="progress">
+                        <div class="bar" id="progress-bar"></div>
                     </div>
-                    <div class="artist">
-                        <div style="font-size:20px">🎧</div>
-                        <div class="name">Kendrick Lamar</div>
-                    </div>
-                    <div class="artist">
-                        <div style="font-size:20px">🎧</div>
-                        <div class="name">Mc IG</div>
+                    <div class="time">
+                        <span id="time-elapsed">0:00</span>
+                        <span id="time-duration">0:00</span>
                     </div>
                 </div>
-            </section>
-        </main>
-    </div>
-
-    <!-- Player -->
-    <div class="player" role="region" aria-label="Player">
-        <div class="track-info">
-            
-            <div class="track-text">
-                <div class="song" id="song-title">Boate Azul</div>
-                <div class="artist" id="song-artist">Bruno e marrone</div>
             </div>
+
+            <div class="right-controls">
+                <input type="range" id="volume" class="vol" min="0" max="1" step="0.01" value="0.8" aria-label="Volume">
+                <button class="btn" id="btn-repeat" title="Repetir">🔁</button>
+            </div>
+
+            <audio id="audio" preload="metadata"></audio>
         </div>
 
-        <div class="controls">
-            <div class="buttons">
-                <button class="btn" id="prev" title="Anterior">⏮️</button>
-                <button class="btn play" id="play" title="Play/Pause">▶</button>
-                <button class="btn" id="next" title="Próxima">⏭️</button>
-            </div>
+        <script src="script.js"></script>
+    </body>
 
-            <div class="progress-container">
-                <div class="progress" id="progress">
-                    <div class="bar" id="progress-bar"></div>
-                </div>
-                <div class="time">
-                    <span id="time-elapsed">0:00</span>
-                    <span id="time-duration">0:00</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="right-controls">
-            <input type="range" id="volume" class="vol" min="0" max="1" step="0.01" value="0.8" aria-label="Volume">
-            <button class="btn" id="btn-repeat" title="Repetir">🔁</button>
-        </div>
-
-        <audio id="audio" preload="metadata"></audio>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
+    </html>
