@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url(/Listenly/Scr/frontend/Pages/Img/bg_dark.jpg);
+    background-image: url(../Scr/frontend/Pages/Img/bg_dark.jpg);
     color: #fff;
     flex-direction: column;
     justify-content: center;
@@ -13,7 +13,7 @@ body {
     min-height: 100vh;
     overflow-y: hidden;
     overflow-x: auto; 
-    background-image: url(/Listenly/Scr/frontend/Pages/Img/bg_dark.jpg);
+    background-image: url(../Scr/frontend/Pages/Img/bg_dark.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
