@@ -34,24 +34,22 @@
             </div>-->
             
             <div class="brand">
-                <div class="logo">L</div>
+                <!-- Perfil usuario -->
+            <div class="profile-container">
+                <img id="profile-photo" src="https://placehold.co/150x150/4B4B4B/FFFFFF?text=Usuário" alt="Foto do Usuário" class="w-32 h-32 rounded-full border-4 border-pink-500 shadow-lg mb-4">
+                <a href="/Listenly/Scr/frontend/Pages/Perfil/perfil-de-usuario.html" style="color:inherit; text-decoration:none;">Ver perfil</a>
+            </div>
                 <h4>Listenly<h4>
-                <h4>Seu player<h4>
             </div>
             <hr>
+            
             <!-- Navegação principal -->
             <nav class="nav-links">
                 <a href="home.html"><i class="bi bi-house-door"></i> Início</a>
                 <a href="../Playlist/Playlist.html"><i class="bi bi-music-note-list"></i> Sua Biblioteca</a><br>
                 <hr>
             </nav>
-
-            <!-- Perfil usuario -->
-            <div class="flex flex-col items-center mb-8">
-                <img id="profile-photo" src="https://placehold.co/150x150/4B4B4B/FFFFFF?text=Usuário" alt="Foto do Usuário" class="w-32 h-32 rounded-full border-4 border-pink-500 shadow-lg mb-4">
-            </div>
-            <div id="mensagem">Olá, visitante</div>
-
+            
             <!-- Rodapé do menu lateral com links adicionais -->
             <div class="nav-footer">
                 <a href="#">Legal</a>
@@ -63,12 +61,18 @@
         
         <main>
 
+            <!-- Mensagem de boas vindas -->
+            <div class="header">
+                <div style="font-weight:600" id="mensagem">Olá, visitante!</div>
+            </div>
+
             <!-- Barra superior de pesquisa -->
             <header class="search-bar">
                 <i class="bi bi-search"></i>
                 <input placeholder="O que voce quer ouvir">
                 <div class="search-results-dropdown"></div>
             </header>
+            
             
             <!-- SEÇÃO: ARTISTAS POPULARES -->
             <section class="content">

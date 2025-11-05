@@ -302,6 +302,7 @@ main {
 
 @media (max-width:900px) {
     .sidebar {
+        border-radius: 10px;
         display: none;
     }
 
@@ -331,6 +332,7 @@ main {
 
 
 .search-bar {
+    margin-top: 15px;
     display: flex;
     align-items: center;
     background-color: #242424;
@@ -457,6 +459,7 @@ main {
 
 
 .container h2 {
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 
@@ -841,14 +844,48 @@ section,
 }
 
 /* foto de perfil navbar */
-#profile-photo {
-    border-radius: 10px;
-    width: 80px;
+.profile-container {
+  position: relative;
+  display: inline-block;
 }
+
+#profile-photo {
+    border-radius: 50%;
+    border: 7px solid #1f1e1e; /* rosa Tailwind pink-500 */
+     box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+
+.profile-container a {
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.profile-container:hover a {
+  opacity: 1;
+}
+
 
 #mensagem {
     display: flex;
-    font-size: 30px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 35px;
+    color: red;
 }
 
 .brand {
@@ -872,5 +909,6 @@ section,
 }
 
 .brand h4 {
+    color: red;
     font-size: 16px;
 }
