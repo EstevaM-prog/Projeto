@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ============================
-         IMPORTS DE ESTILO E ÍCONES
-         ============================ -->
     <!-- Ícones Bootstrap (biblioteca de ícones SVG) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
@@ -23,35 +20,25 @@
 
 <body>
 
-    <!-- ============================
-         CONTAINER PRINCIPAL DA PÁGINA
-         ============================ -->
+    <!-- CONTAINER PRINCIPAL DA PÁGINA -->
     <div class="container">
 
-        <!-- ============================
-             MENU LATERAL (SIDEBAR)
-             ============================ -->
+        <!-- MENU LATERAL (SIDEBAR) -->
         <aside id="sidebar">
 
             <!-- Logo e nome do app -->
             <div class="nav-logo">
                 <i class="bi bi-music-note-beamed"></i>
                 <h2>Listenly</h2>
+                
             </div>
-
+            <hr>
             <!-- Navegação principal -->
             <nav class="nav-links">
                 <a href="home.html"><i class="bi bi-house-door"></i> Início</a>
-                <a href="../Pesquisa/Pesquisa.html"><i class="bi bi-search"></i> Buscar</a>
-                <a href="../Playlist/Playlist.html"><i class="bi bi-music-note-list"></i> Sua Biblioteca</a>
+                <a href="../Playlist/Playlist.html"><i class="bi bi-music-note-list"></i> Sua Biblioteca</a><br>
+                <hr>
             </nav>
-
-            <!-- Campo de pesquisa na barra lateral -->
-            <div class="search-box">
-                <i class="bi bi-search"></i>
-                <input type="text" id="sidebar-search" placeholder="Buscar músicas, artistas...">
-                <div class="search-results-dropdown"></div>
-            </div>
 
             <!-- Rodapé do menu lateral com links adicionais -->
             <div class="nav-footer">
@@ -60,10 +47,8 @@
                 <a href="#">Cookies</a>
             </div>
         </aside>
-
-        <!-- ============================
-             CONTEÚDO PRINCIPAL (MAIN)
-             ============================ -->
+        
+        
         <main>
 
             <!-- Barra superior de pesquisa -->
@@ -72,16 +57,8 @@
                 <input placeholder="O que voce quer ouvir">
                 <div class="search-results-dropdown"></div>
             </header>
-
-            <!-- Área de login e cadastro -->
-            <header class="log">
-                <a href="">Login</a>
-                <a href="">Create cont</a>
-            </header>
-
-            <!-- ============================
-                 SEÇÃO: ARTISTAS POPULARES
-                 ============================ -->
+            
+            <!-- SEÇÃO: ARTISTAS POPULARES -->
             <section class="content">
                 <h2>Artistas Populares</h2>
 
@@ -149,9 +126,7 @@
                     <button class="carousel-button next"><i class="bi bi-chevron-right"></i></button>
                 </div>
 
-                <!-- ============================
-                     SEÇÃO: ÁLBUNS POPULARES
-                     ============================ -->
+                <!-- SEÇÃO: ÁLBUNS POPULARES-->
                 <h2>Álbuns Populares</h2>
 
                 <div class="carousel-container">
@@ -215,9 +190,7 @@
                 </div>
             </section>
 
-            <!-- ============================
-                 PLAYER FIXO INFERIOR
-                 ============================ -->
+            <!-- PLAYER FIXO INFERIOR -->
             <footer class="player">
                 <!-- Lado esquerdo: capa e informações da música -->
                 <div class="player-left">
@@ -233,6 +206,7 @@
                     <button id="prev"><i class="bi bi-skip-start-fill"></i></button>
                     <button id="play"><i class="bi bi-play-circle-fill"></i></button>
                     <button id="next"><i class="bi bi-skip-end-fill"></i></button>
+
                     <!-- Barra de progresso da música -->
                     <input type="range" id="progress" value="0">
                 </div>
@@ -241,9 +215,6 @@
                 <audio id="audio"></audio>
             </footer>
 
-            <!-- ============================
-                 IMPORTAÇÃO DO SCRIPT JS
-                 ============================ -->
             <script src="./Script.js"></script>
         </main>
     </div>
