@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste tocar Musica</title>
+</head>
+<body>
+    <audio id="statusMusic">
+        <source src="/groovy-vibe-427121.mp3" type="audio/mpeg">
+    </audio>
+
+<button id="btnPlayPause">Tocar</button>
+
+<script>
+// JavaScript para o botão único
+const audioRefinado = document.getElementById('playerMusicaRefinado');
+const btnPlayPause = document.getElementById('btnPlayPause');
+
+btnPlayPause.addEventListener('click', () => {
+  // O atributo .paused é true se a música estiver parada ou pausada
+  if (audioRefinado.paused) {
+    audioRefinado.play();
+    btnPlayPause.textContent = 'Pausar'; // Atualiza o texto do botão
+  } else {
+    audioRefinado.pause();
+    btnPlayPause.textContent = 'Tocar'; // Atualiza o texto do botão
+  }
+});
+</script>
+</body>
+</html>

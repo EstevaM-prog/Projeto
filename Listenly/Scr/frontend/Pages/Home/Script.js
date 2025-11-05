@@ -246,6 +246,7 @@ playBtn.addEventListener('click', () => {
         audio.pause();
         playBtn.innerHTML = '<i class="bi bi-play-circle-fill"></i>';
     }
+    
 });
 
 // =====================================
