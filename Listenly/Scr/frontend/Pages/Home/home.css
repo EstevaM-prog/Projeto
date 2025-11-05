@@ -327,21 +327,28 @@ main {
 }
 
 
+/* substitua a regra .search-bar existente por esta */
 .search-bar {
-    margin-top: 15px;
+    /* posição fixa no canto superior direito */
+    position: fixed;
+    top: 16px;
+    /* distância do topo — ajuste se quiser mais/menos */
+    right: 24px;
+    /* distância da direita da tela */
+    left: auto;
+    /* garante que não seja influenciada por left prévio */
+    z-index: 101;
+
+    /* aparência original mantida */
     display: flex;
     align-items: center;
     background-color: #242424;
     padding: 8px 16px;
     border-radius: 20px;
     width: 300px;
-    position: fixed;
-    z-index: 101;
-}
-
-.search-bar button i {
-    cursor: pointer;
-
+    /* mantive seu tamanho; altere se quiser */
+    margin-top: 0;
+    /* remove margem superior que não é necessária por ser fixed */
 }
 
 .log {
