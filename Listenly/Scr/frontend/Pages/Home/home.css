@@ -47,10 +47,6 @@ main {
 
 }
 
-.nav-logo i {
-    font-size: 24px;
-}
-
 .nav-libary {
     display: flex;
     align-items: center;
@@ -692,13 +688,6 @@ main {
     flex-direction: column;
     padding: 20px;
     gap: 20px;
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 20px;
 }
 
 .nav-links a {
