@@ -204,9 +204,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Lista de músicas disponíveis no player
 const playlist = [
-    { title: '505', artist: 'Arctic Monkeys', file: '../Playlist/musica1.mp3', cover: '../Img/Album/artic_monkeys.jpg' },
-    { title: 'BAILE', artist: 'SD9', file: '../Playlist/musica2.mp3', cover: '../Img/Album/baile.jpg' },
-    { title: 'See You Again', artist: 'Tyler', file: '../Playlist/musica3.mp3', cover: '../Img/Album/tyler.jpg' }
+    { 
+        title: '505', 
+        artist: 'Arctic Monkeys', 
+        file: '../Playlist/musica1.mp3', 
+        cover: '../Img/Album/artic_monkeys.jpg' 
+    },
+    { 
+        title: 'BAILE', 
+        artist: 'Baile', // Extraído do alt="Baile"
+        file: '../Playlist/musica2.mp3', 
+        cover: '../Img/Album/baile.jpg' 
+    },
+    { 
+        title: 'Mina de Condomínio', 
+        artist: 'Seu Jorge', 
+        file: '../Playlist/musica3.mp3', 
+        cover: '../Img/Album/seu_jorge.jpg' 
+    },
+    { 
+        title: 'PRIDE.', 
+        artist: 'Kendrick Lamar', // Extraído do alt="Kendrick Lamar - Damn"
+        file: '../Playlist/musica4.mp3', 
+        cover: '../Img/Album/damn.jpg' 
+    },
+    { 
+        title: 'No Piscar dos Olhos', 
+        artist: 'Febem', 
+        file: '../Playlist/musica5.mp3', 
+        cover: '../Img/Album/febem.jpg' 
+    },
+    { 
+        title: 'Feel Good Inc.', 
+        artist: 'Gorillaz', 
+        file: '../Playlist/musica6.mp3', 
+        cover: '../Img/Album/gorilaz.jpg' 
+    },
+    { 
+        title: 'See You Again', 
+        artist: 'Tyler, The Creator', 
+        file: '../Playlist/musica7.mp3', 
+        cover: '../Img/Album/tyler.jpg' 
+    },
+    { 
+        title: 'Sorri, Sou Rei', 
+        artist: 'Natiruts', 
+        file: '../Playlist/musica8.mp3', 
+        cover: '../Img/Album/natiruts.jpg' 
+    },
+    { 
+        title: 'Sobrevivendo no Inferno', 
+        artist: "Racionais MC's", 
+        file: '../Playlist/musica9.mp3', 
+        cover: '../Img/Album/racionais.jpg' 
+    },
+    { 
+        title: 'Nada Como um Dia', 
+        artist: "Racionais MC's", 
+        file: '../Playlist/musica10.mp3', 
+        cover: '../Img/Album/racionais_2.jpg' 
+    }
 ];
 
 // Índice da música atual
@@ -215,6 +272,7 @@ let currentIndex = 0;
 // Seleciona elementos do player
 const audio = document.getElementById('audio');
 const playBtn = document.getElementById('play');
+const pauseBtn = document.getElementById('pause');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 const progress = document.getElementById('progress');
@@ -238,15 +296,23 @@ loadTrack(currentIndex); // Carrega a primeira música ao iniciar
 // =====================================
 // BOTÃO DE PLAY / PAUSE
 // =====================================
+// 1. Seleciona os elementos do HTML
+const icone = playBtn.querySelector('i');
+
+// 2. Adiciona o listener
 playBtn.addEventListener('click', () => {
+    // A lógica de play/pause continua a mesma
     if (audio.paused) {
         audio.play();
-        playBtn.innerHTML = '<i class="bi bi-pause-circle-fill"></i>';
     } else {
         audio.pause();
-        playBtn.innerHTML = '<i class="bi bi-play-circle-fill"></i>';
     }
-    
+
+    // 💡 MUDANÇA PRINCIPAL AQUI:
+    // Nós "alternamos" as duas classes.
+    // Isso garante que uma sempre será removida e a outra adicionada.
+    icone.classList.toggle("bi-play-circle-fill");
+    icone.classList.toggle("bi-pause-circle-fill");
 });
 
 // =====================================
@@ -257,7 +323,26 @@ nextBtn.addEventListener('click', () => {
     loadTrack(currentIndex);
     audio.play();
     playBtn.innerHTML = '<i class="bi bi-pause-circle-fill"></i>';
-});
+
+    //function de play/pause
+    const icone = playBtn.querySelector('i');
+
+    // 2. Adiciona o listener
+    playBtn.addEventListener('click', () => {
+        // A lógica de play/pause continua a mesma
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+
+        // 💡 MUDANÇA PRINCIPAL AQUI:
+        // Nós "alternamos" as duas classes.
+        // Isso garante que uma sempre será removida e a outra adicionada.
+        icone.classList.toggle("bi-play-circle-fill");
+        icone.classList.toggle("bi-pause-circle-fill");
+    });
+    });
 
 // =====================================
 // BOTÃO "ANTERIOR" MÚSICA
@@ -267,7 +352,26 @@ prevBtn.addEventListener('click', () => {
     loadTrack(currentIndex);
     audio.play();
     playBtn.innerHTML = '<i class="bi bi-pause-circle-fill"></i>';
-});
+
+    //function de play/pause
+    const icone = playBtn.querySelector('i');
+
+    // 2. Adiciona o listener
+    playBtn.addEventListener('click', () => {
+        // A lógica de play/pause continua a mesma
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+
+        // 💡 MUDANÇA PRINCIPAL AQUI:
+        // Nós "alternamos" as duas classes.
+        // Isso garante que uma sempre será removida e a outra adicionada.
+        icone.classList.toggle("bi-play-circle-fill");
+        icone.classList.toggle("bi-pause-circle-fill");
+    });
+    });
 
 // =====================================
 // ATUALIZA BARRA DE PROGRESSO EM TEMPO REAL
