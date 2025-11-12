@@ -3,19 +3,22 @@
 // Funções: Pesquisa, Carrossel de Artistas/Álbuns e Player de Música
 // ======================================================
 
+// Aguarda o carregamento completo do DOM antes de executar o script
 document.addEventListener('DOMContentLoaded', () => {
 
     // =====================================
     // ELEMENTOS DO CAMPO DE PESQUISA (TOP BAR)
     // =====================================
     const searchInput = document.querySelector('.search-bar input');
-    const searchButton = document.getElementById('btn-search');
+    const searchButton = document.getElementById('btn-search'); // (não usado, mas reservado)
     const searchBar = document.querySelector('.search-bar');
     const resultsDropdown = document.querySelector('.search-results-dropdown');
 
     // =====================================
     // ARRAYS DE DADOS: ARTISTAS E ÁLBUNS
     // =====================================
+
+    // Lista de artistas com nome e caminho da imagem
     const artists = [
         { name: 'Alee', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_alee.jpg' },
         { name: 'Kyan', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_kyan.jpg' },
@@ -29,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Yago', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_yago.jpg' }
     ];
 
+    // Lista de álbuns com nome e capa
     const albums = [
         { name: '505', image: '/Listenly/Scr/frontend/Pages/Img/Album/artic_monkeys.jpg' },
         { name: 'BAILE', image: '/Listenly/Scr/frontend/Pages/Img/Album/baile.jpg' },
@@ -46,11 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // FUNÇÃO: MOSTRAR RESULTADOS DE PESQUISA
     // =====================================
     function displayResults(results) {
+        // Limpa o conteúdo anterior
         resultsDropdown.innerHTML = '';
+
+        // Se não houver resultados, esconde o menu
         if (results.length === 0) {
             resultsDropdown.style.display = 'none';
             return;
         }
+
+        // Cria dinamicamente cada resultado encontrado
         results.forEach(result => {
             const resultItem = document.createElement('div');
             resultItem.className = 'result-item';
@@ -58,12 +67,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${result.image}" alt="${result.name}">
                 <h4>${result.name}</h4>
             `;
+
+            // Quando clicar em um resultado, preenche o campo e fecha o dropdown
             resultItem.addEventListener('click', () => {
                 searchInput.value = result.name;
                 resultsDropdown.style.display = 'none';
             });
+
+            // Adiciona o resultado na lista
             resultsDropdown.appendChild(resultItem);
         });
+
+        // Exibe o menu suspenso
         resultsDropdown.style.display = 'block';
     }
 
@@ -71,26 +86,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // FUNÇÃO: PESQUISAR ARTISTAS E ÁLBUNS
     // =====================================
     function search() {
-        const query = searchInput.value.toLowerCase();
+        const query = searchInput.value.toLowerCase(); // Normaliza o texto digitado
+
         if (query) {
             const results = [];
+
+            // Busca nos artistas
             artists.forEach(artist => {
                 if (artist.name.toLowerCase().includes(query)) {
                     results.push({ ...artist, type: 'artist' });
                 }
             });
+
+            // Busca nos álbuns
             albums.forEach(album => {
                 if (album.name.toLowerCase().includes(query)) {
                     results.push({ ...album, type: 'album' });
                 }
             });
+
             displayResults(results);
         } else {
             resultsDropdown.style.display = 'none';
         }
     }
 
+    // Executa a busca conforme o usuário digita
     searchInput.addEventListener('keyup', search);
+
+    // Fecha o dropdown ao clicar fora da barra de pesquisa
     document.addEventListener('click', (event) => {
         if (!searchBar.contains(event.target)) {
             searchInput.value = '';
@@ -105,31 +129,75 @@ document.addEventListener('DOMContentLoaded', () => {
         const grid = carouselContainer.querySelector('.artist-grid, .albums-grid');
         const prevButton = carouselContainer.querySelector('.carousel-button.prev');
         const nextButton = carouselContainer.querySelector('.carousel-button.next');
-        const scrollAmount = 300;
+        const scrollAmount = 300; // Distância de rolagem por clique
+        let isScrolling = false;
+
+        // Evita erro caso algum elemento esteja ausente
         if (!grid || !prevButton || !nextButton) return;
+
+        // Duplicação dos itens para efeito de rolagem infinita
         const items = Array.from(grid.children);
         items.forEach(item => {
             const clone = item.cloneNode(true);
             grid.appendChild(clone);
         });
+
+        // Função que reposiciona o scroll quando chega ao final
+        function handleScroll() {
+            if (grid.scrollLeft >= grid.scrollWidth / 2) {
+                grid.scrollLeft = 0;
+            }
+        }
+
+        // Controle de rolagem suave (usado internamente)
+        function scroll(direction) {
+            if (isScrolling) return;
+            isScrolling = true;
+
+            const start = grid.scrollLeft;
+            const end = start + direction * scrollAmount;
+
+            grid.scrollTo({
+                left: end,
+                behavior: 'smooth'
+            });
+
+            setTimeout(() => {
+                if (grid.scrollLeft >= grid.scrollWidth / 2) {
+                    grid.scrollLeft = grid.scrollLeft - (grid.scrollWidth / 2);
+                } else if (grid.scrollLeft === 0 && direction === -1) {
+                    grid.scrollLeft = grid.scrollWidth / 2;
+                }
+                isScrolling = false;
+            }, 500);
+        }
+
+        // Botão anterior (rola para a esquerda)
         prevButton.addEventListener('click', () => {
-            if (grid.scrollLeft === 0) grid.scrollLeft = grid.scrollWidth / 2;
+            if (grid.scrollLeft === 0) {
+                grid.scrollLeft = grid.scrollWidth / 2;
+            }
             grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         });
+
+        // Botão próximo (rola para a direita)
         nextButton.addEventListener('click', () => {
             grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         });
+
+        // Verifica o limite da rolagem e reinicia quando chega ao fim
         grid.addEventListener('scroll', () => {
-            if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth) grid.scrollLeft = 0;
+            if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth) {
+                grid.scrollLeft = 0;
+            }
         });
     }
+
+    // Ativa o carrossel para todos os containers existentes
     document.querySelectorAll('.carousel-container').forEach(setupCarousel);
 });
 
 
-// ======================================================
-// PLAYER DE MÚSICA 🎧 (versão aprimorada)
-// ======================================================
 // ======================================================
 // PLAYER DE MÚSICA 🎧
 // ======================================================
@@ -143,7 +211,6 @@ const playlist = [
 
 // Índice da música atual
 let currentIndex = 0;
-let isPlaying = false; // controla o estado atual
 
 // Seleciona elementos do player
 const audio = document.getElementById('audio');
@@ -160,56 +227,36 @@ const artist = document.getElementById('player-artist');
 // =====================================
 function loadTrack(index) {
     const track = playlist[index];
-    audio.src = track.file;
-    cover.src = track.cover;
-    title.textContent = track.title;
-    artist.textContent = track.artist;
-    progress.value = 0;
-    resetPlayButton(); // sempre mostra "play" ao carregar nova faixa
+    audio.src = track.file;      // Caminho do arquivo MP3
+    cover.src = track.cover;     // Atualiza capa
+    title.textContent = track.title;  // Atualiza título
+    artist.textContent = track.artist; // Atualiza artista
+    progress.value = 0;          // Reseta barra de progresso
 }
+loadTrack(currentIndex); // Carrega a primeira música ao iniciar
 
 // =====================================
-// FUNÇÃO: ALTERAR ÍCONE DO BOTÃO
-// =====================================
-function updatePlayButton() {
-    playBtn.innerHTML = isPlaying
-        ? '<i class="bi bi-pause-circle-fill"></i>'
-        : '<i class="bi bi-play-circle-fill"></i>';
-}
-
-// =====================================
-// FUNÇÃO: REINICIAR ESTADO DO BOTÃO
-// =====================================
-function resetPlayButton() {
-    isPlaying = false;
-    updatePlayButton();
-}
-
-// =====================================
-// CONTROLE DE PLAY / PAUSE
+// BOTÃO DE PLAY / PAUSE
 // =====================================
 playBtn.addEventListener('click', () => {
-    if (audio.src === '') loadTrack(currentIndex);
-
-    if (!isPlaying) {
+    if (audio.paused) {
         audio.play();
-        isPlaying = true;
+        playBtn.innerHTML = '<i class="bi bi-pause-circle-fill"></i>';
     } else {
         audio.pause();
-        isPlaying = false;
+        playBtn.innerHTML = '<i class="bi bi-play-circle-fill"></i>';
     }
-    updatePlayButton();
+    
 });
 
 // =====================================
 // BOTÃO "PRÓXIMA" MÚSICA
 // =====================================
 nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % playlist.length;
+    currentIndex = (currentIndex + 1) % playlist.length; // Vai para o próximo índice
     loadTrack(currentIndex);
     audio.play();
-    isPlaying = true;
-    updatePlayButton();
+    playBtn.innerHTML = '<i class="bi bi-pause-circle-fill"></i>';
 });
 
 // =====================================
@@ -219,8 +266,7 @@ prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
     loadTrack(currentIndex);
     audio.play();
-    isPlaying = true;
-    updatePlayButton();
+    playBtn.innerHTML = '<i class="bi bi-pause-circle-fill"></i>';
 });
 
 // =====================================
@@ -241,76 +287,100 @@ progress.addEventListener('input', () => {
     }
 });
 
-// =====================================
-// RESETA BOTÃO QUANDO A MÚSICA TERMINA
-// =====================================
-audio.addEventListener('ended', () => {
-    resetPlayButton();
-});
-
-// =====================================
-// CARREGA PRIMEIRA FAIXA AO INICIAR
-// =====================================
-loadTrack(currentIndex);
-updatePlayButton();
-
-
-// ======================================================
-// USUÁRIO
-// ======================================================
+// Simula um user logado By: Estevam
 async function mostrarNomeUsuario() {
-    const elementoMensagem = document.getElementById("mensagem");
-    try {
-        const resposta = await fetch("/api/user");
-        const userData = await resposta.json();
-        elementoMensagem.textContent = userData?.username
-            ? `Olá, ${userData.username}!`
-            : "Olá, visitante!";
-    } catch {
-        elementoMensagem.textContent = "Erro ao carregar usuário 😢";
-    }
-}
-mostrarNomeUsuario();
+  const elementoMensagem = document.getElementById("mensagem");
 
-// ======================================================
-// CLIQUE EM ÁLBUM ATUALIZA PLAYER
-// ======================================================
+  try {
+    // Faz a requisição ao backend
+    const resposta = await fetch("/api/user");
+    const userData = await resposta.json();
+
+    if (userData && userData.username) {
+      elementoMensagem.textContent = `Olá, ${userData.username}!`;
+    } else {
+      elementoMensagem.textContent = "Olá, visitante!";
+    }
+  } catch (erro) {
+    console.error("Erro ao buscar usuário:", erro);
+    elementoMensagem.textContent = "Erro ao carregar usuário 😢";
+  }
+}
+
+// Chama a função assim que a pagina carregar
+mostrarNomeUsuario();
+// ============================
+// FUNÇÃO: atualizar player ao clicar em uma música/album-item
+// Colar este bloco no final do seu script (após o código do carrossel)
+// ============================
 (function () {
+    // garante execução mesmo se já tiver carregado
     function initClickToPlayer() {
         const albumsGrid = document.querySelectorAll('.albums-grid');
-        if (!albumsGrid.length) return;
-        const playerCoverImg = document.querySelector('.player-left img');
-        const playerSong = document.querySelector('.song') || document.querySelector('#player-title');
-        const playerArtist = document.querySelector('.artist') || document.querySelector('#player-artist');
-        const audioEl = document.getElementById('audio');
+        if (!albumsGrid || albumsGrid.length === 0) return;
+
+        // Seletores do player (tentamos várias opções pra ser compatível com seu markup)
+        const playerCoverImg = document.querySelector('.player-left img') || document.querySelector('.cover-mini img') || null;
+        const playerCoverDiv = document.querySelector('.cover-mini'); // se for div com background
+        const playerSong = document.querySelector('.song') || document.querySelector('.player .song') || null;
+        const playerArtist = document.querySelector('.artist') || document.querySelector('.player .artist') || null;
+        const audioEl = document.querySelector('audio'); // pega o primeiro <audio> da página, se existir
+
+        // função que aplica os dados no player
         function updatePlayer({ imgSrc, title, artist, audioSrc }) {
-            if (imgSrc && playerCoverImg) playerCoverImg.src = imgSrc;
-            if (title && playerSong) playerSong.textContent = title;
-            if (artist && playerArtist) playerArtist.textContent = artist;
+            // cover: se existir img, usa src; se cover-mini for div, usa background-image
+            if (playerCoverImg) {
+                playerCoverImg.src = imgSrc || playerCoverImg.src;
+            } else if (playerCoverDiv) {
+                if (imgSrc) playerCoverDiv.style.backgroundImage = `url("${imgSrc}")`;
+            }
+
+            if (playerSong && title) playerSong.textContent = title;
+            if (playerArtist && artist) playerArtist.textContent = artist;
+
+            // troca a fonte do audio se existir e se audioSrc foi informado
             if (audioEl && audioSrc) {
-                audioEl.pause();
+                // se já estiver tocando, pausa antes de trocar (evita glitches)
+                try {
+                    audioEl.pause();
+                } catch (e) { }
                 audioEl.src = audioSrc;
+                // tenta carregar e tocar
                 audioEl.load();
-                audioEl.play().catch(() => { });
+                audioEl.play().catch(() => { /* autoplay bloqueado: usuário precisará apertar play */ });
             }
         }
+
+        // listener usando delegação (funciona mesmo com itens clonados pelo carrossel)
         albumsGrid.forEach(grid => {
             grid.addEventListener('click', (ev) => {
                 const item = ev.target.closest('.album-item');
-                if (!item) return;
+                if (!item || !grid.contains(item)) return;
+
+                // pega imagem, título e possível fonte de áudio
                 const img = item.querySelector('img');
                 const titleEl = item.querySelector('h4');
-                const imgSrc = img?.src;
-                const title = titleEl?.textContent.trim();
-                const artist = item.dataset.artist || img?.alt || '';
-                const audioSrc = item.dataset.audio || img?.dataset.audio || '';
+                const imgSrc = img ? img.getAttribute('src') : null;
+                const title = titleEl ? titleEl.textContent.trim() : '';
+                // tenta inferir artista a partir do alt (se houver), ou busca atributo data-artist
+                const artist = item.dataset.artist || (img ? (img.getAttribute('alt') || '') : '');
+
+                // busca fonte de áudio em data attribute (recomendado: adicionar data-audio no HTML)
+                const audioSrc = item.dataset.audio || item.getAttribute('data-audio') || (img ? img.dataset.audio : null);
+
                 updatePlayer({ imgSrc, title, artist, audioSrc });
-                document.querySelectorAll('.album-item').forEach(i => i.classList.remove('active'));
+
+                // feedback visual: marca o item ativo (adiciona/remova classe .active)
+                document.querySelectorAll('.albums-grid .album-item').forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
             });
         });
     }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initClickToPlayer);
-    } else initClickToPlayer();
-})();
+    } else {
+        initClickToPlayer();
+    }
+})( );
+//teste
