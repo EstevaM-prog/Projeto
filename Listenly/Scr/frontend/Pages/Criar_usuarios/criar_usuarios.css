@@ -14,7 +14,7 @@ body {
   align-items: center;
   min-height: 100vh;
   overflow: hidden;
-  background-image: url(/Listenly/Scr/frontend/Pages/Img/bg_dark.jpg);
+  background-image: url(../Img/bg_dark.jpg);
   background-size: cover;
   background-position: center;
   position: relative;

@@ -1,3 +1,6 @@
+
+
+
 // ======================================================
 // SCRIPT PRINCIPAL DO LISTENLY 🎵
 // Funções: Pesquisa, Carrossel de Artistas/Álbuns e Player de Música
@@ -212,6 +215,11 @@ const progress = document.getElementById('progress');
 const cover = document.getElementById('player-cover');
 const title = document.getElementById('player-title');
 const artist = document.getElementById('player-artist');
+// ==============================
+// LISTA DE MÚSICAS
+// ==============================
+
+
 
 // =====================================
 // FUNÇÃO: CARREGAR MÚSICA PELO ÍNDICE
@@ -225,6 +233,18 @@ function loadTrack(index) {
     progress.value = 0;
     resetPlayButton(); // sempre mostra "play" ao carregar nova faixa
 }
+
+// codigo adicionado para teste de musica baixada
+playlist.length = 0; // limpa a lista anterior, se existir
+playlist.push(
+    {
+        title: "505",
+        artist: "Arctic Monkeys",
+        cover: "../Img/Album/artic_monkeys.jpg",
+        file: "./Audio/505.mp3"
+    }
+);
+
 
 // =====================================
 // FUNÇÃO: ALTERAR ÍCONE DO BOTÃO
