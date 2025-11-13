@@ -211,6 +211,7 @@ main {
 
 .progress-container {
     width: 100%;
+    
 }
 
 .progress {
@@ -218,8 +219,9 @@ main {
     height: 8px;
     background: rgba(0, 0, 0, 0.06);
     border-radius: 999px;
-    position: relative;
+    position: fixed;
     cursor: pointer;
+    
 }
 
 .bar {
@@ -749,7 +751,7 @@ main {
 
 /* Ajuste das seções internas */
 .player-left,
-.player-center,
+.player-center
 .player-right {
     display: flex;
     align-items: center;
@@ -757,19 +759,36 @@ main {
 }
 
 /* Força o layout a não cortar nada */
+/* Mantém proporções */
 .player-left {
     width: 25%;
     min-width: 180px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
+
 
 .player-center {
     width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
+    gap: 8px;
+    margin: 0 auto;
+    text-align: center;
+
+    transform: translateX(-150px); /* move 30px para a esquerda */
 }
 
 .player-right {
     width: 25%;
+    min-width: 180px;
+    display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 /* Botões e range */
@@ -782,14 +801,20 @@ main {
     transition: transform 0.2s ease;
 }
 
-.player-center button:hover {
+
+
+.player button:hover {
     transform: scale(1.1);
 }
 
+/* Barra de Progresso */
 .player-center input[type="range"] {
-    width: 160px;
+    position: absolute;
+    margin-top: 55px;
+    width: 35%;
     accent-color: #1db954;
 }
+
 
 /* Imagem da música */
 .player-left img {
@@ -907,4 +932,32 @@ section,
 .brand h4 {
     color: red;
     font-size: 16px;
+}
+
+
+/* Controle de Volume */
+.player-volume {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.player-volume input[type="range"] {
+  width: 100px;
+  accent-color: #1db954;
+  cursor: pointer;
+}
+
+.player-volume i {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.player-volume i:hover {
+  color: #1db954;
 }
