@@ -362,6 +362,7 @@ audio.addEventListener('timeupdate', () => {
     }
 });
 
+
 // =====================================
 // PERMITE ALTERAR O PONTO DA MÚSICA MANUALMENTE
 // =====================================
@@ -389,18 +390,32 @@ updatePlayButton();
 // USUÁRIO
 // ======================================================
 async function mostrarNomeUsuario() {
-    const elementoMensagem = document.getElementById("mensagem");
-    try {
-        const resposta = await fetch("/api/user");
-        const userData = await resposta.json();
-        elementoMensagem.textContent = userData?.username
-            ? `Olá, ${userData.username}!`
-            : "Olá, visitante!";
-    } catch {
-        elementoMensagem.textContent = "Erro ao carregar usuário 😢";
+  const elementoMensagem = document.getElementById("mensagem");
+  if (!elementoMensagem) {
+    console.error("Elemento com id 'mensagem' não encontrado.");
+    return;
+  }
+
+  try {
+    const resposta = await fetch("/api/user", { method: "GET" });
+
+    if (!resposta.ok) {
+      throw new Error(`Erro HTTP: ${resposta.status}`);
     }
+
+    const userData = await resposta.json();
+
+    const nomeUsuario = userData?.username?.trim();
+    elementoMensagem.textContent = nomeUsuario
+      ? `Olá, ${nomeUsuario}!`
+      : "Olá, visitante!";
+  } catch (erro) {
+    console.error("Erro ao buscar usuário:", erro);
+    elementoMensagem.textContent = "Erro ao carregar usuário 😢";
+  }
 }
-mostrarNomeUsuario();
+
+document.addEventListener("DOMContentLoaded", mostrarNomeUsuario);
 
 // ======================================================
 // CLIQUE EM ÁLBUM ATUALIZA PLAYER
@@ -479,3 +494,41 @@ mostrarNomeUsuario();
         initClickToPlayer();
     }
 })();
+
+
+// =====================================
+// CONTROLE DE VOLUME 🎚️
+// =====================================
+const volumeControl = document.getElementById('volume-control');
+const volumeIcon = document.getElementById('volume-icon');
+
+// Atualiza volume quando o usuário move o slider
+volumeControl.addEventListener('input', () => {
+    audio.volume = volumeControl.value;
+    if (audio.volume === 0) {
+        volumeIcon.className = 'bi bi-volume-mute-fill';
+    } else if (audio.volume < 0.5) {
+        volumeIcon.className = 'bi bi-volume-down-fill';
+    } else {
+        volumeIcon.className = 'bi bi-volume-up-fill';
+    }
+});
+
+// Muta/desmuta ao clicar no ícone
+let lastVolume = 1;
+volumeIcon.addEventListener('click', () => {
+    if (audio.volume > 0) {
+        lastVolume = audio.volume;
+        audio.volume = 0;
+        volumeControl.value = 0;
+        volumeIcon.className = 'bi bi-volume-mute-fill';
+    } else {
+        audio.volume = lastVolume;
+        volumeControl.value = lastVolume;
+        if (lastVolume < 0.5) {
+            volumeIcon.className = 'bi bi-volume-down-fill';
+        } else {
+            volumeIcon.className = 'bi bi-volume-up-fill';
+        }
+    }
+});
