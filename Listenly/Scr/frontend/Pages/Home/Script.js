@@ -315,19 +315,32 @@ function resetPlayButton() {
 // CONTROLE DE PLAY / PAUSE
 // =====================================
 // 1. Seleciona os elementos do HTML
-const icone = playBtn.querySelector('i');
-
-// 2. Adiciona o listener
+// =====================================
+// CONTROLE DE PLAY / PAUSE 🔊
+// =====================================
 playBtn.addEventListener('click', () => {
     if (audio.src === '') loadTrack(currentIndex);
 
-    if (!isPlaying) {
+    if (audio.paused) {
         audio.play();
-        isPlaying = true;
     } else {
         audio.pause();
-        isPlaying = false;
     }
+});
+
+// Atualiza o botão automaticamente conforme o estado do áudio
+audio.addEventListener('play', () => {
+    isPlaying = true;
+    updatePlayButton();
+});
+
+audio.addEventListener('pause', () => {
+    isPlaying = false;
+    updatePlayButton();
+});
+
+audio.addEventListener('ended', () => {
+    isPlaying = false;
     updatePlayButton();
 });
 
