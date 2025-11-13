@@ -30,6 +30,7 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 ---
 
 ⚙️ Como rodar o projeto
+
 🔧 Pré-requisitos
 
 1. Node.js v18+
@@ -38,16 +39,16 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 
 🚀 Executando localmente
 
-# Clonar o repositório
+ Clonar o repositório
 git clone https://github.com/EstevaM-prog/Projeto.git
 
-# Entrar na pasta do projeto
+ Entrar na pasta do projeto:
 cd Projeto
 
-# Instalar dependências
+ Instalar dependências:
 npm install
 
-# Iniciar o servidor de desenvolvimento
+ Iniciar o servidor de desenvolvimento:
 npm run dev || npm run serve
 
 ---
