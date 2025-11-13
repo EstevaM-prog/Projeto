@@ -759,20 +759,36 @@ main {
 }
 
 /* Força o layout a não cortar nada */
+/* Mantém proporções */
 .player-left {
     width: 25%;
     min-width: 180px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
+
 
 .player-center {
     width: 50%;
-    justify-content: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto;
+    text-align: center;
+
+    transform: translateX(-150px); /* move 30px para a esquerda */
 }
 
 .player-right {
     width: 25%;
+    min-width: 180px;
+    display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 /* Botões e range */
@@ -785,14 +801,20 @@ main {
     transition: transform 0.2s ease;
 }
 
-.player-center button:hover {
+
+
+.player button:hover {
     transform: scale(1.1);
 }
 
+/* Barra de Progresso */
 .player-center input[type="range"] {
-    width: 160px;
+    position: absolute;
+    margin-top: 55px;
+    width: 35%;
     accent-color: #1db954;
 }
+
 
 /* Imagem da música */
 .player-left img {

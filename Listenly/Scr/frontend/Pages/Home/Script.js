@@ -130,9 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// ======================================================
-// PLAYER DE MÚSICA 🎧 (versão aprimorada)
-// ======================================================
+
 // ======================================================
 // PLAYER DE MÚSICA 🎧
 // ======================================================
@@ -215,10 +213,6 @@ const progress = document.getElementById('progress');
 const cover = document.getElementById('player-cover');
 const title = document.getElementById('player-title');
 const artist = document.getElementById('player-artist');
-// ==============================
-// LISTA DE MÚSICAS
-// ==============================
-
 
 
 // =====================================
@@ -412,17 +406,40 @@ mostrarNomeUsuario();
 // CLIQUE EM ÁLBUM ATUALIZA PLAYER
 // ======================================================
 (function () {
+    function renderAlbums() {
+        const albumsContainer = document.querySelector('.albums-grid');
+        if (!albumsContainer) return;
+        albumsContainer.innerHTML = ''; // limpa a grid antes de renderizar
+
+        playlist.forEach(music => {
+            const albumItem = document.createElement('div');
+            albumItem.classList.add('album-item');
+            albumItem.dataset.artist = music.artist;
+            albumItem.dataset.audio = music.file;
+
+            albumItem.innerHTML = `
+                <img src="${music.cover}" alt="${music.artist}">
+                <h4>${music.title}</h4>
+            `;
+
+            albumsContainer.appendChild(albumItem);
+        });
+    }
+
     function initClickToPlayer() {
         const albumsGrid = document.querySelectorAll('.albums-grid');
         if (!albumsGrid.length) return;
+
         const playerCoverImg = document.querySelector('.player-left img');
         const playerSong = document.querySelector('.song') || document.querySelector('#player-title');
         const playerArtist = document.querySelector('.artist') || document.querySelector('#player-artist');
         const audioEl = document.getElementById('audio');
+
         function updatePlayer({ imgSrc, title, artist, audioSrc }) {
             if (imgSrc && playerCoverImg) playerCoverImg.src = imgSrc;
             if (title && playerSong) playerSong.textContent = title;
             if (artist && playerArtist) playerArtist.textContent = artist;
+
             if (audioEl && audioSrc) {
                 audioEl.pause();
                 audioEl.src = audioSrc;
@@ -430,23 +447,35 @@ mostrarNomeUsuario();
                 audioEl.play().catch(() => { });
             }
         }
+
         albumsGrid.forEach(grid => {
             grid.addEventListener('click', (ev) => {
                 const item = ev.target.closest('.album-item');
                 if (!item) return;
+
                 const img = item.querySelector('img');
                 const titleEl = item.querySelector('h4');
                 const imgSrc = img?.src;
                 const title = titleEl?.textContent.trim();
                 const artist = item.dataset.artist || img?.alt || '';
                 const audioSrc = item.dataset.audio || img?.dataset.audio || '';
+
                 updatePlayer({ imgSrc, title, artist, audioSrc });
+
                 document.querySelectorAll('.album-item').forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
             });
         });
     }
+
+    // Executa tudo quando o DOM estiver pronto
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initClickToPlayer);
-    } else initClickToPlayer();
+        document.addEventListener('DOMContentLoaded', () => {
+            renderAlbums();
+            initClickToPlayer();
+        });
+    } else {
+        renderAlbums();
+        initClickToPlayer();
+    }
 })();
