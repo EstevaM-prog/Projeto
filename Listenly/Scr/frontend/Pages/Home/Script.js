@@ -139,64 +139,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Lista de músicas disponíveis no player
 const playlist = [
-    { 
-        title: '505', 
-        artist: 'Arctic Monkeys', 
-        file: '../Playlist/musica1.mp3', 
-        cover: '../Img/Album/artic_monkeys.jpg' 
+    {
+        title: "505",
+        artist: "Arctic Monkeys",
+        file: "./Audio/505.mp3",
+        cover: "../Img/Album/artic_monkeys.jpg"
     },
     { 
         title: 'BAILE', 
         artist: 'Baile', // Extraído do alt="Baile"
-        file: '../Playlist/musica2.mp3', 
+        file: './Audio/BAILE.mp3', 
         cover: '../Img/Album/baile.jpg' 
     },
     { 
         title: 'Mina de Condomínio', 
         artist: 'Seu Jorge', 
-        file: '../Playlist/musica3.mp3', 
+        file: './Audio/Mina de Condomínio.mp3', 
         cover: '../Img/Album/seu_jorge.jpg' 
     },
     { 
         title: 'PRIDE.', 
         artist: 'Kendrick Lamar', // Extraído do alt="Kendrick Lamar - Damn"
-        file: '../Playlist/musica4.mp3', 
+        file: './Audio/PRIDE..mp3', 
         cover: '../Img/Album/damn.jpg' 
     },
     { 
         title: 'No Piscar dos Olhos', 
         artist: 'Febem', 
-        file: '../Playlist/musica5.mp3', 
+        file: './Audio/No Piscar dos Olhos.mp3', 
         cover: '../Img/Album/febem.jpg' 
     },
     { 
         title: 'Feel Good Inc.', 
         artist: 'Gorillaz', 
-        file: '../Playlist/musica6.mp3', 
+        file: './Audio/Feel Good Inc..mp3', 
         cover: '../Img/Album/gorilaz.jpg' 
     },
     { 
         title: 'See You Again', 
         artist: 'Tyler, The Creator', 
-        file: '../Playlist/musica7.mp3', 
+        file: './Audio/See You Again.mp3', 
         cover: '../Img/Album/tyler.jpg' 
     },
     { 
         title: 'Sorri, Sou Rei', 
         artist: 'Natiruts', 
-        file: '../Playlist/musica8.mp3', 
+        file: './Audio/Sorri, Sou Rei.mp3', 
         cover: '../Img/Album/natiruts.jpg' 
     },
     { 
         title: 'Sobrevivendo no Inferno', 
         artist: "Racionais MC's", 
-        file: '../Playlist/musica9.mp3', 
+        file: './Audio/Sobrevivendo no Inferno.mp3', 
         cover: '../Img/Album/racionais.jpg' 
     },
     { 
         title: 'Nada Como um Dia', 
         artist: "Racionais MC's", 
-        file: '../Playlist/musica10.mp3', 
+        file: './Audio/Nada Como um Dia.mp3', 
         cover: '../Img/Album/racionais_2.jpg' 
     }
 ];
@@ -240,8 +240,62 @@ playlist.push(
     {
         title: "505",
         artist: "Arctic Monkeys",
-        cover: "../Img/Album/artic_monkeys.jpg",
-        file: "./Audio/505.mp3"
+        file: "./Audio/505.mp3",
+        cover: "../Img/Album/artic_monkeys.jpg"
+    },
+    { 
+        title: 'BAILE', 
+        artist: 'Baile', // Extraído do alt="Baile"
+        file: './Audio/BAILE.mp3', 
+        cover: '../Img/Album/baile.jpg' 
+    },
+    { 
+        title: 'Mina de Condomínio', 
+        artist: 'Seu Jorge', 
+        file: './Audio/Mina de Condomínio.mp3', 
+        cover: '../Img/Album/seu_jorge.jpg' 
+    },
+    { 
+        title: 'PRIDE.', 
+        artist: 'Kendrick Lamar', // Extraído do alt="Kendrick Lamar - Damn"
+        file: './Audio/PRIDE..mp3', 
+        cover: '../Img/Album/damn.jpg' 
+    },
+    { 
+        title: 'No Piscar dos Olhos', 
+        artist: 'Febem', 
+        file: './Audio/No Piscar dos Olhos.mp3', 
+        cover: '../Img/Album/febem.jpg' 
+    },
+    { 
+        title: 'Feel Good Inc.', 
+        artist: 'Gorillaz', 
+        file: './Audio/Feel Good Inc..mp3', 
+        cover: '../Img/Album/gorilaz.jpg' 
+    },
+    { 
+        title: 'See You Again', 
+        artist: 'Tyler, The Creator', 
+        file: './Audio/See You Again.mp3', 
+        cover: '../Img/Album/tyler.jpg' 
+    },
+    { 
+        title: 'Sorri, Sou Rei', 
+        artist: 'Natiruts', 
+        file: './Audio/Sorri, Sou Rei.mp3', 
+        cover: '../Img/Album/natiruts.jpg' 
+    },
+    { 
+        title: 'Sobrevivendo no Inferno', 
+        artist: "Racionais MC's", 
+        file: './Audio/Sobrevivendo no Inferno.mp3', 
+        cover: '../Img/Album/racionais.jpg' 
+    },
+    { 
+        title: 'Nada Como um Dia', 
+        artist: "Racionais MC's", 
+        file: './Audio/Nada Como um Dia.mp3', 
+        cover: '../Img/Album/racionais_2.jpg' 
     }
 );
 

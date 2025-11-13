@@ -211,6 +211,7 @@ main {
 
 .progress-container {
     width: 100%;
+    
 }
 
 .progress {
@@ -218,8 +219,9 @@ main {
     height: 8px;
     background: rgba(0, 0, 0, 0.06);
     border-radius: 999px;
-    position: relative;
+    position: fixed;
     cursor: pointer;
+    
 }
 
 .bar {
@@ -749,7 +751,7 @@ main {
 
 /* Ajuste das seções internas */
 .player-left,
-.player-center,
+.player-center
 .player-right {
     display: flex;
     align-items: center;
@@ -765,6 +767,7 @@ main {
 .player-center {
     width: 50%;
     justify-content: center;
+    align-items: center;
 }
 
 .player-right {
