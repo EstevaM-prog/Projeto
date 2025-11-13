@@ -59,6 +59,7 @@ Estrutura inspirada em boas praticas e organização com conceitod de arquiterua
  3. Modularizar código por contexto (backend JS vs frontend pages)
 
 Projeto/
+
 ├── .vscode/            
 ├── Listenly/           
 │   ├── Docs/           
@@ -78,7 +79,7 @@ Projeto/
 
 ---
 
-###🎯 Problema que Resolve
+🎯 Problema que Resolve
 
 O projeto foi desenvolvido para facilitar o acesso a músicas de novos artistas e oferecer uma plataforma para hospedagem de faixas, permitindo que usuários descubram, reproduzam e compartilhem músicas de forma simples e intuitiva.
 
