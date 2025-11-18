@@ -1,14 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Minha Playlist - Tela Cheia</title>
+    <style>
+        /* CSS Reset e Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Previne scroll na página inteira */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #FFFFFF;
+            display: grid; /* Layout principal alterado para Grid */
+        }
+
+        /* --- 1. Layout Principal (App) --- */
+        .app-layout {
+            display: grid;
+            /* Define duas colunas: 240px para a navbar, 1fr (resto) para o conteúdo */
+            grid-template-columns: 240px 1fr; 
+            height: 100vh; /* Ocupa 100% da altura da tela */
+        }
+
+        /* --- 2. Sidebar (Navbar Esquerda) --- */
+        .sidebar {
+            background-color: #000000; /* Fundo preto para a sidebar */
+            padding: 24px;
+            height: 100vh; /* Garante que ela vá até o final */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-logo {
+            width: 130px;
+            margin-bottom: 10px;
+        }
+
+        .nav-links, .nav-playlists {
+            list-style: none;
+        }
+
+        .nav-links li, .nav-playlists li {
+            margin-bottom: 15px;
+        }
+
+        .nav-links a, .nav-playlists a {
+            color: #b3b3b3;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .nav-links a:hover, .nav-links a.active,
+        .nav-playlists a:hover {
+            color: #FFFFFF;
+        }
+        
+        .sidebar-separator {
+            border-bottom: 1px solid #282828;
+            margin: 10px 0;
+        }
+
+        .sidebar-footer {
+            margin-top: auto; /* Empurra o footer para o final da sidebar */
+            font-size: 0.75rem;
+        }
+        .sidebar-footer a {
+            color: #b3b3b3;
+            text-decoration: none;
+        }
+
+        /* --- 3. Conteúdo Principal (Playlist) --- */
+        .main-content {
+            height: 100vh;
+            overflow-y: auto; /* APENAS o conteúdo principal rola */
+            background-color: #181818; /* Fundo da área de conteúdo */
+        }
+
+        /* Contêiner Principal da Playlist (Agora é o conteúdo) */
+        /* .playlist-container foi removido */
+
+        /* Cabeçalho da Playlist (Imagem, Título, Botões) */
+        .playlist-header {
+            display: flex;
+            align-items: flex-end;
+            gap: 24px;
+            padding: 24px;
+            background: linear-gradient(to bottom, #4a4a4a 0%, #2a2a2a 100%);
+
+            /* Efeito "Sticky": Faz o header grudar no topo ao rolar */
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .playlist-cover {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .playlist-info {
+            flex-grow: 1;
+        }
+
+        .playlist-info .playlist-type {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .playlist-info h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .playlist-info .playlist-details {
+            font-size: 0.9rem;
+            color: #b3b3b3;
+        }
+
+        /* Controles (Play, Shuffle) */
+        .playlist-controls {
+            padding: 24px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .btn {
+            border: none;
+            border-radius: 500px;
+            padding: 12px 28px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn-play {
+            background-color: #1DB954;
+            color: #FFFFFF;
+            margin-right: 16px;
+        }
+
+        .btn-shuffle {
+            background-color: transparent;
+            border: 1px solid #b3b3b3;
+            color: #FFFFFF;
+        }
+        .btn:hover { transform: scale(1.05); }
+        .btn-play:hover { background-color: #1ed760; }
+        .btn-shuffle:hover { border-color: #FFFFFF; }
+
+        /* Lista de Músicas (Tabela) */
+        .track-list {
+            padding: 0 24px 24px 24px;
+        }
+
+        .tracks-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tracks-table th {
+            color: #b3b3b3;
+            font-weight: 500;
+            text-align: left;
+            font-size: 0.85rem;
+            padding: 12px 8px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #282828;
+        }
+
+        .tracks-table td {
+            padding: 12px 8px;
+            vertical-align: middle;
+        }
+
+        .track-item {
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .track-item:hover {
+            background-color: #282828;
+        }
+
+        /* Colunas específicas */
+        .track-number { width: 40px; text-align: center; color: #b3b3b3; }
+        .track-title { font-weight: 600; color: #FFFFFF; }
+        .track-artist, .track-album { color: #b3b3b3; font-size: 0.9rem; }
+        .track-duration { width: 60px; text-align: right; color: #b3b3b3; font-size: 0.9rem; }
+    </style>
 </head>
-
 <body>
-   Playlist teste
-</body>
 
+    <div class="app-layout">
+        
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://via.placeholder.com/130x40/1DB954/000000?text=MusicApp" alt="Logo" class="sidebar-logo">
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#" class="active">🏠 Início</a></li>
+                <li><a href="#">🔍 Buscar</a></li>
+                <li><a href="#">📚 Sua Biblioteca</a></li>
+            </ul>
+            
+            <div class="sidebar-separator"></div>
+
+            <ul class="nav-playlists">
+                <li><a href="#">➕ Criar playlist</a></li>
+                <li><a href="#">❤️ Músicas Curtidas</a></li>
+            </ul>
+
+            <footer class="sidebar-footer">
+                <a href="#">Cookies</a> | <a href="#">Privacidade</a>
+            </footer>
+        </nav>
+
+        <main class="main-content">
+            
+            <header class="playlist-header">
+                <img src="https://via.placeholder.com/200" alt="Capa da Playlist" class="playlist-cover">
+                <div class="playlist-info">
+                    <span class="playlist-type">Playlist</span>
+                    <h1>Hits da Semana</h1>
+                    <p class="playlist-details">
+                        As melhores músicas que estão bombando. • <b>Seu Nome</b> • 15 músicas, 45 min
+                    </p>
+                </div>
+            </header>
+
+            <div class="playlist-controls">
+                <button class="btn btn-play">PLAY</button>
+                <button class="btn btn-shuffle">SHUFFLE</button>
+            </div>
+
+            <div class="track-list">
+                <table class="tracks-table">
+                    <thead>
+                        <tr>
+                            <th class="track-number">#</th>
+                            <th>Título</th>
+                            <th>Artista</th>
+                            <th>Álbum</th>
+                            <th class="track-duration">Tempo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="track-item">
+                            <td class="track-number">1</td>
+                            <td class="track-title">Blinding Lights</td>
+                            <td class="track-artist">The Weeknd</td>
+                            <td class="track-album">After Hours</td>
+                            <td class="track-duration">3:20</td>
+                        </tr>
+                        <tr class="track-item">
+                            <td class="track-number">2</td>
+                            <td class="track-title">As It Was</td>
+                            <td class="track-artist">Harry Styles</td>
+                            <td class="track-album">Harry's House</td>
+                            <td class="track-duration">2:47</td>
+                        </tr>
+                        <tr class="track-item">
+                            <td class="track-number">3</td>
+                            <td class="track-title">Levitating</td>
+                            <td class="track-artist">Dua Lipa</td>
+                            <td class="track-album">Future Nostalgia</td>
+                            <td class="track-duration">3:23</td>
+                        </tr>
+                        <tr class="track-item">
+                            <td class="track-number">4</td>
+                            <td class="track-title">good 4 u</td>
+                            <td class="track-artist">Olivia Rodrigo</td>
+                            <td class="track-album">SOUR</td>
+                            <td class="track-duration">2:58</td>
+                        </tr>
+                        <tr class="track-item">
+                            <td class="track-number">5</td>
+                            <td class="track-title">Save Your Tears</td>
+                            <td class="track-artist">The Weeknd</td>
+                            <td class="track-album">After Hours</td>
+                            <td class="track-duration">3:35</td>
+                        </tr>
+                        <tr class="track-item">
+                            <td class="track-number">6</td>
+                            <td class="track-title">Montero (Call Me By Your Name)</td>
+                            <td class="track-artist">Lil Nas X</td>
+                            <td class="track-album">Montero</td>
+                            <td class="track-duration">2:18</td>
+                        </tr>
+                        <tr class="track-item">
+                            <td class="track-number">7</td>
+                            <td class="track-title">Stay</td>
+                            <td class="track-artist">The Kid LAROI, Justin Bieber</td>
+                            <td class="track-album">F*CK LOVE 3: OVER YOU</td>
+                            <td class="track-duration">2:21</td>
+                        </tr>
+                         <tr class="track-item">
+                            <td class="track-number">8</td>
+                            <td class="track-title">Peaches</td>
+                            <td class="track-artist">Justin Bieber</td>
+                            <td class="track-album">Justice</td>
+                            <td class="track-duration">3:18</td>
+                        </tr>
+                        <tr class="track-item">
+                            <td class="track-number">9</td>
+                            <td class="track-title">Industry Baby</td>
+                            <td class="track-artist">Lil Nas X, Jack Harlow</td>
+                            <td class="track-album">Montero</td>
+                            <td class="track-duration">3:32</td>
+                        </tr>
+                        <tr class="track-item">
+                            <td class="track-number">10</td>
+                            <td class="track-title">Heat Waves</td>
+                            <td class="track-artist">Glass Animals</td>
+                            <td class="track-album">Dreamland</td>
+                            <td class="track-duration">3:58</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </main>
+    </div>
+
+</body>
 </html>

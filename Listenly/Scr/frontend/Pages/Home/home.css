@@ -342,7 +342,7 @@ main {
     z-index: 101;
 
     /* aparência original mantida */
-    display: flex;
+    display: flex; 
     align-items: center;
     background-color: #242424;
     padding: 8px 16px;
