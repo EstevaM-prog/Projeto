@@ -1,0 +1,22 @@
+/* Global typography rules to standardize base font size across the site */
+:root {
+  /* Base font size in pixels. Use rem units across the project for scalability. */
+  --base-font-size: 16px;
+}
+
+html {
+  font-size: 100%; /* fallback */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--base-font-size);
+  line-height: 1.5;
+  color: #111;
+}
+
+/* Small helpers to keep typography consistent */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+p, li, a, span, button { font-size: 1rem; }
