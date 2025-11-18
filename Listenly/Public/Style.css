@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../Scr/frontend/Pages/Img/bg_dark.jpg);
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: hidden;
+    overflow-x: auto; 
+    background-image: url(../Scr/frontend/Pages/Img/bg_dark.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #fff;
+
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+
+main {
+    flex: 1;
+    
+    padding: 16px;
+}
+
+#slidebar {
+    width: 300px;
+    background-color: #121212;
+    padding: 24px;
+    padding-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.nav-logo i {
+    font-size: 24px;
+}
+
+.nav-libary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-libary i, .nav-libary p {
+    font-size: 14px;
+    color: #B7B3B6;
+    cursor: pointer;
+}
+
+.nav-playlist, .nav-podcast {
+    background-color: #242424;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.nav-playlist button, .nav-podcast button {
+    background-color: #fff;
+    color: #000 ;
+    border: none;
+    padding: 8px 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 20px;
+}
+
+.nav-playlist p, .nav-podcast p {
+    font-size: 12px;
+}
+
+.nav-footer{
+    margin-top: auto;
+}
+.nav-footer a {
+    color: #a7a7a7;
+    text-decoration: none;
+    font-size: 12px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+}
+
+.nav-lang-button {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 12px;
+    margin-top: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+main {
+    padding: 24px;
+    flex-grow: 1;
+    overflow-y: auto; /* Permitir rolagem vertical principal se necessário */
+    overflow-x: hidden; /* Prevenir rolagem horizontal principal */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #242424;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 300px;
+    position: fixed;
+    z-index: 101;
+}
+
+.search-bar button i{
+    cursor: pointer;
+    
+}
+
+.log {
+    display: flex;
+    gap: 10px;           /* espaço entre os links */
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Links dentro do header */
+.log a {
+    background-color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 120px;        /* opcional, ou deixe automático */
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    color: #000;         /* para contraste */
+}
+
+
+.search-bar input {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    width: 100%;
+    margin-left: 10px;
+    outline: none;
+}
+
+.artist-grid, .albums-grid {
+    
+    grid-template-columns: repeat(autofill, minmax(180px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+
+   
+    display: flex;
+    
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 8px;
+    
+    /* Opcional: estiliza a barra de rolagem */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.artist-grid::-webkit-scrollbar, .albums-grid::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+
+.artist-Card, .album-Card {
+    background-color: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.artist-Card::hover , .album-Card::hover {
+    background-color: #282828;
+}
+
+.artist-Card img , .album-Card img {
+    width: 100%;
+    max-width: 70%;
+    border-radius: 50px;
+    margin-bottom: 16px;
+}
+
+.artist-Card h3 , .album-Card h3{
+    font-size: 12px;
+}
+
+.artist-Card p , .album-Card p{
+    font-size: 10px;
+    color: #B7B3B6;
+}
+
+
+
+.content {
+    margin-top: 40px;
+}
+
+
+
+.container h2 {
+    margin-bottom: 10px;
+}
+
+
+
+.banner {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(90deg, #000000, #011d3f);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 14px;
+}
+
+.banner h2{
+    font-size: 14px;
+}
+
+.banner p{
+    font-size: 10px;
+}
+
+.banner button {
+    border-radius: 20px;
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+.content{
+    display: grid;
+    grid-template-columns: repeat(autofill, minmax(180px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.artist-grid {
+           /* deixa os artistas lado a lado */
+    display: flex;
+    gap: 20px;  /* Espaço fazio entre os artistas */
+}
+
+.artist img {
+    width: 150px;        /* ajusta o tamanho da imagem */
+    height: auto;
+    cursor: pointer;
+}
+
+.artist {
+    text-align: center;  /* centraliza o nome abaixo da imagem */
+}
+
+.artist-grid img{
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
+
+
+.artist-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.artist-item h4 {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+
+
+.albums {
+    text-align: center;  /* centraliza o nome abaixo da imagem */
+}
+
+.albums-grid {
+    display: flex;       /* deixa os artistas lado a lado */
+    gap: 20px;           /* espaço entre os artistas */
+}
+
+.albums img {
+    width: 150px;        /* ajusta o tamanho da imagem */
+    height: auto;
+    cursor: pointer;
+}
+
+.albums {
+    text-align: center;  /* centraliza o nome abaixo da imagem */
+}
+
+.albums-grid img{
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;   
+}
+
+.album-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.album-item h4 {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+
+
+
+.card {
+ min-width: 200px;
+ height: 250px;
+ background: #222;
+ border-radius: 12px;
+ flex: 0 0 auto;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+ overflow: hidden;
+}
+
+.card img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden; /* Garante que nada saia do contêiner */
+}
+
+.carousel-container:hover .carousel-button {
+    opacity: 1;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.search-results-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #282828;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    z-index: 102;
+}
+
+.search-results-dropdown .result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-results-dropdown .result-item:hover {
+    background-color: #333;
+}
+
+.search-results-dropdown .result-item h4 {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.search-results-dropdown .result-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}

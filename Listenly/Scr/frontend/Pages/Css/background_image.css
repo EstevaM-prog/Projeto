@@ -1,0 +1,16 @@
+body {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url(/Listenly/Scr/frontend/Pages/Img/bg_dark.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}

@@ -1,25 +1,29 @@
-@import url('background-image: url(/Listenly/Scr/frontend/Pages/Img/bg_dark.jpg);')
-*{  
-  width: 1440px;
-  height: 1024px;
-  overflow: hidden;
-}
-body{
+/* Corrigido: removido @import inválido e ajustes sintáticos */
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-    background-image: url(/Listenly/Scr/frontend/Pages/Img/bg_dark.jpg);
+  background-image: url(../Img/bg_dark.jpg);
 }
-.wrapper{ /* Borda do card */
+
+.wrapper {
+  /* Borda do card */
   width: 300px;
   background: #fff;
   padding: 20px;
-  border-radius:16px;
-  box-shadow:10px 10px 15px rgba(0,0,0,0.05);
+  border-radius: 16px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
 }
-.wrapper header{ /* Borda ao lado do Gratuito, básico, Premium */
+
+.wrapper header {
+  /* Borda ao lado do Gratuito, básico, Premium */
   display: flex;
   height: 55px;
   position: relative;
@@ -27,118 +31,138 @@ body{
   border: 1px solid #ccc;
   border-radius: 30px;
 }
-header label{ /* Cursor dentro do CSS para clicar */
+
+header label {
+  /* Cursor dentro do CSS para clicar */
   height: 100%;
   width: 50%;
   z-index: 2;
   display: flex;
   position: relative;
-  font-size:18px;
+  font-size: 18px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
 }
+
 #tab-1:checked ~ header .tab-1,
 #tab-2:checked ~ header .tab-2,
-#tab-3:checked ~ header .tab-3{
+#tab-3:checked ~ header .tab-3 {
   color: #fff;
 }
-header label: nth-child(2){
+
+header label:nth-child(2) {
   width: 40%;
 }
-header .slider{
+
+header .slider {
   position: absolute;
   left: 50%;
   height: 85%;
   width: 120px;
   border-radius: inherit;
   transform: translateX(-50%);
-  background: 
-  linear-gradient(145deg, rgb(41, 58, 151), rgba(85, 65, 199, 0.8));,
-  url('sua-imagem.jpg');
+  background: linear-gradient(145deg, rgb(41, 58, 151), rgba(85, 65, 199, 0.8)), url('sua-imagem.jpg');
+  background-size: cover;
+  background-position: center;
   transition: all 0.3s ease;
 }
-#tab-1:checked ~ header .slider{
+
+#tab-1:checked ~ header .slider {
   left: 0%;
   width: 90px;
-  transform: translatex(5%);
+  transform: translateX(5%);
 }
-#tab-2:checked ~ header .slider{
+
+#tab-2:checked ~ header .slider {
   left: 50%;
   width: 120px;
-  transform: translatex(-50%);
+  transform: translateX(-50%);
 }
-#tab-3:checked ~ header .slider{
+
+#tab-3:checked ~ header .slider {
   left: 100%;
   width: 95px;
-  transform: translatex(-105%);
+  transform: translateX(-105%);
 }
-.wrapper input[type="radio"]{
-  display:none;
+
+.wrapper input[type="radio"] {
+  display: none;
 }
-.cards-area{
-  overflow: hidden; 
+
+.cards-area {
+  overflow: hidden;
 }
-.cards-area .cards{
+
+.cards-area .cards {
   width: 300%;
   display: flex;
 }
-.cards .row{
-  width: 33.4%
+
+.cards .row {
+  width: 33.4%;
 }
-.cards .row-1{
+
+.cards .row-1 {
   transition: all 0.3s ease;
 }
-#tab-1:checked ~ .cards-area .cards .row-1{
+
+#tab-1:checked ~ .cards-area .cards .row-1 {
   margin-left: 0%;
 }
-#tab-2:checked ~ .cards-area .cards .row-1{
+
+#tab-2:checked ~ .cards-area .cards .row-1 {
   margin-left: -33.4%;
 }
-#tab-3:checked ~ .cards-area .cards .row-1{
+
+#tab-3:checked ~ .cards-area .cards .row-1 {
   margin-left: -66.8%;
 }
-.row .pricing-details{
+
+.row .pricing-details {
   margin: 20px 0;
   text-align: center;
   padding-bottom: 10px;
   border-bottom: 1px solid #e6e6e6;
 }
-.pricing-details span{
+
+.pricing-details span {
   font-size: 55px;
   font-weight: 600;
   font-family: 'Noto Sans', sans-serif;
+  position: relative;
 }
-.pricing-details span::before,
-.pricing-details span::after{
-  position: absolute;
-  font-weight: 400;
-  font-family: "Poppins", sans-serif; 
-}
-.pricing-details span::before{
+
+.pricing-details span::before {
   position: absolute;
   content: "$";
   font-size: 20px;
   left: -13px;
   top: 17px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
 }
-.pricing-details span::after{
-}
-.row .features li{
+
+/* Removido conjunto de regras vazio .pricing-details span::after */
+
+.row .features li {
   display: flex;
   align-items: center;
   font-size: 15px;
   margin-bottom: 10px;
   list-style: none;
 }
-.features li i{
-  color:rgba(20, 1, 2, 0.8);
+
+.features li i {
+  color: rgba(20, 1, 2, 0.8);
 }
-.features li span{
+
+.features li span {
   margin-left: 10px;
 }
-.wrapper button{
+
+.wrapper button {
   height: 55px;
   width: 100%;
   margin-top: 20px;
@@ -148,10 +172,10 @@ header .slider{
   font-size: 18px;
   cursor: pointer;
   border-radius: 30px;
-  background: 
-  linear-gradient(145deg, rgb(41, 58, 151), rgba(85, 65, 199, 0.8));
+  background: linear-gradient(145deg, rgb(41, 58, 151), rgba(85, 65, 199, 0.8));
   transition: transform 0.3s ease;
 }
-.wrapper button::hover{
-  transform scale(0.98);
+
+.wrapper button:hover {
+  transform: scale(0.98);
 }
