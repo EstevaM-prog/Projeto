@@ -1,15 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const numeroCartaoInput = document.getElementById('numero_cartao');
-    const validadeCartaoInput = document.getElementById('validade_cartao');
-    const codSegurancaInput = document.getElementById('cod_seguranca');
-    const formPagamento = document.querySelector('.form_pagamento form');
+// Declaração de Const
+    document.addEventListener('DOMContentLoaded', () => {
+        const numeroCartaoInput = document.getElementById('numero_cartao');
+        const validadeCartaoInput = document.getElementById('validade_cartao');
+        const codSegurancaInput = document.getElementById('cod_seguranca');
+        const formPagamento = document.querySelector('.form_pagamento form');
 
-    // Função para permitir apenas números
+// Função para permitir apenas números
     function onlyNumbers(event) {
         event.target.value = event.target.value.replace(/\D/g, '');
     }
 
-    // Formatação do número do cartão
+// Formatação do número do cartão
     numeroCartaoInput.addEventListener('input', (event) => {
         let { value } = event.target;
         value = value.replace(/\D/g, ''); // Remove todos os caracteres que não sejam dígitos
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         event.target.value = value;
     });
 
-    // Formatação da validade
+// Formatação da validade
     validadeCartaoInput.addEventListener('input', (event) => {
         let { value } = event.target;
         value = value.replace(/\D/g, ''); // Remove todos os caracteres que não sejam dígitos
@@ -31,13 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
             value = value.slice(0, 5);
         }
         event.target.value = value;
-    });
+        });
 
-    // Restringe o CVV apenas a números
+// Restringe o CVV apenas a números
     codSegurancaInput.addEventListener('input', onlyNumbers);
 
-    // Associa a função de validação ao evento de envio do formulário
+// Associa a função de validação ao evento de envio do formulário
     if (formPagamento) {
         formPagamento.addEventListener('submit', validarFormPagamento);
-    }
-});
+        }
+        });
+
+// Validação do Pagamento

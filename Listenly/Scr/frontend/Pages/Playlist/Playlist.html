@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Global typography (padroniza tamanho de fonte) -->
+    <link rel="stylesheet" href="../Css/global-typography.css">
+
+    <!-- Ícones Bootstrap (biblioteca de ícones SVG) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Ícone da aba do navegador -->
+    <link rel="shortcut icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
+
+    <!-- Estilos principais da página -->
+    <link rel="stylesheet" href="playlist.css">
+
+    <!-- Título exibido na aba do navegador -->
+    <title>Listenly - Web playlist</title>
+        
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <!-- Ícone da Logo -->
+                <img src="/Projeto/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" alt="Logo" class="sidebar-logo">
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="/Projeto/Listenly/Scr/frontend/Pages/Home/home.html" class="active">🏠 Início</a></li>
+                <li><a href="/Projeto/Listenly/Scr/frontend/Pages/Pesquisa/Pesquisa.html">🔍 Buscar</a></li>
+                <li><a href="../Playlist/Playlist.html">📚 Sua Biblioteca</a></li>
+            </ul>
+            
+            <div class="sidebar-separator"></div>
+
+            <!--
+            <ul class="nav-playlists">
+                <li><a href="#">➕ Criar playlist</a></li>
+                <li><a href="#">❤️ Músicas Curtidas</a></li>
+            </ul>
+            -->
+
+            <footer class="sidebar-footer">
+                <a href="#">Cookies</a> | <a href="#">Privacidade</a>
+            </footer>
+        </nav>
+
+        <main class="main-content">
+            
+            <header class="playlist-header">
+                <img src="/Projeto/Listenly/Scr/frontend/Pages/Img/Icons/playlist.jpg" alt="Capa da Playlist" class="playlist-cover">
+                <div class="playlist-info">
+                    <span class="playlist-type">Playlist</span>
+                    <h1>Minha Playlist</h1>
+                    <p class="playlist-details">
+                        Sua seleção exclusiva com os maiores hits.
+                    </p>
+                </div>
+            </header>
+
+            <div class="playlist-controls">
+                <button class="btn btn-play">PLAY</button>
+                <button class="btn btn-shuffle">SHUFFLE</button>
+            </div>
+
+            <div class="track-list">
+                <table class="tracks-table">
+                    <thead>
+                        <tr>
+                            <th class="track-number">#</th>
+                            <th>Título</th>
+                            <th>Artista</th>
+                            <th>Álbum</th>
+                            <th class="track-duration">Tempo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Padrão para aparecer
+                        <tr class="track-item">
+                            <td class="track-number">1</td>
+                            <td class="track-title">Blinding Lights</td>
+                            <td class="track-artist">The Weeknd</td>
+                            <td class="track-album">After Hours</td>
+                            <td class="track-duration">3:20</td>
+                        -->    
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            
+        </main>
+    </div>
+
+</body>
+</html>

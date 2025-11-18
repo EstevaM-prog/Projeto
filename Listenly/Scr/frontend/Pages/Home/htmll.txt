@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Imports Css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
+    <link rel="stylesheet" href="home.css">
+
+
+    <!-- Title Aba -->
+    <title>Listenly - Web player: música para todas pessoas</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+            <!-- Sidebar -->
+            <aside id="sidebar">
+                <div class="nav-logo">
+                    <i class="bi bi-music-note-beamed"></i>
+                    <h2>Listenly</h2>
+                </div>
+            
+                <nav class="nav-links">
+                    <a href="home.html"><i class="bi bi-house-door"></i> Início</a>
+                    <a href="../Pesquisa/Pesquisa.html"><i class="bi bi-search"></i> Buscar</a>
+                    <a href="../Playlist/Playlist.html"><i class="bi bi-music-note-list"></i> Sua Biblioteca</a>
+                </nav>
+            
+                <!-- Campo de Pesquisa -->
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="sidebar-search" placeholder="Buscar músicas, artistas...">
+                    <div class="search-results-dropdown"></div>
+                </div>
+            
+                <div class="nav-footer">
+                    <a href="#">Legal</a>
+                    <a href="#">Privacidade</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </aside>
+
+
+        <main>
+
+            <!-- Ciaxa de Pesquisa-->
+            <header class="search-bar">
+                <i class="bi bi-search"></i>
+
+                <!-- Caixa de Resultado-->
+                <input placeholder="O que voce quer ouvir">
+                <div class="search-results-dropdown"></div>
+            </header>
+
+            <!-- Are de Login / Cadastro -->
+            <header class="log">
+                <a href="../Login/login.html">Login</a>
+                <a href="../Criar_usuarios/criar_usuarios.html">Create cont</a>
+            </header>
+
+            <!-- Grid de Artistas -->
+            <section class="content">
+                <h2>Artistas Populares</h2>
+                <div class="carousel-container">
+                    <button class="carousel-button prev"><i class="bi bi-chevron-left"></i></button>
+                    <div class="artist-grid">
+
+                        <div class="artist-item">
+                            <img src="../Img/Artistas/profile_alee.jpg" alt="Alee">
+                            <h4>Alee</h4>
+                        </div>
+                        <div class="artist-item">
+                            <img src="../Img/Artistas/profile_kyan.jpg" alt="Kyan">
+                            <h4>Kyan</h4>
+                        </div>
+                        <div class="artist-item">
+                            <img src="../Img/Artistas/profile_leal.jpg" alt="Leal">
+                            <h4>Leal</h4>
+                        </div>
+                        <div class="artist-item">
+                            <img src="../Img/Artistas/profile_sabotage.jpg" alt="Sabotage">
+                            <h4>Sabotage</h4>
+                        </div>
+                        <div class="artist-item">
+                            <img src="../Img/Artistas/profile_sd9.jpg" alt="SD9">
+                            <h4>SD9</h4>
+                        </div>
+                        <div class="artist-item">
+                            <img src="../Img/Artistas/profile_teto.jpg" alt="Teto">
+                            <h4>Teto</h4>
+                        </div>
+                        <div class="artist-item">
+                            <img src="../Img/Artistas/profile_travis.jpg" alt="Travis Scott">
+                            <h4>Travis Scott</h4>
+                        </div>
+                        <div class="artist-item">
+                            <img src="../Img/Artistas/profile_tyler.jpg" alt="Tyler">
+                            <h4>Tyler</h4>
+                        </div>
+                        <div class="artist-item">
+                            <img src="../Img/Artistas/profile_veigh.jpg" alt="Veigh">
+                            <h4>Veigh</h4>
+                        </div>
+                        <div class="artist-item">
+                            <img src="../Img/Artistas/profile_yago.jpg" alt="Yago">
+                            <h4>Yago</h4>
+                        </div>
+
+                    </div>
+                    <button class="carousel-button next"><i class="bi bi-chevron-right"></i></button>
+                </div>
+
+                <!-- Grid de Álbuns -->
+                <h2>Álbuns Populares</h2>
+                <div class="carousel-container">
+                    <button class="carousel-button prev"><i class="bi bi-chevron-left"></i></button>
+                    <div class="albums-grid">
+
+                        <div class="album-item">
+                            <img src="../Img/Album/artic_monkeys.jpg" alt="Arctic Monkeys - 505">
+                            <h4>505</h4>
+                        </div>
+                        <div class="album-item">
+                            <img src="../Img/Album/baile.jpg" alt="Baile">
+                            <h4>BAILE</h4>
+                        </div>
+                        <div class="album-item">
+                            <img src="../Img/Album/seu_jorge.jpg" alt="Seu Jorge">
+                            <h4>Mina de Condomínio</h4>
+                        </div>
+                        <div class="album-item">
+                            <img src="../Img/Album/damn.jpg" alt="Kendrick Lamar - Damn">
+                            <h4>PRIDE.</h4>
+                        </div>
+                        <div class="album-item">
+                            <img src="../Img/Album/febem.jpg" alt="Febem">
+                            <h4>No Piscar dos Olhos</h4>
+                        </div>
+                        <div class="album-item">
+                            <img src="../Img/Album/gorilaz.jpg" alt="Gorillaz">
+                            <h4>Feel Good Inc.</h4>
+                        </div>
+                        <div class="album-item">
+                            <img src="../Img/Album/tyler.jpg" alt="Tyler, The Creator">
+                            <h4>See You Again</h4>
+                        </div>
+                        <div class="album-item">
+                            <img src="../Img/Album/natiruts.jpg" alt="Natiruts">
+                            <h4>Sorri, Sou Rei</h4>
+                        </div>
+                        <div class="album-item">
+                            <img src="../Img/Album/racionais.jpg" alt="Racionais MC's">
+                            <h4>Sobrevivendo no Inferno</h4>
+                        </div>
+                        <div class="album-item">
+                            <img src="../Img/Album/racionais_2.jpg" alt="Racionais MC's">
+                            <h4>Nada Como um Dia</h4>
+                        </div>
+
+                    </div>
+                    <button class="carousel-button next"><i class="bi bi-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <!-- Player fixo inferior -->
+            <footer class="player">
+                <div class="player-left">
+                    <img id="player-cover" src="../Img/Album/artic_monkeys.jpg" alt="Capa do Álbum">
+                    <div>
+                        <h4 id="player-title">505</h4>
+                        <p id="player-artist">Arctic Monkeys</p>
+                    </div>
+                </div>
+                <div class="player-center">
+                    <button id="prev"><i class="bi bi-skip-start-fill"></i></button>
+                    <button id="play"><i class="bi bi-play-circle-fill"></i></button>
+                    <button id="next"><i class="bi bi-skip-end-fill"></i></button>
+                    <input type="range" id="progress" value="0">
+                </div>
+                <audio id="audio"></audio>
+            </footer>
+
+            <script src="./Script.js"></script>
+</body>
+
+</html>

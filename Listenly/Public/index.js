@@ -1,81 +1,156 @@
+// Search
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Const ( Name e Foto do artista)
-    const artistsData = [
-        { name: '', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
-        { name: '#', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
-        { name: '#', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
-        { name: '#', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
-        { name: '#', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
-        { name: '#', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
-        { name: '#', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
-        { name: '#', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
-        { name: '#', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
-        { name: '#', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
-        { name: '#', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
-        { name: '#', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
-        { name: '#', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/'},
+    const searchInput = document.querySelector('.search-bar input');
+    const searchButton = document.getElementById('btn-search');
+    const searchBar = document.querySelector('.search-bar');
+    const resultsDropdown = document.querySelector('.search-results-dropdown');
+
+// Array dos Aristas (Nome, Imagem)
+    const artists = [
+        { name: 'Alee', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_alee.jpg' },
+        { name: 'Kyan', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_kyan.jpg' },
+        { name: 'Leal', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_leal.jpg' },
+        { name: 'Sabotage', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_sabotage.jpg' },
+        { name: 'SD9', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_sd9.jpg' },
+        { name: 'Teto', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_teto.jpg' },
+        { name: 'Travis Scott', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_travis.jpg' },
+        { name: 'Tyler', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_tyler.jpg' },
+        { name: 'Veigh', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_veigh.jpg' },
+        { name: 'Yago', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_yago.jpg' }
     ];
 
-    // Const ( Name, Arista, Imagem do album)
-    const albumsData = [
-        { name: 'Arctic Monkeys', artist: 'Arctic Monkeys', image: '/Listenly/Src/frontend/Pages/Img/Album/artic_monkeys.jpg' },
-        { name: 'Baile', artist: 'Fdn', image: '/Listenly/Src/frontend/Pages/Img/Album/baile.jpg' },
-        { name: 'Eu não sou santo não', artist: 'Bezerra da Silva', image: '/Listenly/Src/frontend/Pages/Img/Album/bezerra.jpg' },
-        { name: 'Damn', artist: '#', Image: '/Listenly/Src/frontend/Pages/Img/Album/damn.jpg' },
-        { name: 'Febem', artist: '#', image: '/Listenly/Src/frontend/Pages/Img/Album/febem.jpg' },
-        { name: 'Gorillaz', artist: '#', image: '/Listenly/Src/frontend/Pages/Img/Album/gorilaz.jpg' },
-        { name: 'Kenner', artist: 'Fdn', image: '/Listenly/Src/frontend/Pages/Img/Album/kenner.jpg' },
-        { name: 'Natiruts', artist: '#', image: '/Listenly/Src/frontend/Pages/Img/Album/natiruts.jpg' },
-        { name: 'Racionais', artist: '#', image: '/Listenly/Src/frontend/Pages/Img/Album/racionais.jpg' },
-        { name: 'Seu Jorge America Brasil', artist: 'Seu Jorge', image: '/Listenly/Src/frontend/Pages/Img/Album/seu_jorge.jpg' },
-        { name: 'Trilha Sonora do Gueto', artist: '#', image: '/Listenly/Src/frontend/Pages/Img/Album/tsg.jpg' },
-        { name: 'Perfect', artist: 'Tyler, the Creator', image: '/Listenly/Src/frontend/Pages/Img/Album/tyler.jpg' },
-        { name: 'Yago', artist: 'Yago o próprio', image: '/Listenly/Src/frontend/Pages/Img/Album/yago.jpg' },
-        { name: 'Racionais 2', artist: '#', image: '/Listenly/Src/frontend/Pages/Img/Album/racionais_2.jpg' }
+// Array dos Albums (Nome, Imagem)
+    const albums = [
+        { name: '505', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/artic_monkeys.jpg' },
+        { name: 'BAILE', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/baile.jpg' },
+        { name: 'Mina de Condominio', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/seu_jorge.jpg' },
+        { name: 'PRIDE.', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/damn.jpg' },
+        { name: 'No Piscar dos Olhos', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/febem.jpg' },
+        { name: 'Feel Good Inc.', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/gorilaz.jpg' },
+        { name: 'See You Again', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/tyler.jpg' },
+        { name: 'Sorri, Sou Rei', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/natiruts.jpg' },
+        { name: 'Sobrevivendo no Inferno', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/racionais.jpg' },
+        { name: 'Nada Como um Dia', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/racionais_2.jpg' }
     ];
 
+//Function de Resultado
+    function displayResults(results) {
+        resultsDropdown.innerHTML = '';
+        if (results.length === 0) {
+            resultsDropdown.style.display = 'none';
+            return;
+        }
 
-    // const do grid de imagens (Artistas / Albuns)
-    const artistGrid = document.querySelector('.artist-grid')
-    const albumsGrid = document.querySelector('.albums-grid')
+        results.forEach(result => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'result-item';
+            resultItem.innerHTML = `
+                <img src="${result.image}" alt="${result.name}">
+                <h4>${result.name}</h4>
+            `;
+            resultItem.addEventListener('click', () => {
+                searchInput.value = result.name;
+                resultsDropdown.style.display = 'none';
+            });
+            resultsDropdown.appendChild(resultItem);
+        });
+        resultsDropdown.style.display = 'block';
+    }
 
+// Function de Pesquisa
+    function search() {
+        const query = searchInput.value.toLowerCase();
+        if (query) {
+            const results = [];
 
-    // criando div com forEach
-    artistsData.forEach( artist => {
-        const artistCard = document.createElement('div')
-        artistCard.classList.add('artist-card')
+            artists.forEach(artist => {
+                if (artist.name.toLowerCase().includes(query)) {
+                    results.push({ ...artist, type: 'artist' });
+                }
+            });
 
-        // Inserindo as coias dentro da div
-        artistCard.innerHTML = `
-            <img scr=${artist.image} alt=imagem do ${artist.name}>
-            <div>
-                <h3>${artist.name}</h3>
-                <p>artista</p>
-            </div>
-        `
+            albums.forEach(album => {
+                if (album.name.toLowerCase().includes(query)) {
+                    results.push({ ...album, type: 'album' });
+                }
+            });
 
-        artistGrid.appendChild(artistCard)
-    })
+            displayResults(results);
+        } else {
+            resultsDropdown.style.display = 'none';
+        }
+    }
 
-    // criando div com forEach
-    albumsData.forEach(album => {
-        const albumCard = document.createElement('div')
-        albumCard.classList.add('album-card')
+    searchInput.addEventListener('keyup', search);
 
-        // Inserindo as coias dentro da div
-        albumCard.innerHTML = `
-            <img src="${album.image}" alt="imagem do ${album.name}">
-            <div>
-                <h3>${album.name}</h3>
-                <p>${album.artist}</p>
-            </div>
-        `
+    document.addEventListener('click', (event) => {
+        if (!searchBar.contains(event.target)) {
+            searchInput.value = '';
+            resultsDropdown.style.display = 'none';
+        }
+    });
 
-        albumsGrid.appendChild(albumCard)
-        })
+// Function de Carrosel das imagens (Aristas / Album)
+    function setupCarousel(carouselContainer) {
+        const grid = carouselContainer.querySelector('.artist-grid, .albums-grid');
+        const prevButton = carouselContainer.querySelector('.carousel-button.prev');
+        const nextButton = carouselContainer.querySelector('.carousel-button.next');
+        const scrollAmount = 300;
+        let isScrolling = false;
 
+        if (!grid || !prevButton || !nextButton) return;
 
-})
+        const items = Array.from(grid.children);
+        items.forEach(item => {
+            const clone = item.cloneNode(true);
+            grid.appendChild(clone);
+        });
 
+        function handleScroll() {
+            if (grid.scrollLeft >= grid.scrollWidth / 2) {
+                grid.scrollLeft = 0;
+            }
+        }
 
+        function scroll(direction) {
+            if (isScrolling) return;
+            isScrolling = true;
+
+            const start = grid.scrollLeft;
+            const end = start + direction * scrollAmount;
+
+            grid.scrollTo({
+                left: end,
+                behavior: 'smooth'
+            });
+
+            setTimeout(() => {
+                if (grid.scrollLeft >= grid.scrollWidth / 2) {
+                    grid.scrollLeft = grid.scrollLeft - (grid.scrollWidth / 2);
+                } else if (grid.scrollLeft === 0 && direction === -1) {
+                    grid.scrollLeft = grid.scrollWidth / 2;
+                }
+                isScrolling = false;
+            }, 500);
+        }
+
+        prevButton.addEventListener('click', () => {
+            if (grid.scrollLeft === 0) {
+                grid.scrollLeft = grid.scrollWidth / 2;
+            }
+            grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextButton.addEventListener('click', () => {
+            grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        grid.addEventListener('scroll', () => {
+            if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth) {
+                grid.scrollLeft = 0;
+            }
+        });
+    }
+
+    document.querySelectorAll('.carousel-container').forEach(setupCarousel);
+});
