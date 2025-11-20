@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Fontes e Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
+    <title>Listenly - Suporte</title>
+
+    <link rel="stylesheet" href="suporte.css">
+</head>
+
+<body>
+
+    <div class="background-gradient"></div>
+    <div class="estrelas"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">
+            <i class="fas fa-headset"></i> Listenly Ajuda
+        </a>
+        <a href="/Listenly/Scr/frontend/Pages/Home/home.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Voltar
+        </a>
+    </header>
+
+    <div class="container">
+        
+        <!-- Lado Esquerdo: Informações e FAQ -->
+        <div class="info-section">
+            <div class="page-title">
+                <h1>Como podemos ajudar?</h1>
+                <p>Tem alguma dúvida, sugestão ou encontrou um problema? Nossa equipe está pronta para te ouvir.</p>
+            </div>
+
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-info">
+                        <h4>E-mail</h4>
+                        <span>suporte@listenly.com</span>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-info">
+                        <h4>Escritório</h4>
+                        <span>São Paulo, SP - Brasil</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h3>Perguntas Frequentes</h3>
+                
+                <details>
+                    <summary>Como cancelo minha assinatura?</summary>
+                    <div class="faq-answer">
+                        Vá até as configurações do seu perfil, clique em "Assinatura" e selecione a opção "Cancelar Plano". O acesso Premium continuará até o fim do ciclo atual.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Como envio minha música?</summary>
+                    <div class="faq-answer">
+                        Atualmente, trabalhamos apenas com distribuidoras parceiras. Entre em contato com nosso time de artistas para mais informações.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>O app não está tocando música.</summary>
+                    <div class="faq-answer">
+                        Verifique sua conexão com a internet. Se o problema persistir, tente limpar o cache do navegador ou reinstalar o aplicativo.
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- Lado Direito: Formulário -->
+        <div class="form-section">
+            <h2>Envie uma mensagem</h2>
+            <form id="supportForm">
+                <div class="form-group">
+                    <label for="name">Seu Nome</label>
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="name" class="form-control" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail para contato</label>
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Assunto</label>
+                    <i class="fas fa-tag input-icon"></i>
+                    <select id="subject" class="form-control" required>
+                        <option value="" disabled selected>Selecione o motivo</option>
+                        <option value="problema">Relatar um problema</option>
+                        <option value="cobranca">Dúvida sobre cobrança</option>
+                        <option value="artista">Sou um artista</option>
+                        <option value="sugestao">Sugestão</option>
+                        <option value="sugestao">Esqueci a senha</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" class="form-control" placeholder="Descreva detalhadamente como podemos ajudar..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    Enviar Mensagem <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Botão Flutuante de Tema -->
+    <button id="theme-toggle" style="position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; border: none; background: var(--glass-bg); color: var(--text-primary); cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3); backdrop-filter: blur(5px); z-index: 99;">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Toast de Sucesso -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i> Mensagem enviada com sucesso!
+    </div>
+
+    <script src="suporte.js"></script>
+</body>
+</html>

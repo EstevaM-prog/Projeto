@@ -1,92 +1,143 @@
-// Mstrar senha
-    function mostrarSenha() {
-                    const senha = document.getElementById("senha");
-                    const icone = document.getElementById("iconeSenha");
+// --- Texto dos Termos de Uso ---
+        const termosTexto = `📜 TERMOS DE USO - WEB MUSIC
 
-                    if (senha.type === "password") {
-                        senha.type = "text";
-                        icone.classList.replace("bi-eye", "bi-eye-slash");
-                    } else {
-                        senha.type = "password";
-                        icone.classList.replace("bi-eye-slash", "bi-eye");
-                    }
-                }
+1. ACEITAÇÃO
+Ao se cadastrar, você concorda com estes termos de uso.
 
-                function mostrarSenha2() {
-                    const senha2 = document.getElementById("senha2");
-                    const icone2 = document.getElementById("iconeSenha2");
+2. USO RESPONSÁVEL
+Você concorda em não utilizar a plataforma para fins ilegais ou para distribuir conteúdo protegido por direitos autorais sem permissão.
 
-                    if (senha2.type === "password") {
-                        senha2.type = "text";
-                        icone2.classList.replace("bi-eye", "bi-eye-slash");
-                    } else {
-                        senha2.type = "password";
-                        icone2.classList.replace("bi-eye-slash", "bi-eye");
-                    }
-                }
+3. PRIVACIDADE
+Seus dados (nome, e-mail) são armazenados de forma segura e utilizados apenas para fornecer o serviço.
+
+4. CONTEÚDO
+O usuário é o único responsável pelo conteúdo que interage ou compartilha na plataforma.
+
+5. CONDUTA
+Comportamento abusivo, discurso de ódio ou spam resultarão no banimento imediato da conta.
+
+Clique em OK para confirmar que leu e aceita os termos.`;
+
+        // --- Evento para Mostrar Termos ---
+        // Adiciona o evento ao checkbox 'termos'
+        document.getElementById('termos').addEventListener('change', function() {
+            if (this.checked) {
+                alert(termosTexto);
+            }
+        });
 
 
-// Validar formulário criar_usuarios com regex
-function validarFormCreateUser(event) {
-    event.preventDefault(); // impede envio automático do form
+        // --- Funções Solicitadas ---
 
-    const username = document.getElementById('username').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const senha = document.getElementById('senha').value.trim();
-    const senha2 = document.getElementById('senha2').value.trim();
-    const mensagem = document.getElementById('mensagem');
+        // Função Genérica para Mostrar Senha (agora aceita ID do input e do ícone)
+        function mostrarSenha(inputId, iconId) {
+            const senhaInput = document.getElementById(inputId);
+            const icone = document.getElementById(iconId);
 
-// Regex
-    const regexUsername = /^[a-zA-Z0-9._]{3,20}$/; // 3-20 caracteres, letras, números, . ou _
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const regexSenha = /^(?=.*[a-zA-Z])(?=.*[\d\W_]).{10,}$/; // mínimo 10 caracteres, letra + número ou especial
+            if (senhaInput.type === "password") {
+                senhaInput.type = "text";
+                icone.classList.replace("bi-lock", "bi-unlock");
+                icone.classList.replace("bi-shield-lock", "bi-shield-check"); // Caso use ícone diferente na senha 2
+            } else {
+                senhaInput.type = "password";
+                icone.classList.replace("bi-unlock", "bi-lock");
+                icone.classList.replace("bi-shield-check", "bi-shield-lock");
+            }
+        }
 
-// Função para exibir erro
-    function exibirErro(texto) {
-        alert(texto);
-        mensagem.textContent = texto;
-        mensagem.className = "erro";
-    }
+        // Validar Formulário de Cadastro
+        function validarFormCadastro(event) {
+            event.preventDefault(); // evita envio do formulário
 
-    // Valida campos obrigatórios
-    if (!username || !email || !senha || !senha2) {
-        exibirErro("❌ Por favor, preencha todos os campos.");
-        return false;
-    }
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const senha = document.getElementById('senha').value.trim();
+            const senha2 = document.getElementById('senha2').value.trim();
+            const termos = document.getElementById('termos').checked;
+            const mensagem = document.getElementById('mensagem');
 
-    // Valida username
-    if (!regexUsername.test(username)) {
-        exibirErro("❌ Insira um nome de usuário válido (3-20 caracteres, letras, números, . ou _).");
-        return false;
-    }
+            // Regex
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+            const regexSenha = /^(?=.*[a-zA-Z])(?=.*[\d\W_]).{10,}$/; 
 
-    // Valida email
-    if (!regexEmail.test(email)) {
-        exibirErro("❌ Insira um e-mail válido.");
-        return false;
-    }
+            function exibirErro(texto){
+                mensagem.textContent = texto;
+                mensagem.className = "erro";
+            }
 
-    // Valida senha
-    if (!regexSenha.test(senha)) {
-        exibirErro("❌ A senha deve ter pelo menos 10 caracteres, incluindo letras e números ou caractere especial.");
-        return false;
-    }
+            // Validações Básicas
+            if (username === "" || email === "" || senha === "" || senha2 === "") {
+                exibirErro("❌ Por favor, preencha todos os campos.");
+                return false;
+            }
 
-    // Confirma senha
-    if (senha !== senha2) {
-        exibirErro("❌ As senhas não coincidem.");
-        return false;
-    }
+            if (!termos) {
+                exibirErro("❌ Você precisa aceitar os termos de uso.");
+                return false;
+            }
 
-    // Sucesso
-    const sucessoTexto = "✅ Cadastro válido!";
-    alert(sucessoTexto);
+            if (!regexEmail.test(email)){
+                exibirErro("❌ Insira um e-mail válido.");
+                return false;
+            }
 
-    mensagem.textContent = sucessoTexto;
-    mensagem.className = "sucesso";
+            if (!regexSenha.test(senha)){
+                exibirErro("❌ A senha deve ter pelo menos 10 caracteres, com letras e números.");
+                return false;
+            }
 
-    // redireciona para a página home após o usuário clicar em "OK"
-    window.location.replace("/Listenly/Scr/frontend/Pages/Home/home.html");
+            // Validação: Senha 1 igual a Senha 2
+            if (senha !== senha2) {
+                exibirErro("❌ As senhas não coincidem.");
+                return false;
+            }
 
-    return true;
-    }
+            // Sucesso
+            const sucessoTexto = "✅ Cadastro realizado! Redirecionando...";
+            mensagem.textContent = sucessoTexto;
+            mensagem.className = "sucesso";
+            
+            // Animação visual no botão
+            const btn = document.querySelector('.login-button');
+            btn.innerHTML = "Criando conta...";
+            btn.style.opacity = "0.7";
+
+            // Salvar dados básicos (Simulação)
+            localStorage.setItem('savedEmail', email); // Já deixa salvo para o login
+
+            // Redirecionamento
+            setTimeout(() => {
+                window.location.href = "/Listenly/Scr/frontend/Pages/Home/home.html"; // Volta para o login após cadastro
+            }, 2000);
+
+            return true;
+        }
+
+        // Inicialização
+        window.addEventListener('DOMContentLoaded', () => {
+            // Recuperar tema salvo
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('theme-toggle').textContent = '☀️';
+            }
+        });
+        
+        // Listeners
+        document.getElementById('cadastroForm').addEventListener('submit', validarFormCadastro);
+
+        // Dark Mode Toggle (Igual ao Login)
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        });
