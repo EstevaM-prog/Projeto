@@ -545,3 +545,17 @@ volumeIcon.addEventListener('click', () => {
         }
     }
 });
+
+
+const sidebar = document.getElementById('sidebar');
+const collapseBtn = document.getElementById('sidebar-collapse-btn');
+const collapseIcon = collapseBtn.querySelector('i');
+
+collapseBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('collapsed');
+    if (sidebar.classList.contains('collapsed')) {
+        collapseIcon.classList.replace('fa-chevron-left', 'fa-chevron-right');
+    } else {
+        collapseIcon.classList.replace('fa-chevron-right', 'fa-chevron-left');
+    }
+});
