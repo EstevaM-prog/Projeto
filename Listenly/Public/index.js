@@ -1,4 +1,6 @@
 // Search
+localStorage.clear()
+
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('.search-bar input');
     const searchButton = document.getElementById('btn-search');

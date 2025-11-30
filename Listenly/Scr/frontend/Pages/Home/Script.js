@@ -143,59 +143,59 @@ const playlist = [
         file: "./Audio/505.mp3",
         cover: "../Img/Album/artic_monkeys.jpg"
     },
-    { 
-        title: 'BAILE', 
+    {
+        title: 'BAILE',
         artist: 'Baile', // Extraído do alt="Baile"
-        file: './Audio/BAILE.mp3', 
-        cover: '../Img/Album/baile.jpg' 
+        file: './Audio/BAILE.mp3',
+        cover: '../Img/Album/baile.jpg'
     },
-    { 
-        title: 'Mina de Condomínio', 
-        artist: 'Seu Jorge', 
-        file: './Audio/Mina de Condomínio.mp3', 
-        cover: '../Img/Album/seu_jorge.jpg' 
+    {
+        title: 'Mina de Condomínio',
+        artist: 'Seu Jorge',
+        file: './Audio/Mina de Condomínio.mp3',
+        cover: '../Img/Album/seu_jorge.jpg'
     },
-    { 
-        title: 'PRIDE.', 
+    {
+        title: 'PRIDE.',
         artist: 'Kendrick Lamar', // Extraído do alt="Kendrick Lamar - Damn"
-        file: './Audio/PRIDE..mp3', 
-        cover: '../Img/Album/damn.jpg' 
+        file: './Audio/PRIDE..mp3',
+        cover: '../Img/Album/damn.jpg'
     },
-    { 
-        title: 'No Piscar dos Olhos', 
-        artist: 'Febem', 
-        file: './Audio/No Piscar dos Olhos.mp3', 
-        cover: '../Img/Album/febem.jpg' 
+    {
+        title: 'No Piscar dos Olhos',
+        artist: 'Febem',
+        file: './Audio/No Piscar dos Olhos.mp3',
+        cover: '../Img/Album/febem.jpg'
     },
-    { 
-        title: 'Feel Good Inc.', 
-        artist: 'Gorillaz', 
-        file: './Audio/Feel Good Inc..mp3', 
-        cover: '../Img/Album/gorilaz.jpg' 
+    {
+        title: 'Feel Good Inc.',
+        artist: 'Gorillaz',
+        file: './Audio/Feel Good Inc..mp3',
+        cover: '../Img/Album/gorilaz.jpg'
     },
-    { 
-        title: 'See You Again', 
-        artist: 'Tyler, The Creator', 
-        file: './Audio/See You Again.mp3', 
-        cover: '../Img/Album/tyler.jpg' 
+    {
+        title: 'See You Again',
+        artist: 'Tyler, The Creator',
+        file: './Audio/See You Again.mp3',
+        cover: '../Img/Album/tyler.jpg'
     },
-    { 
-        title: 'Sorri, Sou Rei', 
-        artist: 'Natiruts', 
-        file: './Audio/Sorri, Sou Rei.mp3', 
-        cover: '../Img/Album/natiruts.jpg' 
+    {
+        title: 'Sorri, Sou Rei',
+        artist: 'Natiruts',
+        file: './Audio/Sorri, Sou Rei.mp3',
+        cover: '../Img/Album/natiruts.jpg'
     },
-    { 
-        title: 'Sobrevivendo no Inferno', 
-        artist: "Racionais MC's", 
-        file: './Audio/Sobrevivendo no Inferno.mp3', 
-        cover: '../Img/Album/racionais.jpg' 
+    {
+        title: 'Sobrevivendo no Inferno',
+        artist: "Racionais MC's",
+        file: './Audio/Sobrevivendo no Inferno.mp3',
+        cover: '../Img/Album/racionais.jpg'
     },
-    { 
-        title: 'Nada Como um Dia', 
-        artist: "Racionais MC's", 
-        file: './Audio/Nada Como um Dia.mp3', 
-        cover: '../Img/Album/racionais_2.jpg' 
+    {
+        title: 'Nada Como um Dia',
+        artist: "Racionais MC's",
+        file: './Audio/Nada Como um Dia.mp3',
+        cover: '../Img/Album/racionais_2.jpg'
     }
 ];
 
@@ -237,59 +237,59 @@ playlist.push(
         file: "./Audio/505.mp3",
         cover: "../Img/Album/artic_monkeys.jpg"
     },
-    { 
-        title: 'BAILE', 
+    {
+        title: 'BAILE',
         artist: 'Baile', // Extraído do alt="Baile"
-        file: './Audio/BAILE.mp3', 
-        cover: '../Img/Album/baile.jpg' 
+        file: './Audio/BAILE.mp3',
+        cover: '../Img/Album/baile.jpg'
     },
-    { 
-        title: 'Mina de Condomínio', 
-        artist: 'Seu Jorge', 
-        file: './Audio/Mina de Condomínio.mp3', 
-        cover: '../Img/Album/seu_jorge.jpg' 
+    {
+        title: 'Mina de Condomínio',
+        artist: 'Seu Jorge',
+        file: './Audio/Mina de Condomínio.mp3',
+        cover: '../Img/Album/seu_jorge.jpg'
     },
-    { 
-        title: 'PRIDE.', 
+    {
+        title: 'PRIDE.',
         artist: 'Kendrick Lamar', // Extraído do alt="Kendrick Lamar - Damn"
-        file: './Audio/PRIDE..mp3', 
-        cover: '../Img/Album/damn.jpg' 
+        file: './Audio/PRIDE..mp3',
+        cover: '../Img/Album/damn.jpg'
     },
-    { 
-        title: 'No Piscar dos Olhos', 
-        artist: 'Febem', 
-        file: './Audio/No Piscar dos Olhos.mp3', 
-        cover: '../Img/Album/febem.jpg' 
+    {
+        title: 'No Piscar dos Olhos',
+        artist: 'Febem',
+        file: './Audio/No Piscar dos Olhos.mp3',
+        cover: '../Img/Album/febem.jpg'
     },
-    { 
-        title: 'Feel Good Inc.', 
-        artist: 'Gorillaz', 
-        file: './Audio/Feel Good Inc..mp3', 
-        cover: '../Img/Album/gorilaz.jpg' 
+    {
+        title: 'Feel Good Inc.',
+        artist: 'Gorillaz',
+        file: './Audio/Feel Good Inc..mp3',
+        cover: '../Img/Album/gorilaz.jpg'
     },
-    { 
-        title: 'See You Again', 
-        artist: 'Tyler, The Creator', 
-        file: './Audio/See You Again.mp3', 
-        cover: '../Img/Album/tyler.jpg' 
+    {
+        title: 'See You Again',
+        artist: 'Tyler, The Creator',
+        file: './Audio/See You Again.mp3',
+        cover: '../Img/Album/tyler.jpg'
     },
-    { 
-        title: 'Sorri, Sou Rei', 
-        artist: 'Natiruts', 
-        file: './Audio/Sorri, Sou Rei.mp3', 
-        cover: '../Img/Album/natiruts.jpg' 
+    {
+        title: 'Sorri, Sou Rei',
+        artist: 'Natiruts',
+        file: './Audio/Sorri, Sou Rei.mp3',
+        cover: '../Img/Album/natiruts.jpg'
     },
-    { 
-        title: 'Sobrevivendo no Inferno', 
-        artist: "Racionais MC's", 
-        file: './Audio/Sobrevivendo no Inferno.mp3', 
-        cover: '../Img/Album/racionais.jpg' 
+    {
+        title: 'Sobrevivendo no Inferno',
+        artist: "Racionais MC's",
+        file: './Audio/Sobrevivendo no Inferno.mp3',
+        cover: '../Img/Album/racionais.jpg'
     },
-    { 
-        title: 'Nada Como um Dia', 
-        artist: "Racionais MC's", 
-        file: './Audio/Nada Como um Dia.mp3', 
-        cover: '../Img/Album/racionais_2.jpg' 
+    {
+        title: 'Nada Como um Dia',
+        artist: "Racionais MC's",
+        file: './Audio/Nada Como um Dia.mp3',
+        cover: '../Img/Album/racionais_2.jpg'
     }
 );
 
@@ -403,29 +403,39 @@ updatePlayButton();
 // USUÁRIO
 // ======================================================
 async function mostrarNomeUsuario() {
-  const elementoMensagem = document.getElementById("mensagem");
-  if (!elementoMensagem) {
-    console.error("Elemento com id 'mensagem' não encontrado.");
-    return;
-  }
-
-  try {
-    const resposta = await fetch("/api/user", { method: "GET" });
-
-    if (!resposta.ok) {
-      throw new Error(`Erro HTTP: ${resposta.status}`);
+    const elementoMensagem = document.getElementById("mensagem");
+    if (!elementoMensagem) {
+        console.error("Elemento com id 'mensagem' não encontrado.");
+        return;
     }
 
-    const userData = await resposta.json();
+    const userId = localStorage.getItem("user_id");
+    const apiRoute = `http://localhost:5000/v1/users/${userId}`;
 
-    const nomeUsuario = userData?.username?.trim();
-    elementoMensagem.textContent = nomeUsuario
-      ? `Olá, ${nomeUsuario}!`
-      : "Olá, visitante!";
-  } catch (erro) {
-    console.error("Erro ao buscar usuário:", erro);
-    elementoMensagem.textContent = "Erro ao carregar usuário 😢";
-  }
+    try {
+        const resposta = await fetch(apiRoute, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!resposta.ok) {
+            throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        const userData = await resposta.json();
+
+        console.log(userData)
+
+        const nome = userData?.nome?.trim();
+        elementoMensagem.textContent = nome
+            ? `Olá, ${nome}!`
+            : "Olá, visitante!";
+    } catch (erro) {
+        console.error("Erro ao buscar usuário:", erro);
+        elementoMensagem.textContent = "Erro ao carregar usuário 😢";
+    }
 }
 
 document.addEventListener("DOMContentLoaded", mostrarNomeUsuario);

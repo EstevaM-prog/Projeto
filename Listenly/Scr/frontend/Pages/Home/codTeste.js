@@ -149,13 +149,22 @@ document.addEventListener("DOMContentLoaded", () => {
 // CÓDIGO FORA DO DOMContentLoaded (ESCOPO GLOBAL)
 // =============================================================
 
+
+    const userId = localStorage.getItem("id");
+    console.log(userId)
+    const apiRoute = `http://localhost:5000/v1/users/login/${userId}`;
 // Simula um user logado By: Estevam
 async function mostrarNomeUsuario() {
     const elementoMensagem = document.getElementById("mensagem");
 
     try {
         // Faz a requisição ao backend para obter dados do usuário
-        const resposta = await fetch("/api/user");
+        const resposta = await fetch(apiRoute, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
         const userData = await resposta.json();
 
         if (userData && userData.username) {

@@ -11,6 +11,8 @@
         <!-- Title Aba-->
         <title>Listenly - Register</title>
         
+        <script src="criar_usuarios.js" defer></script>
+
         <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
     </head>
 
@@ -72,13 +74,12 @@
 
                 <!-- Button de Enviar-->
                 <div class="Enviar">
-                    <button type="submit">TO ENTER</button>
+                    <button type="submit" id="enviar">TO ENTER</button>
                 </div>
             </form>
         </div>
         
         <script src="/Listenly/Scr/backend/Js/create_user.js"></script>
-        <script>
             document.getElementById('form_register').addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const username = document.getElementById('email').value;
@@ -108,7 +109,7 @@
                     alert('Erro ao registrar: ' + err.message);
                 }
                 });
-        </script>
+        </script> -->
     
     </body>
     </html>

@@ -78,10 +78,6 @@ function validarFormCreateUser(event) {
         return false;
     }
 
-    // Sucesso
-    const sucessoTexto = "✅ Cadastro válido!";
-    alert(sucessoTexto);
-
     mensagem.textContent = sucessoTexto;
     mensagem.className = "sucesso";
 
