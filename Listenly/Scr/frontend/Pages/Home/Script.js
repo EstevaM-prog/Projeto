@@ -20,29 +20,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // ARRAYS DE DADOS: ARTISTAS E ÁLBUNS
     // =====================================
     const artists = [
-        { name: 'Alee', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_alee.jpg' },
-        { name: 'Kyan', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_kyan.jpg' },
-        { name: 'Leal', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_leal.jpg' },
-        { name: 'Sabotage', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_sabotage.jpg' },
-        { name: 'SD9', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_sd9.jpg' },
-        { name: 'Teto', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_teto.jpg' },
-        { name: 'Travis Scott', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_travis.jpg' },
-        { name: 'Tyler', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_tyler.jpg' },
-        { name: 'Veigh', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_veigh.jpg' },
-        { name: 'Yago', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_yago.jpg' }
+        { name: 'Alee', image: '../Img/Artistas/profile_alee.jpg' },
+        { name: 'Kyan', image: ',,/Img/Artistas/profile_kyan.jpg' },
+        { name: 'Leal', image: '../Img/Artistas/profile_leal.jpg' },
+        { name: 'Sabotage', image: '../Img/Artistas/profile_sabotage.jpg' },
+        { name: 'SD9', image: '../Img/Artistas/profile_sd9.jpg' },
+        { name: 'Teto', image: '../Img/Artistas/profile_teto.jpg' },
+        { name: 'Travis Scott', image: '../Img/Artistas/profile_travis.jpg' },
+        { name: 'Tyler', image: '../Img/Artistas/profile_tyler.jpg' },
+        { name: 'Veigh', image: '../Img/Artistas/profile_veigh.jpg' },
+        { name: 'Yago', image: '../Img/Artistas/profile_yago.jpg' }
     ];
 
     const albums = [
-        { name: '505', image: '/Listenly/Scr/frontend/Pages/Img/Album/artic_monkeys.jpg' },
-        { name: 'BAILE', image: '/Listenly/Scr/frontend/Pages/Img/Album/baile.jpg' },
-        { name: 'Mina de Condominio', image: '/Listenly/Scr/frontend/Pages/Img/Album/seu_jorge.jpg' },
-        { name: 'PRIDE.', image: '/Listenly/Scr/frontend/Pages/Img/Album/damn.jpg' },
-        { name: 'No Piscar dos Olhos', image: '/Listenly/Scr/frontend/Pages/Img/Album/febem.jpg' },
-        { name: 'Feel Good Inc.', image: '/Listenly/Scr/frontend/Pages/Img/Album/gorilaz.jpg' },
-        { name: 'See You Again', image: '/Listenly/Scr/frontend/Pages/Img/Album/tyler.jpg' },
-        { name: 'Sorri, Sou Rei', image: '/Listenly/Scr/frontend/Pages/Img/Album/natiruts.jpg' },
-        { name: 'Sobrevivendo no Inferno', image: '/Listenly/Scr/frontend/Pages/Img/Album/racionais.jpg' },
-        { name: 'Nada Como um Dia', image: '/Listenly/Scr/frontend/Pages/Img/Album/racionais_2.jpg' }
+        { name: '505', image: '../Img/Album/artic_monkeys.jpg' },
+        { name: 'BAILE', image: '../Img/Album/baile.jpg' },
+        { name: 'Mina de Condominio', image: '../Img/Album/seu_jorge.jpg' },
+        { name: 'PRIDE.', image: '../Img/Album/damn.jpg' },
+        { name: 'No Piscar dos Olhos', image: '../Img/Album/febem.jpg' },
+        { name: 'Feel Good Inc.', image: '../Img/Album/gorilaz.jpg' },
+        { name: 'See You Again', image: '../Img/Album/tyler.jpg' },
+        { name: 'Sorri, Sou Rei', image: '../Img/Album/natiruts.jpg' },
+        { name: 'Sobrevivendo no Inferno', image: '../Img/Album/racionais.jpg' },
+        { name: 'Nada Como um Dia', image: '../Img/Album/racionais_2.jpg' }
     ];
 
     // =====================================
