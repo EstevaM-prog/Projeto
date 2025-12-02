@@ -9,30 +9,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Array dos Aristas (Nome, Imagem)
     const artists = [
-        { name: 'Alee', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_alee.jpg' },
-        { name: 'Kyan', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_kyan.jpg' },
-        { name: 'Leal', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_leal.jpg' },
-        { name: 'Sabotage', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_sabotage.jpg' },
-        { name: 'SD9', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_sd9.jpg' },
-        { name: 'Teto', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_teto.jpg' },
-        { name: 'Travis Scott', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_travis.jpg' },
-        { name: 'Tyler', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_tyler.jpg' },
-        { name: 'Veigh', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_veigh.jpg' },
-        { name: 'Yago', image: '/Listenly/Scr/frontend/Pages/Img/Artistas/profile_yago.jpg' }
+        { name: 'Alee', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_alee.jpg' },
+        { name: 'Kyan', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_kyan.jpg' },
+        { name: 'Leal', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_leal.jpg' },
+        { name: 'Sabotage', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_sabotage.jpg' },
+        { name: 'SD9', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_sd9.jpg' },
+        { name: 'Teto', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_teto.jpg' },
+        { name: 'Travis Scott', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_travis.jpg' },
+        { name: 'Tyler', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_tyler.jpg' },
+        { name: 'Veigh', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_veigh.jpg' },
+        { name: 'Yago', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_yago.jpg' }
     ];
 
 // Array dos Albums (Nome, Imagem)
     const albums = [
-        { name: '505', image: '/Listenly/Scr/frontend/Pages/Img/Album/artic_monkeys.jpg' },
-        { name: 'BAILE', image: '/Listenly/Scr/frontend/Pages/Img/Album/baile.jpg' },
-        { name: 'Mina de Condominio', image: '/Listenly/Scr/frontend/Pages/Img/Album/seu_jorge.jpg' },
-        { name: 'PRIDE.', image: '/Listenly/Scr/frontend/Pages/Img/Album/damn.jpg' },
-        { name: 'No Piscar dos Olhos', image: '/Listenly/Scr/frontend/Pages/Img/Album/febem.jpg' },
-        { name: 'Feel Good Inc.', image: '/Listenly/Scr/frontend/Pages/Img/Album/gorilaz.jpg' },
-        { name: 'See You Again', image: '/Listenly/Scr/frontend/Pages/Img/Album/tyler.jpg' },
-        { name: 'Sorri, Sou Rei', image: '/Listenly/Scr/frontend/Pages/Img/Album/natiruts.jpg' },
-        { name: 'Sobrevivendo no Inferno', image: '/Listenly/Scr/frontend/Pages/Img/Album/racionais.jpg' },
-        { name: 'Nada Como um Dia', image: '/Listenly/Scr/frontend/Pages/Img/Album/racionais_2.jpg' }
+        { name: '505', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/artic_monkeys.jpg' },
+        { name: 'BAILE', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/baile.jpg' },
+        { name: 'Mina de Condominio', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/seu_jorge.jpg' },
+        { name: 'PRIDE.', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/damn.jpg' },
+        { name: 'No Piscar dos Olhos', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/febem.jpg' },
+        { name: 'Feel Good Inc.', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/gorilaz.jpg' },
+        { name: 'See You Again', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/tyler.jpg' },
+        { name: 'Sorri, Sou Rei', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/natiruts.jpg' },
+        { name: 'Sobrevivendo no Inferno', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/racionais.jpg' },
+        { name: 'Nada Como um Dia', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/racionais_2.jpg' }
     ];
 
 //Function de Resultado

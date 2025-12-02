@@ -1,14 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Fontes e Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
+
+    <title>Listenly - Minha Playlist</title>
+
+    <link rel="stylesheet" href="playlist.css">
+
 </head>
 
 <body>
-   Playlist teste
-</body>
 
+
+    <!-- Elementos de Fundo -->
+    <div class="background-gradient"></div>
+    <div class="estrelas"></div>
+
+    <div class="app-layout">
+        
+        <!-- SIDEBAR -->
+        <nav class="sidebar" id="sidebar">
+            
+            <button id="sidebar-collapse-btn" class="collapse-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <i class="fas fa-music logo-icon"></i>
+                    <span class="logo-text fade-in">Listenly</span>
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li>
+                    <a href="../Home/home.html" title="Início">
+                        <i class="fas fa-home"></i> 
+                        <span class="link-text fade-in">Início</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Listenly/Scr/frontend/Pages/Pesquisa/Pesquisa.html" title="Buscar">
+                        <i class="fas fa-search"></i> 
+                        <span class="link-text fade-in">Buscar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../Playlist/Playlist.html" class="active" title="Sua Biblioteca">
+                        <i class="fas fa-book"></i> 
+                        <span class="link-text fade-in">Sua Biblioteca</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-separator"></div>
+
+            <ul class="nav-playlists">
+                <li>
+                    <a href="#" id="create-playlist-btn" title="Criar playlist">
+                        <div class="playlist-icon-box"><i class="fas fa-plus"></i></div> 
+                        <span class="link-text fade-in">Criar playlist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="liked-songs-btn" title="Músicas Curtidas">
+                        <div class="playlist-icon-box heart"><i class="fas fa-heart"></i></div> 
+                        <span class="link-text fade-in">Músicas Curtidas</span>
+                    </a>
+                </li>
+            </ul>
+
+            <footer class="sidebar-footer">
+                <div class="footer-links fade-in">
+                    <a href="../Cookies/cookies.html">Cookies</a> • <a href="../Privacidade/privacidade.html">Privacidade</a>
+                </div>
+                
+                <button id="theme-toggle-sidebar" class="theme-btn-sidebar" title="Alternar Tema">
+                    <i class="fas fa-moon"></i>
+                    <span class="link-text fade-in">Modo Escuro</span>
+                </button>
+            </footer>
+        </nav>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+            
+            <header class="playlist-header">
+                <div class="cover-container">
+                    <img src="../Img/Icons/playlist.jpg" alt="Capa da Playlist" class="playlist-cover">
+                    <div class="cover-shadow"></div>
+                </div>
+                <div class="playlist-info">
+                    <span class="playlist-type">Playlist Pública</span>
+                    <h1 id="playlist-title">Vibe do Momento</h1>
+                    <p class="playlist-description">
+                        Sua seleção exclusiva com os maiores hits para curtir o dia.
+                    </p>
+                    <div class="playlist-meta">
+                        <div class="creator-info">
+                            <img src="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" alt="" class="creator-avatar" onerror="this.style.display='none'">
+                            <span class="creator-name">Listenly Oficial</span>
+                        </div>
+                        <span class="dot">•</span>
+                        <span>50 músicas, 2h 30min</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-gradient"></div>
+
+            <div class="playlist-controls">
+                <button class="btn-play"><i class="fas fa-play"></i></button>
+                <button class="btn-icon" title="Salvar na Biblioteca"><i class="far fa-heart"></i></button>
+                
+                <!-- Botão com Dropdown -->
+                <div class="options-wrapper">
+                    <button class="btn-icon" id="more-options-btn" title="Mais opções">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                    
+                    <!-- Dropdown Menu
+                    <div class="dropdown-menu" id="options-dropdown">
+                        <button class="dropdown-item"><i class="fas fa-list-ul"></i> Adicionar à fila</button>
+                        <button class="dropdown-item"><i class="fas fa-user-circle"></i> Ir para o artista</button>
+                        <button class="dropdown-item"><i class="fas fa-share-alt"></i> Compartilhar</button>
+                        <div style="border-top: 1px solid var(--border-color); margin: 4px 0;"></div>
+                        <button class="dropdown-item"><i class="fas fa-folder-plus"></i> Salvar em playlist</button>
+                    </div>
+                    -->
+                </div>
+            </div>
+
+            <div class="track-list">
+                <div class="table-header">
+                    <div class="col-number">#</div>
+                    <div class="col-title">Título</div>
+                    <div class="col-album">Álbum</div>
+                    <div class="col-date">Adicionado em</div>
+                    <div class="col-duration"><i class="far fa-clock"></i></div>
+                </div>
+                
+                <div class="tracks-container">
+                    
+                    <div class="track-item">
+                        <div class="col-number">
+                            <span class="num">1</span>
+                            <i class="fas fa-play play-icon"></i>
+                        </div>
+                        <div class="col-title">
+                            <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=100&q=80" alt="Album">
+                            <div class="title-text">
+                                <span class="name">Blinding Lights</span>
+                                <span class="artist">The Weeknd</span>
+                            </div>
+                        </div>
+                        <div class="col-album">After Hours</div>
+                        <div class="col-date">Há 2 dias</div>
+                        <div class="col-duration">3:20</div>
+                    </div>
+
+                    <div class="track-item">
+                        <div class="col-number">
+                            <span class="num">2</span>
+                            <i class="fas fa-play play-icon"></i>
+                        </div>
+                        <div class="col-title">
+                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=100&q=80" alt="Album">
+                            <div class="title-text">
+                                <span class="name">Levitating</span>
+                                <span class="artist">Dua Lipa</span>
+                            </div>
+                        </div>
+                        <div class="col-album">Future Nostalgia</div>
+                        <div class="col-date">Há 1 semana</div>
+                        <div class="col-duration">3:23</div>
+                    </div>
+
+                    <div class="track-item active-track">
+                        <div class="col-number">
+                            <span class="num" style="display:none">3</span>
+                            <img src="https://i.gifer.com/YdBO.gif" alt="Equalizer" width="15" class="equalizer">
+                        </div>
+                        <div class="col-title">
+                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=100&q=80" alt="Album">
+                            <div class="title-text">
+                                <span class="name">As It Was</span>
+                                <span class="artist">Harry Styles</span>
+                            </div>
+                        </div>
+                        <div class="col-album">Harry's House</div>
+                        <div class="col-date">Ontem</div>
+                        <div class="col-duration">2:47</div>
+                    </div>
+
+                    <div class="track-item">
+                        <div class="col-number">
+                            <span class="num">4</span>
+                            <i class="fas fa-play play-icon"></i>
+                        </div>
+                        <div class="col-title">
+                            <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=100&q=80" alt="Album">
+                            <div class="title-text">
+                                <span class="name">Stay</span>
+                                <span class="artist">The Kid LAROI, Justin Bieber</span>
+                            </div>
+                        </div>
+                        <div class="col-album">F*CK LOVE 3</div>
+                        <div class="col-date">Há 3 semanas</div>
+                        <div class="col-duration">2:21</div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <script src="playlist.js"></script>
+</body>
 </html>

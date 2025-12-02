@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ARRAYS DE DADOS: ARTISTAS E ÁLBUNS
     // =====================================
     const artists = [
+<<<<<<< HEAD
         { name: 'Alee', image: '../Img/Artistas/profile_alee.jpg' },
         { name: 'Kyan', image: ',,/Img/Artistas/profile_kyan.jpg' },
         { name: 'Leal', image: '../Img/Artistas/profile_leal.jpg' },
@@ -43,11 +44,37 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Sorri, Sou Rei', image: '../Img/Album/natiruts.jpg' },
         { name: 'Sobrevivendo no Inferno', image: '../Img/Album/racionais.jpg' },
         { name: 'Nada Como um Dia', image: '../Img/Album/racionais_2.jpg' }
+=======
+        { name: 'Alee', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_alee.jpg' },
+        { name: 'Kyan', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_kyan.jpg' },
+        { name: 'Leal', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_leal.jpg' },
+        { name: 'Sabotage', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_sabotage.jpg' },
+        { name: 'SD9', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_sd9.jpg' },
+        { name: 'Teto', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_teto.jpg' },
+        { name: 'Travis Scott', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_travis.jpg' },
+        { name: 'Tyler', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_tyler.jpg' },
+        { name: 'Veigh', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_veigh.jpg' },
+        { name: 'Yago', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Artistas/profile_yago.jpg' }
+    ];
+
+    const albums = [
+        { name: '505', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/artic_monkeys.jpg' },
+        { name: 'BAILE', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/baile.jpg' },
+        { name: 'Mina de Condominio', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/seu_jorge.jpg' },
+        { name: 'PRIDE.', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/damn.jpg' },
+        { name: 'No Piscar dos Olhos', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/febem.jpg' },
+        { name: 'Feel Good Inc.', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/gorilaz.jpg' },
+        { name: 'See You Again', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/tyler.jpg' },
+        { name: 'Sorri, Sou Rei', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/natiruts.jpg' },
+        { name: 'Sobrevivendo no Inferno', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/racionais.jpg' },
+        { name: 'Nada Como um Dia', image: '/Projeto/Listenly/Scr/frontend/Pages/Img/Album/racionais_2.jpg' }
+>>>>>>> main-2.0
     ];
 
     // =====================================
     // FUNÇÃO: MOSTRAR RESULTADOS DE PESQUISA
     // =====================================
+
     function displayResults(results) {
         resultsDropdown.innerHTML = '';
         if (results.length === 0) {
@@ -68,7 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
             resultsDropdown.appendChild(resultItem);
         });
         resultsDropdown.style.display = 'block';
-    }
+
+    };
 
     // =====================================
     // FUNÇÃO: PESQUISAR ARTISTAS E ÁLBUNS
@@ -90,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
             displayResults(results);
         } else {
             resultsDropdown.style.display = 'none';
-        }
-    }
+        }  
+    };
 
     searchInput.addEventListener('keyup', search);
     document.addEventListener('click', (event) => {
@@ -295,7 +323,7 @@ playlist.push(
 
 
 // =====================================
-// FUNÇÃO: ALTERAR ÍCONE DO BOTÃO
+// FUNÇÃO: ALTERAR ÍCONE DO BOTÃO DE PLAY/PAUSE
 // =====================================
 function updatePlayButton() {
     playBtn.innerHTML = isPlaying
@@ -304,7 +332,7 @@ function updatePlayButton() {
 }
 
 // =====================================
-// FUNÇÃO: REINICIAR ESTADO DO BOTÃO
+// FUNÇÃO: REINICIAR ESTADO DO BOTÃO PLAY/PAUSE
 // =====================================
 function resetPlayButton() {
     isPlaying = false;

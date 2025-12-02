@@ -9,8 +9,6 @@
         <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
         <link rel="stylesheet" href="login.css">
         
-        <script src="login.js" defer></script>
-
         <!-- Title Aba-->
         <title>Listenly - Login</title>
 
@@ -34,17 +32,20 @@
                     </ul>
                 </nav>
             </div>
-        </div>
 
-        <!-- Formulario -->
-        <div class="form_login">
-
-            <h1>Login</h1>
-
-            <form action="#" method="POST" onsubmit="return validarFormLogin(event)">
-                <div class="box_form">
-                    <input type="text" id="email" name="email" placeholder="Your email" required>
-                    <i class="bi bi-envelope"></i>
+            <!-- Formulário atualizado com ID para JS e chamada de validação -->
+            <form id="loginForm" method="POST" action="#">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon"><i class="bi bi-envelope"></i></span>
+                        <input 
+                            type="text" 
+                            id="email" 
+                            name="email" 
+                            placeholder="seu@email.com"
+                        >
+                    </div>
                 </div>
 
                 <div class="box_form">
@@ -58,26 +59,43 @@
 
                 <!-- Botão de enviar-->
                 <div class="Enviar">
-                <button type="submit" id="enviar">TO ENTER</button>
+                <button type="submit">TO ENTER</button>
                 </div>
 
-                <!-- Paragrafo/Redirecionamento de não ter conta-->
-                <div class="link_register">
-                    <p>Don't have an account? <a href="/Listenly/Scr/frontend/Pages/Criar_usuarios/criar_usuarios.html">Register</a></p>
+                <!-- Container para mensagens de Erro/Sucesso -->
+                <div id="mensagem"></div>
+
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Lembrar-me</label>
+                    </div>
+                    <a href="../Sup/suporte.html" class="forgot-password">Esqueceu a senha?</a>
                 </div>
 
-                <span id="Erro" style="color: red;"></span>
+                <button type="submit" class="login-button">Entrar</button>
             </form>
+
+            <div class="divider">ou continue com</div>
+
+            <div class="social-login">
+                <button class="social-button" onclick="alert('Login com Google')">
+                    <span class="social-icon">🔵</span>
+                    Google
+                </button>
+                
+                <button class="social-button" onclick="alert('Login com Facebook')">
+                    <span class="social-icon">📘</span>
+                    Facebook
+                </button>
+            </div>
+
+            <div class="signup-link">
+                Não tem uma conta? <a href="../Criar_usuarios/criar_usuarios.html">Cadastre-se</a>
+            </div>
         </div>
+    </div>
 
-
-            <script src="/Listenly/Scr/backend/Js/login.js"></script>  <!-- Import Script.js-->
-            
-            <script>
-                const nomeUsuario = ""; // Pode vir do servidor ou localStorage, por exemplo
-
-                // Atualiza o título da aba
-                document.title = `Listenly - ${nomeUsuario}!`;
-            </script>
-    </body>
-    </html>
+    <script src="login.js"></script>
+</body>
+</html>

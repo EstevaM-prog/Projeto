@@ -1,13 +1,29 @@
-    <!doctype html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Web Music</title>
+    <!-- Importando Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="criar_usuarios.css">
+</head>
+<body>
+    <!-- Botão de Tema -->
+    <button id="theme-toggle" class="theme-toggle" title="Alternar Tema">
+        🌙
+    </button>
 
-        <!-- Imports Css -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-        <link rel="stylesheet" href="criar_usuarios.css">
+    <div class="login-container">
+        <!-- Left Side (Mantido igual) -->
+        <div class="login-left">
+            <div class="brand-logo">🎵</div>
+            <h1 class="brand-title">Web Music</h1>
+            <p class="brand-subtitle">Junte-se à comunidade</p>
+            <div class="welcome-illustration">🎸</div>
+        </div>
 
+<<<<<<< HEAD
         <!-- Title Aba-->
         <title>Listenly - Register</title>
         
@@ -15,33 +31,117 @@
 
         <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
     </head>
+=======
+        <!-- Right Side - Form Cadastro -->
+        <div class="login-right">
+            <div class="login-header">
+                <h2>Criar Conta</h2>
+                <p>Preencha os dados abaixo para começar</p>
+            </div>
+>>>>>>> main-2.0
 
-    <body>
-        <!-- Nav bar-->
-        <div class="nav_bar">
-            <div class="nav_container"></div>
-            <a href="#" class="logo"></a>
-                <nav>
-                    <ul>
-                        <li>
-                            <ul class="nav-menu">
-                                <li><a href="/Listenly/Public/index.html" class="nav-link">Home</a></li>
-                                <li><a href="#" class="nav-link">Sobre</a></li>
-                                <li><a href="#" class="nav-link">Serviços</a></li>
-                                <li><a href="#" class="nav-link">Contato</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+            <form id="cadastroForm" action="#" method="POST">
+                <!-- Campo: Nome de Usuário -->
+                <div class="form-group">
+                    <label for="username">Nome de Usuário</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon"><i class="bi bi-person"></i></span>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            placeholder="SeuNomeDeUsuario"
+                        >
+                    </div>
+                </div>
+
+                <!-- Campo: Email -->
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon"><i class="bi bi-envelope"></i></span>
+                        <input 
+                            type="text" 
+                            id="email" 
+                            name="email" 
+                            placeholder="seu@email.com"
+                        >
+                    </div>
+                </div>
+
+                <!-- Campo: Senha -->
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">
+                            <i id="iconeSenha" class="bi bi-lock"></i>
+                        </span>
+                        <input 
+                            type="password" 
+                            id="senha" 
+                            name="password" 
+                            placeholder="Mínimo 10 caracteres"
+                        >
+                        <button type="button" class="toggle-password-btn" onclick="mostrarSenha('senha', 'iconeSenha')">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Campo: Senha 2 (Confirmação) -->
+                <div class="form-group">
+                    <label for="senha2">Confirmar Senha</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">
+                            <i id="iconeSenha2" class="bi bi-shield-lock"></i>
+                        </span>
+                        <input 
+                            type="password" 
+                            id="senha2" 
+                            name="confirm_password" 
+                            placeholder="Repita a senha"
+                        >
+                        <button type="button" class="toggle-password-btn" onclick="mostrarSenha('senha2', 'iconeSenha2')">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mensagens -->
+                <div id="mensagem"></div>
+
+                <!-- Termos (Equivalente visual ao Lembrar-me) -->
+                <div class="form-options">
+                    <div class="remember-me">
+                        <!-- ID 'termos' usado para o evento de clique -->
+                        <input type="checkbox" id="termos" name="termos">
+                        <label for="termos">Aceito os termos</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="login-button">Cadastrar</button>
+            </form>
+
+            <div class="divider">ou cadastre-se com</div>
+
+            <div class="social-login">
+                <button class="social-button" onclick="alert('Login com Google')">
+                    <span class="social-icon">🔵</span>
+                    Google
+                </button>
+                <button class="social-button" onclick="alert('Login com Facebook')">
+                    <span class="social-icon">📘</span>
+                    Facebook
+                </button>
+            </div>
+
+            <div class="signup-link">
+                Já tem uma conta? <a href="/Listenly/Scr/frontend/Pages/Login/login.html">Entrar</a>
             </div>
         </div>
-        
-        <!-- Div do Formulario-->
-        <div class="form_register">
-        
-            <!-- Titulo do Formulario-->
-            <h1>Register</h1>
+    </div>
 
+<<<<<<< HEAD
             <!-- Formulario -->
             <form action="#" method="post" onsubmit="return validarFormCreateUser(event)">
                 <div class="box_register">
@@ -113,3 +213,8 @@
     
     </body>
     </html>
+=======
+    <script src="create_user.js"></script>
+</body>
+</html>
+>>>>>>> main-2.0
