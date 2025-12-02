@@ -1,84 +1,107 @@
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- Global typography (padroniza tamanho de fonte) -->
-        <link rel="stylesheet" href="../Css/global-typography.css">
-        
-        <!-- Imports Css-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-        <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
-        <link rel="stylesheet" href="login.css">
-        
-        <!-- Title Aba-->
-        <title>Listenly - Login</title>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Web Music</title>
+    <!-- Importando Bootstrap Icons para funcionar a lógica do bi-lock/unlock -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Botão de Tema -->
+    <button id="theme-toggle" class="theme-toggle" title="Alternar Tema">
+        🌙
+    </button>
 
-    </head>
-    <body>
+    <div class="login-container">
+        <!-- Left Side -->
+        <div class="login-left">
+            <div class="brand-logo">🎵</div>
+            <h1 class="brand-title">Web Music</h1>
+            <p class="brand-subtitle">Sua música, em qualquer lugar</p>
+            <div class="welcome-illustration">🎧</div>
+        </div>
 
-        <!-- Nav bar-->
-        <div class="nav_bar">
-            <div class="nav_container"></div>
-            <a href="#" class="logo"></a>
-                <nav>
-                    <ul>
-                        <li>
-                            <ul class="nav-menu">
-                                <li><a href="/Listenly/Public/index.html" class="nav-link">Home</a></li>
-                                <li><a href="#" class="nav-link">Sobre</a></li>
-                                <li><a href="#" class="nav-link">Serviços</a></li>
-                                <li><a href="#" class="nav-link">Contato</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+        <!-- Right Side -->
+        <div class="login-right">
+            <div class="login-header">
+                <h2>Bem-vindo de volta!</h2>
+                <p>Entre com sua conta para continuar</p>
+            </div>
+
+            <!-- Formulário atualizado com ID para JS e chamada de validação -->
+            <form id="loginForm" method="POST" action="#">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon"><i class="bi bi-envelope"></i></span>
+                        <input 
+                            type="text" 
+                            id="email" 
+                            name="email" 
+                            placeholder="seu@email.com"
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <div class="input-wrapper">
+                        <!-- Ícone de cadeado com ID iconeSenha para o Script -->
+                        <span class="input-icon">
+                            <i id="iconeSenha" class="bi bi-lock"></i>
+                        </span>
+                        
+                        <!-- ID atualizado para 'senha' -->
+                        <input 
+                            type="password" 
+                            id="senha" 
+                            name="password" 
+                            placeholder="••••••••••"
+                        >
+                        
+                        <!-- Botão para mostrar senha -->
+                        <button type="button" class="toggle-password-btn" onclick="mostrarSenha()">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Container para mensagens de Erro/Sucesso -->
+                <div id="mensagem"></div>
+
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Lembrar-me</label>
+                    </div>
+                    <a href="../Sup/suporte.html" class="forgot-password">Esqueceu a senha?</a>
+                </div>
+
+                <button type="submit" class="login-button">Entrar</button>
+            </form>
+
+            <div class="divider">ou continue com</div>
+
+            <div class="social-login">
+                <button class="social-button" onclick="alert('Login com Google')">
+                    <span class="social-icon">🔵</span>
+                    Google
+                </button>
+                
+                <button class="social-button" onclick="alert('Login com Facebook')">
+                    <span class="social-icon">📘</span>
+                    Facebook
+                </button>
+            </div>
+
+            <div class="signup-link">
+                Não tem uma conta? <a href="../Criar_usuarios/criar_usuarios.html">Cadastre-se</a>
             </div>
         </div>
+    </div>
 
-        <!-- Formulario -->
-        <div class="form_login">
-
-            <h1>Login</h1>
-
-            <form action="#" method="POST" onsubmit="return validarFormLogin(event)">
-                <div class="box_form">
-                    <input type="text" id="email" name="email" placeholder="Your email" required>
-                    <i class="bi bi-envelope"></i>
-                </div>
-
-                <div class="box_form">
-                    <input type="password" id="senha" name="senha" placeholder="Enter your password" required>
-                    
-                    <!-- botão com ícone -->
-                    <button class="View" type="button" onclick="mostrarSenha()" style="border:none; background:none; cursor:pointer;">
-                        <i id="iconeSenha" class="bi bi-lock"></i>
-                    </button>
-                </div>
-
-                <!-- Botão de enviar-->
-                <div class="Enviar">
-                <button type="submit">TO ENTER</button>
-                </div>
-
-                <!-- Paragrafo/Redirecionamento de não ter conta-->
-                <div class="link_register">
-                    <p>Don't have an account? <a href="/Listenly/Scr/frontend/Pages/Criar_usuarios/criar_usuarios.html">Register</a></p>
-                </div>
-
-                <span id="Erro" style="color: red;"></span>
-            </form>
-        </div>
-
-
-            <script src="./login.js"></script>  <!-- Import Script.js-->
-            
-            <script>
-                const nomeUsuario = ""; // Pode vir do servidor ou localStorage, por exemplo
-
-                // Atualiza o título da aba
-                document.title = `Listenly - ${nomeUsuario}!`;
-            </script>
-    </body>
-    </html>
+    <script src="login.js"></script>
+</body>
+</html>

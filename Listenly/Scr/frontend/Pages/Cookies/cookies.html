@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Fontes e Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
+    <title>Listenly - Política de Cookies</title>
+
+    <link rel="stylesheet" href="cookies.css">
+</head>
+
+<body>
+
+    <!-- Elementos de Fundo -->
+    <div class="background-gradient"></div>
+    <div class="estrelas"></div>
+
+    <!-- Header Simples -->
+    <header>
+        <a href="#" class="logo">
+            <i class="fas fa-cookie-bite"></i> Listenly Cookies
+        </a>
+        <a href="/Listenly/Scr/frontend/Pages/Home/home.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Voltar
+        </a>
+    </header>
+
+    <div class="container">
+        
+        <div class="intro-section">
+            <h1>Sua Privacidade Importa</h1>
+            <p>Utilizamos cookies para melhorar a sua experiência no Listenly. Você pode personalizar suas preferências abaixo.</p>
+        </div>
+
+        <form id="cookie-form">
+            
+            <!-- Card 1: Essenciais -->
+            <div class="cookie-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Estritamente Necessários</h3>
+                    </div>
+                    <div>
+                        <span class="status-label">Sempre Ativo</span>
+                        <label class="switch">
+                            <input type="checkbox" checked disabled>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Estes cookies são fundamentais para o funcionamento do site, como login seguro, reprodução de áudio e gerenciamento da sua sessão. Não podem ser desativados.
+                </p>
+            </div>
+
+            <!-- Card 2: Desempenho -->
+            <div class="cookie-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>Desempenho e Análise</h3>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="perf-cookies" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <p class="card-description">
+                    Ajudam-nos a entender como os visitantes interagem com o site, quais músicas são mais ouvidas e se ocorrem erros. Todas as informações são anônimas.
+                </p>
+            </div>
+
+            <!-- Card 3: Funcionalidade -->
+            <div class="cookie-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fas fa-sliders-h"></i>
+                        <h3>Funcionalidade</h3>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="func-cookies" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <p class="card-description">
+                    Permitem que o site se lembre das suas escolhas (como nome de usuário, idioma ou tema escuro/claro) para proporcionar uma experiência mais personalizada.
+                </p>
+            </div>
+
+            <!-- Card 4: Publicidade -->
+            <div class="cookie-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>Publicidade e Marketing</h3>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="ads-cookies">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <p class="card-description">
+                    Utilizados para exibir anúncios relevantes aos seus interesses musicais. Se desativados, você ainda verá anúncios, mas eles serão menos relevantes para você.
+                </p>
+            </div>
+
+            <div class="actions">
+                <button type="button" class="btn btn-secondary" onclick="rejectAll()">Rejeitar Opcionais</button>
+                <button type="submit" class="btn btn-primary">Salvar Preferências</button>
+            </div>
+
+        </form>
+        
+        <!-- Botão de Tema Flutuante -->
+        <button id="theme-toggle" style="position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; border: none; background: var(--glass-bg); color: var(--text-primary); cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3); backdrop-filter: blur(5px); z-index: 99;">
+            <i class="fas fa-moon"></i>
+        </button>
+
+    </div>
+
+    <!-- Notificação Toast -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i> Preferências salvas com sucesso!
+    </div>
+
+    <script src="cookies.js"></script>
+</body>
+</html>
