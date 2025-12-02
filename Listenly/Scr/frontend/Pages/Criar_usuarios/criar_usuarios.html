@@ -130,7 +130,39 @@
             </div>
         </div>
     </div>
+   
+        <script src="/Listenly/Scr/backend/Js/create_user.js"></script>
+        <script>
+            document.getElementById('form_register').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const username = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
 
-    <script src="create_user.js"></script>
-</body>
-</html>
+                // EXEMPLO: enviar para o servidor para criar conta (recomendado)
+                try {
+                    const resp = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                    });
+
+                    if (!resp.ok) throw new Error('Erro no registro');
+
+                    const data = await resp.json(); // por exemplo: { success: true, token: 'abc123' }
+
+                    // SALVE apenas um token (nunca a senha) no cookie se necessário
+                    // Preferência de segurança: preferir que o servidor crie um cookie HttpOnly (ver abaixo).
+                    setCookie('session_token', data.token, 7); // expira em 7 dias
+                    setCookie('username', username, 7);
+
+                    alert('Registro realizado com sucesso!');
+                    window.location.href = '/Pages/Home/home.html'; // redireciona
+                } catch (err) {
+                    console.error(err);
+                    alert('Erro ao registrar: ' + err.message);
+                }
+                });
+        </script>
+    
+    </body>
+    </html>
