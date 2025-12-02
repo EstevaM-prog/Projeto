@@ -1,8 +1,11 @@
-/* Corrigido: removido @import inválido e ajustes sintáticos */
-
+/* ===========================
+   GLOBAL
+=========================== */
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  font-family: "Noto Sans", sans-serif;
 }
 
 body {
@@ -10,172 +13,188 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url(../Img/bg_dark.jpg);
+  background: linear-gradient(135deg, #0d111f, #171c2e);
 }
 
+/* ===========================
+   CARD WRAPPER
+=========================== */
 .wrapper {
-  /* Borda do card */
-  width: 300px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+  width: 350px;
+  padding: 25px 25px 35px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
 }
 
+/* ===========================
+   TABS
+=========================== */
 .wrapper header {
-  /* Borda ao lado do Gratuito, básico, Premium */
   display: flex;
-  height: 55px;
+  height: 52px;
   position: relative;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 30px;
+  overflow: hidden;
 }
 
 header label {
-  /* Cursor dentro do CSS para clicar */
+  flex: 1;
   height: 100%;
-  width: 50%;
-  z-index: 2;
   display: flex;
-  position: relative;
-  font-size: 18px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  font-size: 15px;
+  color: #d1d1d1;
+  transition: 0.3s ease;
+  z-index: 2;
 }
 
 #tab-1:checked ~ header .tab-1,
 #tab-2:checked ~ header .tab-2,
 #tab-3:checked ~ header .tab-3 {
   color: #fff;
+  font-weight: 600;
 }
 
-header label:nth-child(2) {
-  width: 40%;
-}
-
+/* Slider */
 header .slider {
   position: absolute;
-  left: 50%;
   height: 85%;
-  width: 120px;
+  width: 110px;
   border-radius: inherit;
-  transform: translateX(-50%);
-  background: linear-gradient(145deg, rgb(41, 58, 151), rgba(85, 65, 199, 0.8)), url('sua-imagem.jpg');
-  background-size: cover;
-  background-position: center;
-  transition: all 0.3s ease;
+  background: linear-gradient(145deg, #4354d6, #6574f7);
+  box-shadow: 0 0 15px rgba(85, 99, 255, 0.45);
+  transition: 0.3s ease;
 }
 
+/* Slider positions */
 #tab-1:checked ~ header .slider {
   left: 0%;
-  width: 90px;
   transform: translateX(5%);
 }
 
 #tab-2:checked ~ header .slider {
   left: 50%;
-  width: 120px;
   transform: translateX(-50%);
 }
 
 #tab-3:checked ~ header .slider {
   left: 100%;
-  width: 95px;
   transform: translateX(-105%);
 }
 
+/* Hide radios */
 .wrapper input[type="radio"] {
   display: none;
 }
 
+/* ===========================
+   CARDS
+=========================== */
 .cards-area {
   overflow: hidden;
+  margin-top: 25px;
 }
 
 .cards-area .cards {
-  width: 300%;
   display: flex;
+  width: 300%;
+  transition: 0.35s ease;
 }
 
+/* Cada card é agora um container FLEX VERTICAL */
 .cards .row {
-  width: 33.4%;
+  width: 33.33%;
+  color: #e5e5e5;
+  display: flex;
+  flex-direction: column; /* 🔥 necessário para o botão ir pro final */
 }
 
-.cards .row-1 {
-  transition: all 0.3s ease;
+/* Slide movement */
+#tab-1:checked ~ .cards-area .cards {
+  transform: translateX(0%);
+}
+#tab-2:checked ~ .cards-area .cards {
+  transform: translateX(-33.33%);
+}
+#tab-3:checked ~ .cards-area .cards {
+  transform: translateX(-66.66%);
 }
 
-#tab-1:checked ~ .cards-area .cards .row-1 {
-  margin-left: 0%;
-}
-
-#tab-2:checked ~ .cards-area .cards .row-1 {
-  margin-left: -33.4%;
-}
-
-#tab-3:checked ~ .cards-area .cards .row-1 {
-  margin-left: -66.8%;
-}
-
-.row .pricing-details {
-  margin: 20px 0;
+/* ===========================
+   TEXTOS / DETALHES
+=========================== */
+.pricing-details {
   text-align: center;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e6e6e6;
+  margin: 10px 0 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .pricing-details span {
-  font-size: 55px;
-  font-weight: 600;
-  font-family: 'Noto Sans', sans-serif;
-  position: relative;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
 }
 
-.pricing-details span::before {
-  position: absolute;
-  content: "$";
-  font-size: 20px;
-  left: -13px;
-  top: 17px;
-  font-weight: 400;
-  font-family: "Poppins", sans-serif;
+.pricing-details p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #c7c7c7;
 }
 
-/* Removido conjunto de regras vazio .pricing-details span::after */
-
-.row .features li {
+/* ===========================
+   LISTA DE FEATURES
+=========================== */
+.features li {
   display: flex;
   align-items: center;
   font-size: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   list-style: none;
 }
 
-.features li i {
-  color: rgba(20, 1, 2, 0.8);
+.features li i,
+.features li span {
+  color: #e2e2e2;
 }
 
 .features li span {
   margin-left: 10px;
 }
 
+/* ===========================
+   BUTTON — SEMPRE NO FINAL DO CARD
+=========================== */
 .wrapper button {
-  height: 55px;
+  height: 52px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: auto; /* 🔥 empurra para o FUNDÃO do card */
+
   border: none;
-  outline: none;
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
   border-radius: 30px;
-  background: linear-gradient(145deg, rgb(41, 58, 151), rgba(85, 65, 199, 0.8));
-  transition: transform 0.3s ease;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+
+  background: linear-gradient(145deg, #4158d0, #6370ff);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 6px 18px rgba(85, 99, 255, 0.45);
+  transition: 0.3s smooth;
 }
 
 .wrapper button:hover {
-  transform: scale(0.98);
+  transform: scale(0.97);
+  box-shadow: 0 4px 12px rgba(85, 99, 255, 0.35);
 }

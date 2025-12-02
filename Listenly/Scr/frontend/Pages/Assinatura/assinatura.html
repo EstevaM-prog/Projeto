@@ -1,80 +1,104 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- Global typography (padroniza tamanho de fonte) -->
-        <link rel="stylesheet" href="../Css/global-typography.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Import Css-->
-        <link rel="stylesheet" href="card_assinatura.css">
-        <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
+    <!-- Global typography -->
+    <link rel="stylesheet" href="../Css/global-typography.css">
 
-        <!-- Titulo Aba-->
-        <title>Listenly - Premium  </title>
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="card_assinatura.css">
 
-    </head>
+    <link rel="icon" href="/Listenly/Scr/frontend/Pages/Img/Icons/logo.png" type="image/png">
 
-    <body>
-        
-        <div class="wrapper">
+    <title>Listenly - Premium</title>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- Radio Tabs -->
         <input type="radio" name="slider" id="tab-1">
         <input type="radio" name="slider" id="tab-2" checked>
         <input type="radio" name="slider" id="tab-3">
-            <header>
-                <label for="tab-1" class="tab-1">Plus</label>
-                <label for="tab-2" class="tab-2">Gratuito</label>
-                <label for="tab-3" class="tab-3">Premium</label>
-                <div class="slider">            
-            </header>
-            <div class="cards-area">
-                <div class="cards">
-                    <div class="row row-1">
+
+        <header>
+            <label for="tab-1" class="tab-1">Plus</label>
+            <label for="tab-2" class="tab-2">Gratuito</label>
+            <label for="tab-3" class="tab-3">Premium</label>
+            <div class="slider"></div>
+        </header>
+
+        <div class="cards-area">
+            <div class="cards">
+
+                <!-- Plano Plus -->
+                <div class="row row-1">
                     <div class="pricing-details">
                         <span>Plus</span>
                         <p>R$ 14,99</p>
                         <p>Faça parte da família Listenly!</p>
                     </div>
+
                     <ul class="features">
-                        <li>&#10004;<i class="fas fa-check"></i><span> Sem anúncios</span>
-                        <li>&#10004;<i class="fas fa-check"></i><span> Acesso offline limitado</span>
-                        <li>&#10004;<i class="fas fa-check"></i><span> Escutar em 1 dispositivo por vez</span>
-                        <li>&#10004;<i class="fas fa-check"></i><span> Suporte via chat e e-mail</span>
-                        <li>&#10004;<i class="fas fa-check"></i><span> Criar e salvar playlists personalizadas</span>
+                        <li>&#10004; <span>Sem anúncios</span></li>
+                        <li>&#10004; <span>Acesso offline limitado</span></li>
+                        <li>&#10004; <span>Escutar em 1 dispositivo por vez</span></li>
+                        <li>&#10004; <span>Suporte via chat e e-mail</span></li>
+                        <li>&#10004; <span>Criar e salvar playlists personalizadas</span></li>
                     </ul>
-                   <button class="btn" id="btn-2" onclick="location.href='/Listenly/Scr/frontend/Pages/Pagamento/pagamento.html'">Assine Plano Plus</button>
+
+                    <button class="btn" id="btn-2"
+                        onclick="location.href='/Listenly/Scr/frontend/Pages/Pagamento/pagamento.html'">
+                        Assine Plano Plus
+                    </button>
                 </div>
-                    <div class="row">
+
+                <!-- Plano Gratuito -->
+                <div class="row">
                     <div class="pricing-details">
                         <span>Plano Grátis</span>
                         <p>Crie já sua conta!</p>
                         <p>Faça parte da família Listenly!</p>
                     </div>
+
                     <ul class="features">
-                        <li>&#10004;<i class="fas fa-check"></i><span> Gratuito com anúncios.</span>
-                        <li>&#10004;<i class="fas fa-check"></i><span> Sem acesso offline.</span>
-                        <li>&#10004;<i class="fas fa-check"></i><span> Recursos premium bloqueados.</span>
+                        <li>&#10004; <span>Gratuito com anúncios.</span></li>
+                        <li>&#10004; <span>Sem acesso offline.</span></li>
+                        <li>&#10004; <span>Recursos premium bloqueados.</span></li>
                     </ul>
-                 <button class="btn" id="btn-1" onclick="location.href='/Listenly/Scr/frontend/Pages/Criar_usuarios/criar_usuarios.html'">Criar conta grátis</button>
+
+                    <button class="btn" id="btn-1"
+                        onclick="location.href='/Listenly/Scr/frontend/Pages/Criar_usuarios/criar_usuarios.html'">
+                        Criar conta grátis
+                    </button>
                 </div>
-                    <div class="row">
+
+                <!-- Plano Premium -->
+                <div class="row">
                     <div class="pricing-details">
                         <span>Premium</span>
                         <p>R$ 40,00</p>
                         <p>Faça parte da família Listenly!</p>
                     </div>
+
                     <ul class="features">
-                        <li>&#10004;<i class="fas fa-check"></i><span> Sem anúncios</span>
-                        <li>&#10004;<i class="fas fa-check"></i><span> Acesso offline completo</span>
-                        <li>&#10004;<i class="fas fa-check"></i><span> Pular faixas ilimitado</span>
-                        <li>&#10004;<i class="fas fa-check"></i><span> Multi-dispositivo</span>
-                        <li>&#10004;<i class="fas fa-check"></i><span> Suporte prioritário</span>
+                        <li>&#10004; <span>Sem anúncios</span></li>
+                        <li>&#10004; <span>Acesso offline completo</span></li>
+                        <li>&#10004; <span>Pular faixas ilimitado</span></li>
+                        <li>&#10004; <span>Multi-dispositivo</span></li>
+                        <li>&#10004; <span>Suporte prioritário</span></li>
                     </ul>
-                    <button class="btn" id="bnt-3" onclick="location.href='/Listenly/Scr/frontend/Pages/Pagamento/pagamento.html'">Assine Plano Premium</button>
+
+                    <button class="btn" id="btn-3"
+                        onclick="location.href='/Listenly/Scr/frontend/Pages/Pagamento/pagamento.html'">
+                        Assine Plano Premium
+                    </button>
                 </div>
+
             </div>
         </div>
-        </div>
-    </body>
-    </html>
+    </div>
+</body>
+</html>
